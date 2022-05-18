@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Client\Datex.DeliveryConformation.Client.csproj" />
+    <ProjectReference Include="..\..\Datex.DeliveryConformation.Db\Datex.DeliveryConformation.Db.csproj" />
     <ProjectReference Include="..\Shared\Datex.DeliveryConformation.Shared.csproj" />
   </ItemGroup>
 
