@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.Shared", "Shared\Datex.DeliveryConformation.Shared.csproj", "{1CA5DC8D-A448-435A-85CB-E967FEC1BCE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.Db", "..\Datex.DeliveryConformation.Db\Datex.DeliveryConformation.Db.csproj", "{626A0D78-1C93-4A53-8F6E-5624C40F81F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.WPF", "..\Datex.DeliveryConformation.WPF\Datex.DeliveryConformation.WPF.csproj", "{6A85FB05-2DD4-4701-B9E5-490D8E6B93B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{1CA5DC8D-A448-435A-85CB-E967FEC1BCE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CA5DC8D-A448-435A-85CB-E967FEC1BCE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CA5DC8D-A448-435A-85CB-E967FEC1BCE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626A0D78-1C93-4A53-8F6E-5624C40F81F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626A0D78-1C93-4A53-8F6E-5624C40F81F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626A0D78-1C93-4A53-8F6E-5624C40F81F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626A0D78-1C93-4A53-8F6E-5624C40F81F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A85FB05-2DD4-4701-B9E5-490D8E6B93B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A85FB05-2DD4-4701-B9E5-490D8E6B93B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A85FB05-2DD4-4701-B9E5-490D8E6B93B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A85FB05-2DD4-4701-B9E5-490D8E6B93B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
