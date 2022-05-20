@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Datex.DeliveryConformation\Shared\Datex.DeliveryConformation.Shared.csproj" />
+    <ProjectReference Include="..\Shared\Datex.DeliveryConformation.Shared.csproj" />
   </ItemGroup>
 
 </Project>

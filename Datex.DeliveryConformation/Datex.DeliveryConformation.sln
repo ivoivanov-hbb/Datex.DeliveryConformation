@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.Shared", "Shared\Datex.DeliveryConformation.Shared.csproj", "{1CA5DC8D-A448-435A-85CB-E967FEC1BCE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.Db", "..\Datex.DeliveryConformation.Db\Datex.DeliveryConformation.Db.csproj", "{626A0D78-1C93-4A53-8F6E-5624C40F81F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.Db", "Db\Datex.DeliveryConformation.Db.csproj", "{626A0D78-1C93-4A53-8F6E-5624C40F81F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.WPF", "..\Datex.DeliveryConformation.WPF\Datex.DeliveryConformation.WPF.csproj", "{6A85FB05-2DD4-4701-B9E5-490D8E6B93B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datex.DeliveryConformation.WPF", "WPF\Datex.DeliveryConformation.WPF.csproj", "{6A85FB05-2DD4-4701-B9E5-490D8E6B93B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
