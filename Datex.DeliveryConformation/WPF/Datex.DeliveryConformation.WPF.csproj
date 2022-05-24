@@ -11,4 +11,9 @@
     <ProjectReference Include="..\Shared\Datex.DeliveryConformation.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>

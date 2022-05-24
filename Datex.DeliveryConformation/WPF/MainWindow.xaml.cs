@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API = Datex.DeliveryConformation.API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Datex.DeliveryConformation.Shared.Interfaces.Models;
 
 namespace Datex.DeliveryConformation.WPF
 {
@@ -20,9 +22,19 @@ namespace Datex.DeliveryConformation.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private API.DeliveryConformationAPI api;
+
         public MainWindow()
         {
+            api = new API.DeliveryConformationAPI("http://localhost:5011/", new System.Net.Http.HttpClient());
+
             InitializeComponent();
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            IDeliveryTruck t = await api.DeliveryTrucksAsync();
+            ;
         }
     }
 }
