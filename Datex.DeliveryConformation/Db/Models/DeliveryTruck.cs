@@ -1,4 +1,5 @@
 ﻿using Datex.DeliveryConformation.Shared.Interfaces.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Datex.DeliveryConformation.Db.Models
 {
+    [Index(nameof(Id))]
     public class DeliveryTruck : BaseModel, IDeliveryTruck
     {
         public string LicenseNumber { get; set; }

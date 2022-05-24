@@ -7,9 +7,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Datex.DeliveryConformation.Db.Models
 {
+    [Index(nameof(Id))]
+    [Index(nameof(DeliveryTruckId), nameof(Status))]
     public class Shipment : BaseModel, IShipment
     {
         public string? OriginName { get; set; }
@@ -24,6 +28,7 @@ namespace Datex.DeliveryConformation.Db.Models
         public string? Notes { get; set; }
 
         public Guid DeliveryTruckId { get; set; }
+        [JsonIgnore]
         public DeliveryTruck DeliveryTruck { get; set; }
     }
 }

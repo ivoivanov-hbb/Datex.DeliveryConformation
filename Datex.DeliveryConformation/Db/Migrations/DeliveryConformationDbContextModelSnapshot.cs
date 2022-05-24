@@ -34,6 +34,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Id");
+
                     b.ToTable("DeliveryTrucks");
 
                     b.HasData(
@@ -95,30 +97,32 @@ namespace Datex.DeliveryConformation.Db.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DeliveryTruckId");
+                    b.HasIndex("Id");
+
+                    b.HasIndex("DeliveryTruckId", "Status");
 
                     b.ToTable("Shipments");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("deef3fda-a588-45c3-8d9b-633eaf20c597"),
+                            Id = new Guid("65c74710-aeaf-44bd-9d39-72b828f525a2"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 0",
                             DestinationName = "Fake destination name for 0",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 0",
                             OriginName = "Fake origin name for 0",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN0-0"
                         },
                         new
                         {
-                            Id = new Guid("04a1a364-4917-422c-9fab-f254ed922f39"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e9bf1f8d-b183-467c-9b8e-7f56772843a3"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 1",
                             DestinationName = "Fake destination name for 1",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 1",
                             OriginName = "Fake origin name for 1",
                             Status = 2,
@@ -126,59 +130,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fc719b16-1290-485b-9109-ddf2f21f8191"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("c3ae4e15-c848-4a6e-89de-d314353aa99d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 2",
                             DestinationName = "Fake destination name for 2",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 2",
                             OriginName = "Fake origin name for 2",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN2-2"
                         },
                         new
                         {
-                            Id = new Guid("85780511-cb7c-40bf-9f0c-5c103d6007a5"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("04608f8e-84ce-4722-b62a-11cd0a568e87"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 3",
                             DestinationName = "Fake destination name for 3",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 3",
                             OriginName = "Fake origin name for 3",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN3-3"
                         },
                         new
                         {
-                            Id = new Guid("45332158-a918-4c3f-ad41-15898dfc4c42"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2af8414b-45d2-4e82-bd3b-81160e50c5da"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 4",
                             DestinationName = "Fake destination name for 4",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 4",
                             OriginName = "Fake origin name for 4",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN4-4"
                         },
                         new
                         {
-                            Id = new Guid("a6715fb8-72b4-4daa-872a-de69050ef3e2"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b6e55bfd-b77b-4ab2-90bf-30f4b3728387"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 5",
                             DestinationName = "Fake destination name for 5",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 5",
                             OriginName = "Fake origin name for 5",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN5-5"
                         },
                         new
                         {
-                            Id = new Guid("5541a41e-2f64-4949-bf1a-0c3f948aa868"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("bc396daa-c2c3-4f01-9e81-b794cda6d84d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 6",
                             DestinationName = "Fake destination name for 6",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 6",
                             OriginName = "Fake origin name for 6",
                             Status = 0,
@@ -186,11 +190,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d02e18bf-5999-491e-9631-db677a11e60a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("cfb49d8e-c05f-4aa7-bb48-d032238b7b36"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 7",
                             DestinationName = "Fake destination name for 7",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 7",
                             OriginName = "Fake origin name for 7",
                             Status = 1,
@@ -198,23 +202,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9b8c0216-6784-45b8-8ca8-45d994eeda86"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("21eafada-9a9a-4693-8319-5ee38012a165"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 8",
                             DestinationName = "Fake destination name for 8",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 8",
                             OriginName = "Fake origin name for 8",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN8-8"
                         },
                         new
                         {
-                            Id = new Guid("49454ca1-cce0-4f8c-aeef-6b4b05d0a60e"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("16c33c51-50bb-48a0-8952-650b0b575aeb"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 9",
                             DestinationName = "Fake destination name for 9",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 9",
                             OriginName = "Fake origin name for 9",
                             Status = 0,
@@ -222,19 +226,19 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("146a6ca6-393c-49da-acd5-fddf693bc5e5"),
+                            Id = new Guid("3dcaec0c-7122-471c-9907-a224df5f7af7"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 10",
                             DestinationName = "Fake destination name for 10",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 10",
                             OriginName = "Fake origin name for 10",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN10-10"
                         },
                         new
                         {
-                            Id = new Guid("56d8b839-1621-4196-a71b-8e5b4cc94bce"),
+                            Id = new Guid("5aea6465-c2b4-45fb-ad77-32a60fb5f0cb"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 11",
                             DestinationName = "Fake destination name for 11",
@@ -246,31 +250,31 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7cf59e9a-2362-4ceb-8d84-b119e54eaa3a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5d10ed12-19a5-46c6-bf4d-07439044abb4"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 12",
                             DestinationName = "Fake destination name for 12",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 12",
                             OriginName = "Fake origin name for 12",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN12-12"
                         },
                         new
                         {
-                            Id = new Guid("8f7da5b7-f6a9-4f41-b030-7c5111d149e2"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4f7828da-9359-496e-a503-0e6938056304"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 13",
                             DestinationName = "Fake destination name for 13",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 13",
                             OriginName = "Fake origin name for 13",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN13-13"
                         },
                         new
                         {
-                            Id = new Guid("b9b0fd1a-ba4c-4f02-82da-fd96795a67f0"),
+                            Id = new Guid("b09b6157-194a-411d-9bd2-7886076118de"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 14",
                             DestinationName = "Fake destination name for 14",
@@ -282,35 +286,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7b22c76d-2168-44f7-99c3-afafee9d0770"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("cacc67c3-8a08-4ac9-bff3-4066e92222d7"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 15",
                             DestinationName = "Fake destination name for 15",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 15",
                             OriginName = "Fake origin name for 15",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN15-15"
                         },
                         new
                         {
-                            Id = new Guid("1966a190-27ae-4c9e-980e-94caaf7119b6"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b42cc5f3-9410-4c16-a238-ee2635f3a3ce"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 16",
                             DestinationName = "Fake destination name for 16",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 16",
                             OriginName = "Fake origin name for 16",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN16-16"
                         },
                         new
                         {
-                            Id = new Guid("526dd95f-0dce-4337-a80b-d14fce1feb6a"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("0d33a2e8-f1a5-41cd-b6c6-76716b09af36"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 17",
                             DestinationName = "Fake destination name for 17",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 17",
                             OriginName = "Fake origin name for 17",
                             Status = 2,
@@ -318,23 +322,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("75d428c1-8b40-4413-a729-5533c2b66620"),
+                            Id = new Guid("2f9eed77-0c41-4ae8-9126-dab747d2ee4c"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 18",
                             DestinationName = "Fake destination name for 18",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 18",
                             OriginName = "Fake origin name for 18",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN18-18"
                         },
                         new
                         {
-                            Id = new Guid("f2224693-75f1-4a6c-9459-4eab25bcfe6e"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("680b5fe0-4897-46cd-869e-7d3c2005d184"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 19",
                             DestinationName = "Fake destination name for 19",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 19",
                             OriginName = "Fake origin name for 19",
                             Status = 2,
@@ -342,23 +346,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ef523a52-7128-4a26-8fe7-0925039fffb1"),
+                            Id = new Guid("043a1514-5131-46ba-be82-cb340c0db560"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 20",
                             DestinationName = "Fake destination name for 20",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 20",
                             OriginName = "Fake origin name for 20",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN20-20"
                         },
                         new
                         {
-                            Id = new Guid("c9b28173-5a64-4936-9800-326b9ba17e69"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f5bbdeda-b040-4299-b14c-c9a17367d8b8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 21",
                             DestinationName = "Fake destination name for 21",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 21",
                             OriginName = "Fake origin name for 21",
                             Status = 1,
@@ -366,20 +370,20 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ff11ab94-c34d-4d2d-ab5f-90efd6c55095"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("6549242f-32e1-4d95-9852-1275dbee9596"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 22",
                             DestinationName = "Fake destination name for 22",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 22",
                             OriginName = "Fake origin name for 22",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN22-22"
                         },
                         new
                         {
-                            Id = new Guid("d55995f9-d2d7-457c-8bf9-a6c88d7b20db"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("fae499a7-f12d-484f-b8f7-8925b23f6892"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 23",
                             DestinationName = "Fake destination name for 23",
                             NumberOfPackeges = 4,
@@ -390,119 +394,119 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9da353f3-c1a5-4500-9031-06a93fed7403"),
+                            Id = new Guid("73ab16ad-7bee-45da-8c1a-f9518a37ed71"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 24",
                             DestinationName = "Fake destination name for 24",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 24",
                             OriginName = "Fake origin name for 24",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN24-24"
                         },
                         new
                         {
-                            Id = new Guid("1e509a97-9d28-4253-a841-c3dfe7b4b347"),
+                            Id = new Guid("a015c7bc-552a-4901-b01b-f09e317edd57"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 25",
                             DestinationName = "Fake destination name for 25",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 25",
                             OriginName = "Fake origin name for 25",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN25-25"
                         },
                         new
                         {
-                            Id = new Guid("bb48117b-cfa7-42be-ba27-b57b2dea6278"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("9d42947e-8ee7-4db8-9953-981c32ac3122"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 26",
                             DestinationName = "Fake destination name for 26",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 26",
                             OriginName = "Fake origin name for 26",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN26-26"
                         },
                         new
                         {
-                            Id = new Guid("bf8945b9-51d5-4f2c-b130-3adfde3e5868"),
+                            Id = new Guid("99976847-c8ab-450e-a5c1-0d191c870828"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 27",
                             DestinationName = "Fake destination name for 27",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 27",
                             OriginName = "Fake origin name for 27",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN27-27"
                         },
                         new
                         {
-                            Id = new Guid("70cde85f-efdd-47af-b536-040341e4a2a0"),
+                            Id = new Guid("76cf8347-c14f-4706-8496-9234fd3b268a"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 28",
                             DestinationName = "Fake destination name for 28",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 28",
                             OriginName = "Fake origin name for 28",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN28-28"
                         },
                         new
                         {
-                            Id = new Guid("55f481df-8e96-449c-9fda-ab7e24c5daef"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7bf18497-5607-4be8-bcc2-4f22dfeba84c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 29",
                             DestinationName = "Fake destination name for 29",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 29",
                             OriginName = "Fake origin name for 29",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN29-29"
                         },
                         new
                         {
-                            Id = new Guid("35a5720c-c91f-4d38-a3e8-311cf86cf5ee"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("c0a0c569-9ecc-45bc-b443-b6868fa02ccd"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 30",
                             DestinationName = "Fake destination name for 30",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 30",
                             OriginName = "Fake origin name for 30",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN30-30"
                         },
                         new
                         {
-                            Id = new Guid("495d2264-6152-441e-988b-0f44277e29c6"),
+                            Id = new Guid("0897cfed-84d6-46fa-85f5-5b3438fe4b15"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 31",
                             DestinationName = "Fake destination name for 31",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 31",
                             OriginName = "Fake origin name for 31",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN31-31"
                         },
                         new
                         {
-                            Id = new Guid("fb989a37-282a-429f-93ec-85bf7013a7d3"),
+                            Id = new Guid("1e813738-c2d8-4c50-b90e-a6a5dcac44f7"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 32",
                             DestinationName = "Fake destination name for 32",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 32",
                             OriginName = "Fake origin name for 32",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN32-32"
                         },
                         new
                         {
-                            Id = new Guid("260128c9-15d5-4afc-b9a3-50d5c17c86f6"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1d65bdb3-5e4e-4d9b-90c5-5d4300150956"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 33",
                             DestinationName = "Fake destination name for 33",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 33",
                             OriginName = "Fake origin name for 33",
                             Status = 0,
@@ -510,23 +514,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("719b7c3b-a4a1-43f9-928d-4ce7f8e5371b"),
+                            Id = new Guid("8b1d486b-1632-4751-ae17-f23af2f5da4a"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 34",
                             DestinationName = "Fake destination name for 34",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 34",
                             OriginName = "Fake origin name for 34",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN34-34"
                         },
                         new
                         {
-                            Id = new Guid("d24270d8-0765-4023-97d2-562efc49f231"),
+                            Id = new Guid("4d93409c-593a-495f-a48f-61048b009f2b"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 35",
                             DestinationName = "Fake destination name for 35",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 35",
                             OriginName = "Fake origin name for 35",
                             Status = 0,
@@ -534,11 +538,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("92d05af7-dc1a-483d-acf6-8c2833b700eb"),
+                            Id = new Guid("3b3ad7ea-14d3-4d04-bdf0-78f35fd1057d"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 36",
                             DestinationName = "Fake destination name for 36",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 36",
                             OriginName = "Fake origin name for 36",
                             Status = 1,
@@ -546,8 +550,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("093dbf66-98ff-449c-9eca-6b78466fdaa4"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("308d15a5-afa5-47d6-acb5-b0721c50f96f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 37",
                             DestinationName = "Fake destination name for 37",
                             NumberOfPackeges = 0,
@@ -558,11 +562,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("07d53bc3-8be7-4ac9-9d00-e85ea4531167"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b268baa2-78cb-4be1-be79-e64a53fe51a2"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 38",
                             DestinationName = "Fake destination name for 38",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 38",
                             OriginName = "Fake origin name for 38",
                             Status = 0,
@@ -570,8 +574,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("86a308b9-f623-403a-994a-9cf2009d6760"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("89926998-e290-4855-88d8-28235ecdf9c8"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 39",
                             DestinationName = "Fake destination name for 39",
                             NumberOfPackeges = 1,
@@ -582,59 +586,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("be0db7ad-97eb-4322-a56f-dac67fe712f7"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("acaa47df-1766-42ce-bd83-a1a906fb8dbe"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 40",
                             DestinationName = "Fake destination name for 40",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 40",
                             OriginName = "Fake origin name for 40",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN40-40"
                         },
                         new
                         {
-                            Id = new Guid("bacfd55d-b395-409f-bb35-97aa1836a240"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ecb6bfeb-e8c0-4ba5-9476-bc235d3228e2"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 41",
                             DestinationName = "Fake destination name for 41",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 41",
                             OriginName = "Fake origin name for 41",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN41-41"
                         },
                         new
                         {
-                            Id = new Guid("8484938b-495e-4a4a-b162-f28fae382102"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("6b4d5f8a-bd1b-4c6d-8c1a-a9ef23ea7852"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 42",
                             DestinationName = "Fake destination name for 42",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 42",
                             OriginName = "Fake origin name for 42",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN42-42"
                         },
                         new
                         {
-                            Id = new Guid("62f49d86-5206-4246-ad27-7df1a70d5f22"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("860046ef-bb92-4a76-8908-b9fe1e7101e8"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 43",
                             DestinationName = "Fake destination name for 43",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 43",
                             OriginName = "Fake origin name for 43",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN43-43"
                         },
                         new
                         {
-                            Id = new Guid("ae7ffa91-8fbe-45c5-b04d-29df620f6bec"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("c34b09b7-cb55-4135-abce-527a37981880"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 44",
                             DestinationName = "Fake destination name for 44",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 44",
                             OriginName = "Fake origin name for 44",
                             Status = 2,
@@ -642,47 +646,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3aa6375b-9c3e-4bd1-bae5-5577256dc5ba"),
+                            Id = new Guid("ddfb388e-2234-4c67-b042-0afad14c4d6a"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 45",
                             DestinationName = "Fake destination name for 45",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 45",
                             OriginName = "Fake origin name for 45",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN45-45"
                         },
                         new
                         {
-                            Id = new Guid("08923d6c-a7d5-46f7-9231-e5e8bd96e1fd"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2a18f20b-9c0a-469e-8a68-6d8d5f1f2c90"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 46",
                             DestinationName = "Fake destination name for 46",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 46",
                             OriginName = "Fake origin name for 46",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN46-46"
                         },
                         new
                         {
-                            Id = new Guid("abf04785-2006-4a82-9283-7263a6e41ff1"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("49b8e392-d49c-41c6-a910-1dc1b0abd651"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 47",
                             DestinationName = "Fake destination name for 47",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 47",
                             OriginName = "Fake origin name for 47",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN47-47"
                         },
                         new
                         {
-                            Id = new Guid("2e2c7e96-3000-43af-a89a-5c9a6575de0b"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("88e5b321-a9dd-4de3-ac17-1b20f5ea0093"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 48",
                             DestinationName = "Fake destination name for 48",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 48",
                             OriginName = "Fake origin name for 48",
                             Status = 2,
@@ -690,47 +694,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3ab7b578-4896-4836-b6e9-7ba76d4ca301"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("40e11f40-739b-4044-ab6f-e10169664914"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 49",
                             DestinationName = "Fake destination name for 49",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 49",
                             OriginName = "Fake origin name for 49",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN49-49"
                         },
                         new
                         {
-                            Id = new Guid("9f621187-6854-452f-96d7-db7d2629e8af"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("0b6740c3-3505-4a91-8808-429bbb5f3956"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 50",
                             DestinationName = "Fake destination name for 50",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 50",
                             OriginName = "Fake origin name for 50",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN50-50"
                         },
                         new
                         {
-                            Id = new Guid("effdd4c0-417a-4a5f-be90-644f3a5f1ebd"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("40577718-f7bf-4d10-b99f-d2d7b9ff26f9"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 51",
                             DestinationName = "Fake destination name for 51",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 51",
                             OriginName = "Fake origin name for 51",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN51-51"
                         },
                         new
                         {
-                            Id = new Guid("ddc99684-e239-4872-89f7-6cb2dab71f87"),
+                            Id = new Guid("e4f2771f-ef1c-4149-b5a1-de5c1859469e"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 52",
                             DestinationName = "Fake destination name for 52",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 52",
                             OriginName = "Fake origin name for 52",
                             Status = 2,
@@ -738,11 +742,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("53848a7d-cebe-4adc-be82-26cb59dca7cc"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("c5770777-e11a-4544-9f1f-a16742dc7863"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 53",
                             DestinationName = "Fake destination name for 53",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 53",
                             OriginName = "Fake origin name for 53",
                             Status = 2,
@@ -750,35 +754,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a70b936d-6f02-4e18-9d91-693b6a8a0377"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f6d11960-d720-4e9f-bc19-687d94e84fa3"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 54",
                             DestinationName = "Fake destination name for 54",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 54",
                             OriginName = "Fake origin name for 54",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN54-54"
                         },
                         new
                         {
-                            Id = new Guid("34f6b915-7560-4717-a029-e895b13785af"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("6885bcc1-6a2e-4d4f-9667-c63dd33f8c00"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 55",
                             DestinationName = "Fake destination name for 55",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 55",
                             OriginName = "Fake origin name for 55",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN55-55"
                         },
                         new
                         {
-                            Id = new Guid("f2c52ded-1ee3-4de2-941e-1fa6d2b9b6b4"),
+                            Id = new Guid("bdf42dd9-9baf-4d1d-a863-820021a8ea54"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 56",
                             DestinationName = "Fake destination name for 56",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 56",
                             OriginName = "Fake origin name for 56",
                             Status = 2,
@@ -786,11 +790,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c3037e75-39ec-4f10-afab-a4faccd543aa"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e0f229ff-5ec9-499d-aea4-222aae33e5d8"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 57",
                             DestinationName = "Fake destination name for 57",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 57",
                             OriginName = "Fake origin name for 57",
                             Status = 1,
@@ -798,11 +802,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6fb4ab52-08a3-4de0-a3e2-2c2144d88618"),
+                            Id = new Guid("25704bf9-83ce-4d80-a090-956eb17c70e3"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 58",
                             DestinationName = "Fake destination name for 58",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 58",
                             OriginName = "Fake origin name for 58",
                             Status = 0,
@@ -810,107 +814,107 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("09e82aec-adc6-4e2b-9a47-ce4bc4215009"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("bde52cfc-fe1f-4d28-896f-d41c76f260cd"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 59",
                             DestinationName = "Fake destination name for 59",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 59",
                             OriginName = "Fake origin name for 59",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN59-59"
                         },
                         new
                         {
-                            Id = new Guid("8f5d0194-0204-4e6c-99f7-0473ac1e44c1"),
+                            Id = new Guid("747348f3-77b1-4c08-bb4e-72b1ffffb324"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 60",
                             DestinationName = "Fake destination name for 60",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 60",
                             OriginName = "Fake origin name for 60",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN60-60"
                         },
                         new
                         {
-                            Id = new Guid("fcf84971-21dd-4588-9ffe-6b8f2b2762f7"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("60d25337-34b4-4e74-bdf6-062d0eb9f567"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 61",
                             DestinationName = "Fake destination name for 61",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 61",
                             OriginName = "Fake origin name for 61",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN61-61"
                         },
                         new
                         {
-                            Id = new Guid("2dd4b8cb-257c-41e6-90e1-c357578bea24"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("2175dfd6-94be-4503-a2c1-203c0611ba2e"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 62",
                             DestinationName = "Fake destination name for 62",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 62",
                             OriginName = "Fake origin name for 62",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN62-62"
                         },
                         new
                         {
-                            Id = new Guid("ea756b2c-4cb9-4518-bef2-6272789d3ed1"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("9510fd4d-c9d9-4b2c-b15a-4e1cbf59ae55"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 63",
                             DestinationName = "Fake destination name for 63",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 63",
                             OriginName = "Fake origin name for 63",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN63-63"
                         },
                         new
                         {
-                            Id = new Guid("ce6daf9f-fe2b-41c7-a3cf-63bdc4efffca"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("4953e79c-8918-4da3-9b78-37dab27f6973"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 64",
                             DestinationName = "Fake destination name for 64",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 64",
                             OriginName = "Fake origin name for 64",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN64-64"
                         },
                         new
                         {
-                            Id = new Guid("3a0e18ac-2872-425a-bf98-a8ad6e02a893"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("620659a1-f008-4c80-b980-4bcc8b97eeeb"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 65",
                             DestinationName = "Fake destination name for 65",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 65",
                             OriginName = "Fake origin name for 65",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN65-65"
                         },
                         new
                         {
-                            Id = new Guid("91a53733-f26f-445a-935e-cb8d82658060"),
+                            Id = new Guid("2879f4d4-2b14-40a1-abf8-86cc3738a43b"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 66",
                             DestinationName = "Fake destination name for 66",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 66",
                             OriginName = "Fake origin name for 66",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN66-66"
                         },
                         new
                         {
-                            Id = new Guid("502f5934-1ae4-4fe7-8436-51ce0147c933"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7b435938-7943-4271-8c5f-f59b2cb962fd"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 67",
                             DestinationName = "Fake destination name for 67",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 67",
                             OriginName = "Fake origin name for 67",
                             Status = 0,
@@ -918,7 +922,7 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("18fff755-4baf-4238-bf97-c598c7985453"),
+                            Id = new Guid("6cf7b6b1-8684-4269-8b3d-9b40a467a41f"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 68",
                             DestinationName = "Fake destination name for 68",
@@ -930,119 +934,119 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ee7c2f76-f3ea-498b-8831-bb633f7aa012"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("2876528d-db29-45a6-8805-7584bf89e78e"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 69",
                             DestinationName = "Fake destination name for 69",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 69",
                             OriginName = "Fake origin name for 69",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN69-69"
                         },
                         new
                         {
-                            Id = new Guid("b8f51194-2ddd-4adc-822d-3b6f1fddcef0"),
+                            Id = new Guid("4808e78a-d04d-482a-bb1c-5f83095cc1b9"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 70",
                             DestinationName = "Fake destination name for 70",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 70",
                             OriginName = "Fake origin name for 70",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN70-70"
                         },
                         new
                         {
-                            Id = new Guid("f9c7c1df-9074-42e4-b883-70c330806c6d"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e7939081-9245-409d-9c78-cb0cc571bbd0"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 71",
                             DestinationName = "Fake destination name for 71",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 71",
                             OriginName = "Fake origin name for 71",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN71-71"
                         },
                         new
                         {
-                            Id = new Guid("eeb9240b-2a3a-4eed-b72b-e2d82831cd44"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ce789350-c2f8-4074-9f38-3532fc27e2a9"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 72",
                             DestinationName = "Fake destination name for 72",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 72",
                             OriginName = "Fake origin name for 72",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN72-72"
                         },
                         new
                         {
-                            Id = new Guid("161c1f2d-9fe0-4bd4-bb5c-f095291683a2"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("6fc5dbda-f6fb-4e23-99af-c89782f79119"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 73",
                             DestinationName = "Fake destination name for 73",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 73",
                             OriginName = "Fake origin name for 73",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN73-73"
                         },
                         new
                         {
-                            Id = new Guid("5f8e3a6c-eab0-46d5-b1fc-2e048828469b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c0221138-362d-42a7-a777-7bf208c3f5f9"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 74",
                             DestinationName = "Fake destination name for 74",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 74",
                             OriginName = "Fake origin name for 74",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN74-74"
                         },
                         new
                         {
-                            Id = new Guid("41b50497-4aaf-4538-a04b-7f8f6ebf5b32"),
+                            Id = new Guid("ff9a9e1a-eb1b-4d1d-afd7-788a76de180d"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 75",
                             DestinationName = "Fake destination name for 75",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 75",
                             OriginName = "Fake origin name for 75",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN75-75"
                         },
                         new
                         {
-                            Id = new Guid("503cd26e-98f4-41fe-aded-707dd5243c82"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c2b3f9e9-6988-4b06-b8e3-b38b3161ad33"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 76",
                             DestinationName = "Fake destination name for 76",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 76",
                             OriginName = "Fake origin name for 76",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN76-76"
                         },
                         new
                         {
-                            Id = new Guid("618e5f23-43f4-498b-9c9c-2727a45ab448"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a57a442c-422a-403f-a80c-0b61ecb671a5"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 77",
                             DestinationName = "Fake destination name for 77",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 77",
                             OriginName = "Fake origin name for 77",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN77-77"
                         },
                         new
                         {
-                            Id = new Guid("3e14e5b7-7a38-4314-a4f9-d669e0c4ce09"),
+                            Id = new Guid("7615c589-3949-4638-859f-4986e4387265"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 78",
                             DestinationName = "Fake destination name for 78",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 78",
                             OriginName = "Fake origin name for 78",
                             Status = 2,
@@ -1050,11 +1054,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b68ee1a2-6e18-46a2-b959-73c510af0f8d"),
+                            Id = new Guid("86f1437d-092c-4336-a8d5-8cb59558450b"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 79",
                             DestinationName = "Fake destination name for 79",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 79",
                             OriginName = "Fake origin name for 79",
                             Status = 2,
@@ -1062,8 +1066,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d8ec040e-b2af-4b03-a0ee-20e81da2114c"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("79015feb-f5f7-4738-b1e9-0d7314dbe2ad"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 80",
                             DestinationName = "Fake destination name for 80",
                             NumberOfPackeges = 3,
@@ -1074,11 +1078,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("14f3aee9-08fd-4a70-a696-6d6a3b328606"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("31772e6c-c6e7-46ff-97a9-df048bafea04"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 81",
                             DestinationName = "Fake destination name for 81",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 81",
                             OriginName = "Fake origin name for 81",
                             Status = 0,
@@ -1086,8 +1090,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("413f8d70-9a85-47dc-895c-638a316f2e82"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("6802f65f-1dbf-4fb0-83d0-efe701912ba9"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 82",
                             DestinationName = "Fake destination name for 82",
                             NumberOfPackeges = 0,
@@ -1098,47 +1102,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6e23de0c-196b-4a11-b80a-60594dda8d9c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a8d6c4e5-ae09-4a28-9285-cd51996177a4"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 83",
                             DestinationName = "Fake destination name for 83",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 83",
                             OriginName = "Fake origin name for 83",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN83-83"
                         },
                         new
                         {
-                            Id = new Guid("e6f7fe0d-99f1-415c-8e7a-a20f1fe39632"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b340a7b1-ae04-4d22-9e92-5e63d5c1f57d"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 84",
                             DestinationName = "Fake destination name for 84",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 84",
                             OriginName = "Fake origin name for 84",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN84-84"
                         },
                         new
                         {
-                            Id = new Guid("83a99ef3-6816-47ee-afa6-03e1d35053f3"),
+                            Id = new Guid("710cdfa6-fbee-4ed1-bdcb-2f86ab9e5f87"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 85",
                             DestinationName = "Fake destination name for 85",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 85",
                             OriginName = "Fake origin name for 85",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN85-85"
                         },
                         new
                         {
-                            Id = new Guid("74f3a5b8-6316-45a0-bd83-b6e3ea20f73d"),
+                            Id = new Guid("5969f8ea-bedc-478a-9b6b-85261a1e4bf4"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 86",
                             DestinationName = "Fake destination name for 86",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 86",
                             OriginName = "Fake origin name for 86",
                             Status = 2,
@@ -1146,35 +1150,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("39647042-3bef-4b84-87a0-03fdf67152f2"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1cb5ca7e-65ae-4a4e-bbf4-ceec0e1568be"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 87",
                             DestinationName = "Fake destination name for 87",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 87",
                             OriginName = "Fake origin name for 87",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN87-87"
                         },
                         new
                         {
-                            Id = new Guid("f8ab98fc-a3d7-4644-9740-592793076fa6"),
+                            Id = new Guid("e1440e4a-09de-48fb-84b2-ff259d7f99b9"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 88",
                             DestinationName = "Fake destination name for 88",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 88",
                             OriginName = "Fake origin name for 88",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN88-88"
                         },
                         new
                         {
-                            Id = new Guid("7edcfce4-c63e-46c1-80cb-b90e3c14e3fd"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b3e8aea1-9748-4f06-b45e-99e14267a49b"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 89",
                             DestinationName = "Fake destination name for 89",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 89",
                             OriginName = "Fake origin name for 89",
                             Status = 0,
@@ -1182,11 +1186,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f821d4c6-e163-43fe-a0bf-786ba1646424"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1c6aa540-3a5f-4ef7-8939-dc07c5bf986b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 90",
                             DestinationName = "Fake destination name for 90",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 90",
                             OriginName = "Fake origin name for 90",
                             Status = 2,
@@ -1194,23 +1198,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1b5f8c1f-4341-43c7-bd5a-8a6e4da2fe2f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2fe9cd8b-6e93-433b-b3fd-a60267215a25"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 91",
                             DestinationName = "Fake destination name for 91",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 91",
                             OriginName = "Fake origin name for 91",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN91-91"
                         },
                         new
                         {
-                            Id = new Guid("bc2bc6ac-5faf-4149-9e88-a22937f32393"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("7b9eb0d5-9c93-4aef-8488-d9d962b116ce"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 92",
                             DestinationName = "Fake destination name for 92",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 92",
                             OriginName = "Fake origin name for 92",
                             Status = 0,
@@ -1218,11 +1222,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e7db76fb-78e5-4736-ae34-f632b7a61fc9"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("92dbc65e-a8d3-47aa-8aff-8e9e29b1baff"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 93",
                             DestinationName = "Fake destination name for 93",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 93",
                             OriginName = "Fake origin name for 93",
                             Status = 1,
@@ -1230,23 +1234,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("41f56c12-ced8-4a31-91d9-adf3f5c729a0"),
+                            Id = new Guid("03f23a84-675c-45e7-9bd2-1f5b8d07f7e1"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 94",
                             DestinationName = "Fake destination name for 94",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 94",
                             OriginName = "Fake origin name for 94",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN94-94"
                         },
                         new
                         {
-                            Id = new Guid("af4964af-2f10-4d73-bdfb-cb0620f893ce"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("3ae6d8c9-c908-498a-917c-137c2743db7f"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 95",
                             DestinationName = "Fake destination name for 95",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 95",
                             OriginName = "Fake origin name for 95",
                             Status = 0,
@@ -1254,47 +1258,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7c5ed47a-a46e-4a5a-b61e-436c063bd69b"),
+                            Id = new Guid("756f969e-c55e-4cbc-8bb2-e58d0388c932"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 96",
                             DestinationName = "Fake destination name for 96",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 96",
                             OriginName = "Fake origin name for 96",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN96-96"
                         },
                         new
                         {
-                            Id = new Guid("f26a24e7-a81e-42a2-96f2-bef1bb480b6a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0f0aa4ae-7700-4edc-9fe8-7c26858426e5"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 97",
                             DestinationName = "Fake destination name for 97",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 97",
                             OriginName = "Fake origin name for 97",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN97-97"
                         },
                         new
                         {
-                            Id = new Guid("bb2cd10e-0017-488b-819a-93132deeb4a7"),
+                            Id = new Guid("d32f53cf-75f0-4050-ab1d-8d35c7a3d0c8"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 98",
                             DestinationName = "Fake destination name for 98",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 98",
                             OriginName = "Fake origin name for 98",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN98-98"
                         },
                         new
                         {
-                            Id = new Guid("6dfab936-3d4e-42cb-8ad3-fc0eaac974df"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("6bd6cb5a-caa5-4af7-9ef2-a36a7435c4b7"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 99",
                             DestinationName = "Fake destination name for 99",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 99",
                             OriginName = "Fake origin name for 99",
                             Status = 2,
@@ -1302,8 +1306,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f082059e-6948-488d-8040-31d2f1216dbc"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("0dc30678-e52a-47dc-8df1-1003de097b1d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 100",
                             DestinationName = "Fake destination name for 100",
                             NumberOfPackeges = 3,
@@ -1314,95 +1318,95 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("787fbaaf-a063-4450-8ac3-0963c13701f6"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("94a83dec-9ba5-4c18-9b91-a5606da5d69d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 101",
                             DestinationName = "Fake destination name for 101",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 101",
                             OriginName = "Fake origin name for 101",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN101-101"
                         },
                         new
                         {
-                            Id = new Guid("91dfbd7f-fc7e-4fea-8b15-3b0ac7d674c0"),
+                            Id = new Guid("20aec6be-f19c-460d-b302-d3d84763b6b9"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 102",
                             DestinationName = "Fake destination name for 102",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 102",
                             OriginName = "Fake origin name for 102",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN102-102"
                         },
                         new
                         {
-                            Id = new Guid("7b5463fc-6b70-4146-b0fb-9e0db8a091e4"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e274abfb-ef07-43d7-af48-79f4493f7b48"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 103",
                             DestinationName = "Fake destination name for 103",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 103",
                             OriginName = "Fake origin name for 103",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN103-103"
                         },
                         new
                         {
-                            Id = new Guid("8661db3a-2385-433f-a251-ffe642949851"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("919a811d-ecd7-41f1-8cfb-abbbdf0532c3"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 104",
                             DestinationName = "Fake destination name for 104",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 104",
                             OriginName = "Fake origin name for 104",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN104-104"
                         },
                         new
                         {
-                            Id = new Guid("65a5e42b-5a16-4aaa-b0ee-50d2bc198f2b"),
+                            Id = new Guid("fa5a733a-eca7-4fb1-91b4-2b2aa31ef544"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 105",
                             DestinationName = "Fake destination name for 105",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 105",
                             OriginName = "Fake origin name for 105",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN105-105"
                         },
                         new
                         {
-                            Id = new Guid("b14fbc57-868f-44cb-b79f-2822a5c6f051"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("569c7f35-4bc4-4913-9bf3-a2612f463e33"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 106",
                             DestinationName = "Fake destination name for 106",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 106",
                             OriginName = "Fake origin name for 106",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN106-106"
                         },
                         new
                         {
-                            Id = new Guid("22c90e14-e778-4346-a105-94566e8f61ab"),
+                            Id = new Guid("bf21f1f3-9410-4a6b-9171-f75085628d11"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 107",
                             DestinationName = "Fake destination name for 107",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 107",
                             OriginName = "Fake origin name for 107",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN107-107"
                         },
                         new
                         {
-                            Id = new Guid("23a5d6be-d653-4059-a3b9-b983824c755c"),
+                            Id = new Guid("5e2c4318-0564-49d1-be35-69ee5d4cf396"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 108",
                             DestinationName = "Fake destination name for 108",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 108",
                             OriginName = "Fake origin name for 108",
                             Status = 0,
@@ -1410,23 +1414,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e35610c9-0b8a-4199-9161-0bd7329cc0d8"),
+                            Id = new Guid("ab8774fb-07b1-4a2d-b5d1-3fe9c46182ba"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 109",
                             DestinationName = "Fake destination name for 109",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 109",
                             OriginName = "Fake origin name for 109",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN109-109"
                         },
                         new
                         {
-                            Id = new Guid("6eb73ec3-9a83-409f-8297-f3abe12ba036"),
+                            Id = new Guid("e8c8e488-4f48-4182-bd76-901de4ec40a3"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 110",
                             DestinationName = "Fake destination name for 110",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 110",
                             OriginName = "Fake origin name for 110",
                             Status = 2,
@@ -1434,35 +1438,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("62ccc548-626c-4302-b1de-eebe45a02e73"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b2bc9a6a-17c5-4633-ae83-80b644eab868"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 111",
                             DestinationName = "Fake destination name for 111",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 111",
                             OriginName = "Fake origin name for 111",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN111-111"
                         },
                         new
                         {
-                            Id = new Guid("319b07cd-ac99-40e0-866d-e730c29ef256"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("daef6452-eac6-457a-8dc3-874209a64192"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 112",
                             DestinationName = "Fake destination name for 112",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 112",
                             OriginName = "Fake origin name for 112",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN112-112"
                         },
                         new
                         {
-                            Id = new Guid("d49df098-c153-4085-84ae-e467b29bcd21"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("22e35b09-f3ad-4f2e-bdb0-fb69fafbdfa2"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 113",
                             DestinationName = "Fake destination name for 113",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 113",
                             OriginName = "Fake origin name for 113",
                             Status = 0,
@@ -1470,35 +1474,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("62e20180-f0cd-4f76-bab8-5fc15ab39bf7"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8074b846-96eb-48fa-a63c-391236c770df"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 114",
                             DestinationName = "Fake destination name for 114",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 114",
                             OriginName = "Fake origin name for 114",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN114-114"
                         },
                         new
                         {
-                            Id = new Guid("8a3d551f-2132-46a8-9e95-3733bbdcb342"),
+                            Id = new Guid("e02bd0ee-58a5-4c04-a764-cd6f01861274"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 115",
                             DestinationName = "Fake destination name for 115",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 115",
                             OriginName = "Fake origin name for 115",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN115-115"
                         },
                         new
                         {
-                            Id = new Guid("cd61d4c8-8195-4320-913c-7e79914e5db5"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1db2b51d-e281-4b6e-83d1-39569717e659"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 116",
                             DestinationName = "Fake destination name for 116",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 116",
                             OriginName = "Fake origin name for 116",
                             Status = 2,
@@ -1506,59 +1510,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a788a9ae-5dac-4649-8616-12b930d50331"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("96557c0d-fa6e-4819-902c-122a2bb9b742"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 117",
                             DestinationName = "Fake destination name for 117",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 117",
                             OriginName = "Fake origin name for 117",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN117-117"
                         },
                         new
                         {
-                            Id = new Guid("95507f5d-2436-4b50-a507-7060450317dd"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("27e4d8c5-275a-432f-b9c3-4d59314e394f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 118",
                             DestinationName = "Fake destination name for 118",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 118",
                             OriginName = "Fake origin name for 118",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN118-118"
                         },
                         new
                         {
-                            Id = new Guid("5d59abd7-67f2-4dca-93c5-5f4471a9ca73"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("588c400c-42c9-4177-820c-96da9a1defbd"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 119",
                             DestinationName = "Fake destination name for 119",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 119",
                             OriginName = "Fake origin name for 119",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN119-119"
                         },
                         new
                         {
-                            Id = new Guid("562f84ba-db7c-4346-b2c3-b024507cd887"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("8d24f9bb-fa27-4df3-875f-90ce6b8a34f0"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 120",
                             DestinationName = "Fake destination name for 120",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 120",
                             OriginName = "Fake origin name for 120",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN120-120"
                         },
                         new
                         {
-                            Id = new Guid("290038fc-2e87-4976-b991-bb4c516fcb86"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e16e1600-cd91-4446-abc9-4f846a986a89"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 121",
                             DestinationName = "Fake destination name for 121",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 121",
                             OriginName = "Fake origin name for 121",
                             Status = 2,
@@ -1566,44 +1570,44 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("862560f5-591d-46db-84ab-5d3ed18a5cb6"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("68b71a15-fdd7-4a1d-a5f7-b2052b025f30"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 122",
                             DestinationName = "Fake destination name for 122",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 122",
                             OriginName = "Fake origin name for 122",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN122-122"
                         },
                         new
                         {
-                            Id = new Guid("d9f394ed-2b36-473a-ad73-94cd3ae86239"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1a89a04a-2121-4da3-b928-c4d5b76cd2a0"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 123",
                             DestinationName = "Fake destination name for 123",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 123",
                             OriginName = "Fake origin name for 123",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN123-123"
                         },
                         new
                         {
-                            Id = new Guid("2e80008b-c455-4967-bbbc-f1296c840de4"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("19fc90aa-4b32-44b0-b409-22b99872217a"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 124",
                             DestinationName = "Fake destination name for 124",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 124",
                             OriginName = "Fake origin name for 124",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN124-124"
                         },
                         new
                         {
-                            Id = new Guid("fa791e68-d4ee-4879-bbba-c4d916c5cb29"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("560c2be3-9b6e-418b-bd57-234371d4be2e"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 125",
                             DestinationName = "Fake destination name for 125",
                             NumberOfPackeges = 1,
@@ -1614,23 +1618,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a1a71174-e39d-48d5-ac65-8d67dff76587"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("c2ba7278-91e0-4c91-8dcf-c14886331c4a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 126",
                             DestinationName = "Fake destination name for 126",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 126",
                             OriginName = "Fake origin name for 126",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN126-126"
                         },
                         new
                         {
-                            Id = new Guid("59a01166-b1a1-46ff-b439-9c2f33f36712"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("53c6c164-243e-4453-8416-0283cafe8e1a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 127",
                             DestinationName = "Fake destination name for 127",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 127",
                             OriginName = "Fake origin name for 127",
                             Status = 0,
@@ -1638,139 +1642,139 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5a9fa950-26bb-428c-b2f7-60d4af5d96e2"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("8bd34839-1e03-48df-8cd8-473c1c504f6b"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 128",
                             DestinationName = "Fake destination name for 128",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 128",
                             OriginName = "Fake origin name for 128",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN128-128"
                         },
                         new
                         {
-                            Id = new Guid("34ead32b-a876-4fc1-a762-bc473572a993"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("1aa7f438-d026-4aca-8ab4-d84f97ee8774"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 129",
                             DestinationName = "Fake destination name for 129",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 129",
                             OriginName = "Fake origin name for 129",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN129-129"
                         },
                         new
                         {
-                            Id = new Guid("a34b32bc-780e-493f-a377-8ec579b86e8d"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("3356e810-34b1-4c2b-a1cb-52644bbe781b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 130",
                             DestinationName = "Fake destination name for 130",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 130",
                             OriginName = "Fake origin name for 130",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN130-130"
                         },
                         new
                         {
-                            Id = new Guid("1511ba5b-bfd8-4988-b59c-b9c4150f1bc8"),
+                            Id = new Guid("9b105a9d-22b0-4257-b04b-e182eeaa3fbb"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 131",
                             DestinationName = "Fake destination name for 131",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 131",
                             OriginName = "Fake origin name for 131",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN131-131"
                         },
                         new
                         {
-                            Id = new Guid("0329683c-c1d7-4c8b-95bd-b0426f2f470a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("6a955a51-ab81-4687-b2a0-c9db4fee0d27"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 132",
                             DestinationName = "Fake destination name for 132",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 132",
                             OriginName = "Fake origin name for 132",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN132-132"
                         },
                         new
                         {
-                            Id = new Guid("1b1a7117-323e-4f33-b46e-b8364f7f4db8"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("de5e6ca8-6dc7-4125-b0a6-19c79292abf2"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 133",
                             DestinationName = "Fake destination name for 133",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 133",
                             OriginName = "Fake origin name for 133",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN133-133"
                         },
                         new
                         {
-                            Id = new Guid("965b0e71-6745-4b66-bbc5-513e1b6c23ed"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("cfdeb981-70c4-45ba-9b8e-476953ca8086"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 134",
                             DestinationName = "Fake destination name for 134",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 134",
                             OriginName = "Fake origin name for 134",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN134-134"
                         },
                         new
                         {
-                            Id = new Guid("2cc30e82-bc10-4131-a8d0-d0b1f54eeb5d"),
+                            Id = new Guid("7e2e9111-52ec-4537-ac1a-0713d1c9de8a"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 135",
                             DestinationName = "Fake destination name for 135",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 135",
                             OriginName = "Fake origin name for 135",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN135-135"
                         },
                         new
                         {
-                            Id = new Guid("bcf10eae-12cc-4f2b-a117-e8ac3c6194ad"),
+                            Id = new Guid("f0ea6774-18de-41e3-ae40-16fd157c1674"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 136",
                             DestinationName = "Fake destination name for 136",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 136",
                             OriginName = "Fake origin name for 136",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN136-136"
                         },
                         new
                         {
-                            Id = new Guid("9f24956c-3de5-486a-af3e-417042b37d49"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("c20c3d44-a709-40a1-95a9-e9067f4295e4"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 137",
                             DestinationName = "Fake destination name for 137",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 137",
                             OriginName = "Fake origin name for 137",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN137-137"
                         },
                         new
                         {
-                            Id = new Guid("28eade56-b5ee-4bad-90b9-0d86f9575d1b"),
+                            Id = new Guid("9340e135-090d-45f6-aed5-6ea776b35da7"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 138",
                             DestinationName = "Fake destination name for 138",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 138",
                             OriginName = "Fake origin name for 138",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN138-138"
                         },
                         new
                         {
-                            Id = new Guid("62ba3e1e-7761-44cd-8ce0-6dc215ba29da"),
+                            Id = new Guid("b0d47a62-6bea-44a5-b840-830f9f2c4787"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 139",
                             DestinationName = "Fake destination name for 139",
@@ -1782,35 +1786,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f7005246-e939-42e2-b3fb-7c50f38a32c5"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b8351377-17dc-4413-bea7-8941dafd60e7"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 140",
                             DestinationName = "Fake destination name for 140",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 140",
                             OriginName = "Fake origin name for 140",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN140-140"
                         },
                         new
                         {
-                            Id = new Guid("5fa44591-a1e0-4c95-9f54-aa8659aab64b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("e8931cf6-aefc-4e7d-9742-75658809abf4"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 141",
                             DestinationName = "Fake destination name for 141",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 141",
                             OriginName = "Fake origin name for 141",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN141-141"
                         },
                         new
                         {
-                            Id = new Guid("ff2bbc9d-a758-451f-ac7f-c0d79e90450a"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("fbcf53be-b79f-422b-b6a7-7f831b64aeed"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 142",
                             DestinationName = "Fake destination name for 142",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 142",
                             OriginName = "Fake origin name for 142",
                             Status = 2,
@@ -1818,59 +1822,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7982fa38-5c64-4e77-bc9f-4c1cfd54534a"),
+                            Id = new Guid("ec001a8a-be5d-450f-b479-2f12a73511a2"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 143",
                             DestinationName = "Fake destination name for 143",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 143",
                             OriginName = "Fake origin name for 143",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN143-143"
                         },
                         new
                         {
-                            Id = new Guid("cc3b86dd-ec88-4afc-840a-4a8cbeee514b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("ccfbf7f8-6353-43e7-90f7-6bf3f859fdae"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 144",
                             DestinationName = "Fake destination name for 144",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 144",
                             OriginName = "Fake origin name for 144",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN144-144"
                         },
                         new
                         {
-                            Id = new Guid("93e373ef-95a2-407f-ba7d-66414cb23273"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("648d2740-5ff8-47f3-a1e2-ae265b1954b1"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 145",
                             DestinationName = "Fake destination name for 145",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 145",
                             OriginName = "Fake origin name for 145",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN145-145"
                         },
                         new
                         {
-                            Id = new Guid("9e3662b9-bc71-4132-b9d5-938eb3a40b8b"),
+                            Id = new Guid("e6d842e9-5ab1-486a-8cfa-b82804769b17"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 146",
                             DestinationName = "Fake destination name for 146",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 146",
                             OriginName = "Fake origin name for 146",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN146-146"
                         },
                         new
                         {
-                            Id = new Guid("66580d05-ef34-4e37-85be-2d9be392a830"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("fbb1daf8-ae63-42c6-acde-9bb9b5856b91"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 147",
                             DestinationName = "Fake destination name for 147",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 147",
                             OriginName = "Fake origin name for 147",
                             Status = 1,
@@ -1878,23 +1882,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bbcf94fe-64e8-4375-bad0-9a8d61f4c053"),
+                            Id = new Guid("566d431b-667d-483b-a851-4ac25d0803f0"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 148",
                             DestinationName = "Fake destination name for 148",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 148",
                             OriginName = "Fake origin name for 148",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN148-148"
                         },
                         new
                         {
-                            Id = new Guid("3b32de10-e390-4928-b574-7c271ba16f36"),
+                            Id = new Guid("9277a624-ec9e-4ce3-8fda-26c8d0457b00"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 149",
                             DestinationName = "Fake destination name for 149",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 149",
                             OriginName = "Fake origin name for 149",
                             Status = 2,
@@ -1902,71 +1906,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3c32bf7d-54b5-4227-82b4-677a88f173e8"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0a5378fe-ee14-490f-b398-79b2062adab6"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 150",
                             DestinationName = "Fake destination name for 150",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 150",
                             OriginName = "Fake origin name for 150",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN150-150"
                         },
                         new
                         {
-                            Id = new Guid("653ac8fb-a067-4cb1-a485-f3d280f9c480"),
+                            Id = new Guid("de65c4ee-c8af-4ace-899f-4859553a972d"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 151",
                             DestinationName = "Fake destination name for 151",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 151",
                             OriginName = "Fake origin name for 151",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN151-151"
                         },
                         new
                         {
-                            Id = new Guid("9f42871e-62da-4502-a2e2-f26230c77149"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("cc098e6b-1297-47a5-9600-3c9b1f6f94b2"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 152",
                             DestinationName = "Fake destination name for 152",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 152",
                             OriginName = "Fake origin name for 152",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN152-152"
                         },
                         new
                         {
-                            Id = new Guid("8b999cc0-0477-4283-a982-6f8fe9a9558b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4fa51c3c-f8b7-4578-8998-fac8a3d54eca"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 153",
                             DestinationName = "Fake destination name for 153",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 153",
                             OriginName = "Fake origin name for 153",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN153-153"
                         },
                         new
                         {
-                            Id = new Guid("4c33a088-450c-4e00-ae8b-6b3d7eed1e13"),
+                            Id = new Guid("4ab4c14e-bf7a-4a8c-9f4b-fc7860bec464"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 154",
                             DestinationName = "Fake destination name for 154",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 154",
                             OriginName = "Fake origin name for 154",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN154-154"
                         },
                         new
                         {
-                            Id = new Guid("f8c504a9-8339-4265-a752-18c3ee077738"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("0036e624-ab8b-4d1a-8151-4010999ed1f3"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 155",
                             DestinationName = "Fake destination name for 155",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 155",
                             OriginName = "Fake origin name for 155",
                             Status = 0,
@@ -1974,11 +1978,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2584c87f-f986-4dbc-a1d8-27f9f48b804f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("d9439f76-3adf-4b6c-af2a-82175e8c5256"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 156",
                             DestinationName = "Fake destination name for 156",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 156",
                             OriginName = "Fake origin name for 156",
                             Status = 0,
@@ -1986,11 +1990,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b470a6b5-1277-4f58-8222-090f51bb722b"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("2faadddc-1af2-40f9-af8a-bd55480868f0"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 157",
                             DestinationName = "Fake destination name for 157",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 157",
                             OriginName = "Fake origin name for 157",
                             Status = 1,
@@ -1998,11 +2002,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ad49767e-5dad-4a51-8700-13cb95c260c1"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("2ed0efd6-0c3f-48cd-a1c5-bd9570d913bf"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 158",
                             DestinationName = "Fake destination name for 158",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 158",
                             OriginName = "Fake origin name for 158",
                             Status = 1,
@@ -2010,7 +2014,7 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("96beee84-31f8-4d28-bc64-1aec0808933a"),
+                            Id = new Guid("5c6ebec7-f597-4530-88fa-2f67b9e11a1d"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 159",
                             DestinationName = "Fake destination name for 159",
@@ -2022,47 +2026,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("28770221-9e48-47ba-8065-5e5adde3da26"),
+                            Id = new Guid("4b627b21-d558-4139-9484-74ea9c69ab0d"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 160",
                             DestinationName = "Fake destination name for 160",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 160",
                             OriginName = "Fake origin name for 160",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN160-160"
                         },
                         new
                         {
-                            Id = new Guid("17488bdf-645b-4ece-a958-879055d0d66d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("44fbcb8a-2beb-4ced-a7da-e8e2ca306a8a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 161",
                             DestinationName = "Fake destination name for 161",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 161",
                             OriginName = "Fake origin name for 161",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN161-161"
                         },
                         new
                         {
-                            Id = new Guid("5c868479-bbc2-484b-a28d-75916554d75d"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a70a8b34-5aac-45d7-8569-d6bb55ae819d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 162",
                             DestinationName = "Fake destination name for 162",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 162",
                             OriginName = "Fake origin name for 162",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN162-162"
                         },
                         new
                         {
-                            Id = new Guid("aaca158d-a125-474b-aa1f-bc96937843cb"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4e6f6095-8c21-4d1d-bebb-8efdf7c001b5"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 163",
                             DestinationName = "Fake destination name for 163",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 163",
                             OriginName = "Fake origin name for 163",
                             Status = 0,
@@ -2070,35 +2074,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("17e78fb3-933c-479e-81b7-71bf81ede87a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ae9c0f40-0134-4263-91e0-2bda176279e9"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 164",
                             DestinationName = "Fake destination name for 164",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 164",
                             OriginName = "Fake origin name for 164",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN164-164"
                         },
                         new
                         {
-                            Id = new Guid("ed9f721c-e2e7-407e-bc3c-36fed9161249"),
+                            Id = new Guid("b0a4dad9-c069-488d-9ab5-d988d3c8fbce"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 165",
                             DestinationName = "Fake destination name for 165",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 165",
                             OriginName = "Fake origin name for 165",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN165-165"
                         },
                         new
                         {
-                            Id = new Guid("69e374c7-0688-4478-b650-35012ee0ff62"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a1eaa982-6cc0-43d2-a106-90138c958753"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 166",
                             DestinationName = "Fake destination name for 166",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 166",
                             OriginName = "Fake origin name for 166",
                             Status = 0,
@@ -2106,11 +2110,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fb75751f-1d92-48b9-afaa-285716966a21"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("76231eed-afb6-4eae-a411-32d333f2e8bf"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 167",
                             DestinationName = "Fake destination name for 167",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 167",
                             OriginName = "Fake origin name for 167",
                             Status = 2,
@@ -2118,71 +2122,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("922c8d75-500f-4fa5-a9fd-1fc191664b7a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("3628285a-471b-4ece-8c11-ff1859a4f762"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 168",
                             DestinationName = "Fake destination name for 168",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 168",
                             OriginName = "Fake origin name for 168",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN168-168"
                         },
                         new
                         {
-                            Id = new Guid("79f11c7b-993c-4643-bd7a-29a8e69f28b9"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("ee14e37a-b34e-4cf0-a012-a78b36cf4b43"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 169",
                             DestinationName = "Fake destination name for 169",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 169",
                             OriginName = "Fake origin name for 169",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN169-169"
                         },
                         new
                         {
-                            Id = new Guid("9a38cc58-c5c8-478b-932c-9dba62c5c05e"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("d546107f-c79b-4921-b9b4-a184733ce467"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 170",
                             DestinationName = "Fake destination name for 170",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 170",
                             OriginName = "Fake origin name for 170",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN170-170"
                         },
                         new
                         {
-                            Id = new Guid("6bc27ede-8ebc-4730-9ae7-9cccd2c08fce"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("3ddad287-b595-4cfc-a90d-51ff00fe7d17"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 171",
                             DestinationName = "Fake destination name for 171",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 171",
                             OriginName = "Fake origin name for 171",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN171-171"
                         },
                         new
                         {
-                            Id = new Guid("084ee440-4e41-4efd-9d08-7675bb50db71"),
+                            Id = new Guid("4c84bb76-63c8-460a-ae28-415822c85c98"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 172",
                             DestinationName = "Fake destination name for 172",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 172",
                             OriginName = "Fake origin name for 172",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN172-172"
                         },
                         new
                         {
-                            Id = new Guid("78620395-8402-4231-bf8d-20863f719843"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d5b4bbd9-de4c-4828-a282-bc3b1ed6f08b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 173",
                             DestinationName = "Fake destination name for 173",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 173",
                             OriginName = "Fake origin name for 173",
                             Status = 0,
@@ -2190,11 +2194,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f3347d9c-22a1-43c0-a0a6-af07969aa5b2"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("9b7d8c51-af64-41d9-aa5e-8f94b0699252"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 174",
                             DestinationName = "Fake destination name for 174",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 174",
                             OriginName = "Fake origin name for 174",
                             Status = 2,
@@ -2202,23 +2206,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("04d2c1ab-bcc9-41d1-a9ee-b3f1421a6e5b"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("4e44b222-c06f-4bbe-93fe-22baca49c84e"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 175",
                             DestinationName = "Fake destination name for 175",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 175",
                             OriginName = "Fake origin name for 175",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN175-175"
                         },
                         new
                         {
-                            Id = new Guid("c84d7e76-18fa-4323-aef5-b1cce15b9c86"),
+                            Id = new Guid("62d46b5a-bbee-4e47-8256-bf8274b19c8f"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 176",
                             DestinationName = "Fake destination name for 176",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 176",
                             OriginName = "Fake origin name for 176",
                             Status = 2,
@@ -2226,11 +2230,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f2735f21-353c-4f3c-9657-f12dd75cd860"),
+                            Id = new Guid("402960dd-4f27-430e-8cc2-a7fec604b26c"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 177",
                             DestinationName = "Fake destination name for 177",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 177",
                             OriginName = "Fake origin name for 177",
                             Status = 2,
@@ -2238,131 +2242,131 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dbc078d7-9b2e-4d3b-8c79-e8edda3ef9b6"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("f4e64166-eab7-4994-a1a1-6e8d20489464"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 178",
                             DestinationName = "Fake destination name for 178",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 178",
                             OriginName = "Fake origin name for 178",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN178-178"
                         },
                         new
                         {
-                            Id = new Guid("c76eebcb-8bd2-49c9-9bd1-3f62d30c7da3"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("6e6c1bb9-dffc-4f0d-a2c3-1a8e3c1f9c36"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 179",
                             DestinationName = "Fake destination name for 179",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 179",
                             OriginName = "Fake origin name for 179",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN179-179"
                         },
                         new
                         {
-                            Id = new Guid("9841e96a-f7c2-460b-a847-79e001ddffa3"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f102f796-a6a5-447a-aa8f-ee63cd177bc6"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 180",
                             DestinationName = "Fake destination name for 180",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 180",
                             OriginName = "Fake origin name for 180",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN180-180"
                         },
                         new
                         {
-                            Id = new Guid("da73601d-cd78-4493-91c6-ac5a4010787c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2f46134d-c1eb-4a6a-a394-dcd706599df1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 181",
                             DestinationName = "Fake destination name for 181",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 181",
                             OriginName = "Fake origin name for 181",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN181-181"
                         },
                         new
                         {
-                            Id = new Guid("b0ce2192-d171-4c1f-b695-048c1e684fa2"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("13671111-b690-4143-80c1-d76f12c57f30"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 182",
                             DestinationName = "Fake destination name for 182",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 182",
                             OriginName = "Fake origin name for 182",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN182-182"
                         },
                         new
                         {
-                            Id = new Guid("4dfe8f98-df2d-4a1c-9732-0460995c7995"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("d5936ec2-e5ff-47a6-bef7-64299e34a8dc"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 183",
                             DestinationName = "Fake destination name for 183",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 183",
                             OriginName = "Fake origin name for 183",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN183-183"
                         },
                         new
                         {
-                            Id = new Guid("a8735d11-253f-47e0-a913-9463b4d99caf"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("2a57341a-2334-4b81-be8a-42a3a18ba987"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 184",
                             DestinationName = "Fake destination name for 184",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 184",
                             OriginName = "Fake origin name for 184",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN184-184"
                         },
                         new
                         {
-                            Id = new Guid("0304cb88-6afb-4bb9-80e6-2d51a2842b96"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5e87161b-ba3f-4aa7-aa9f-6fb10e9727a1"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 185",
                             DestinationName = "Fake destination name for 185",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 185",
                             OriginName = "Fake origin name for 185",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN185-185"
                         },
                         new
                         {
-                            Id = new Guid("a52e5ee9-c305-49dd-bc49-db64b66864eb"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("bf4ade7b-cb45-40e6-9824-88e9d36dcaf3"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 186",
                             DestinationName = "Fake destination name for 186",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 186",
                             OriginName = "Fake origin name for 186",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN186-186"
                         },
                         new
                         {
-                            Id = new Guid("252014d7-b1b0-4b5f-afcd-84f8674e00e7"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("615e457f-fb93-4e1a-b500-d262f07845e2"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 187",
                             DestinationName = "Fake destination name for 187",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 187",
                             OriginName = "Fake origin name for 187",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN187-187"
                         },
                         new
                         {
-                            Id = new Guid("b243c974-99f1-4bb3-b89b-ce5f6e9b9bdf"),
+                            Id = new Guid("2fcfba3b-5d75-432c-8303-f7de47c61db0"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 188",
                             DestinationName = "Fake destination name for 188",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 188",
                             OriginName = "Fake origin name for 188",
                             Status = 1,
@@ -2370,32 +2374,32 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a826dff9-42df-4763-93f0-8e0b2754a936"),
+                            Id = new Guid("664f378f-442e-463b-98b9-9363ac8c84b4"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 189",
                             DestinationName = "Fake destination name for 189",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 189",
                             OriginName = "Fake origin name for 189",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN189-189"
                         },
                         new
                         {
-                            Id = new Guid("2779c49b-b16b-4316-b4fe-858ef10e1c35"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8f6c5490-7176-43d2-b749-4449f1f81d52"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 190",
                             DestinationName = "Fake destination name for 190",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 190",
                             OriginName = "Fake origin name for 190",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN190-190"
                         },
                         new
                         {
-                            Id = new Guid("4f18fc32-c3ca-4b78-a371-da2febd331ab"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("bc827f90-834c-4efc-8d0f-82c55972fa78"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 191",
                             DestinationName = "Fake destination name for 191",
                             NumberOfPackeges = 0,
@@ -2406,11 +2410,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d60e9abd-b0bb-43fd-b767-758f3f96c2ec"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("490c773f-6a76-42c9-a8e5-423aee9879c0"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 192",
                             DestinationName = "Fake destination name for 192",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 192",
                             OriginName = "Fake origin name for 192",
                             Status = 0,
@@ -2418,11 +2422,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("311f68da-aae6-4298-96d4-5d98c2596928"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7dbc1094-b9d2-4322-8712-c2fad7c25d9a"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 193",
                             DestinationName = "Fake destination name for 193",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 193",
                             OriginName = "Fake origin name for 193",
                             Status = 2,
@@ -2430,8 +2434,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ecda9485-efb0-4674-ba3e-71bd875c2be5"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("02a2aa4d-dd8e-4b5d-8a96-bb5ac2f11883"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 194",
                             DestinationName = "Fake destination name for 194",
                             NumberOfPackeges = 0,
@@ -2442,11 +2446,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a63a4c14-0c38-4e10-afb2-21d92c917b0c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("9a4a35c4-8bb5-4693-9b94-16e871971de5"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 195",
                             DestinationName = "Fake destination name for 195",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 195",
                             OriginName = "Fake origin name for 195",
                             Status = 1,
@@ -2454,35 +2458,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b23d2518-a536-4276-a415-d95376b6930f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("93846275-b752-4dfe-8817-06fc4de3cbd6"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 196",
                             DestinationName = "Fake destination name for 196",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 196",
                             OriginName = "Fake origin name for 196",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN196-196"
                         },
                         new
                         {
-                            Id = new Guid("4d8a1f41-bd33-4b44-a9cd-357e60a9fb5b"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("e6fd0315-156a-4e63-8f35-dbeb08dd5b2b"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 197",
                             DestinationName = "Fake destination name for 197",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 197",
                             OriginName = "Fake origin name for 197",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN197-197"
                         },
                         new
                         {
-                            Id = new Guid("2a6c4cf4-d640-4c58-a0ad-52c9ae23e9d4"),
+                            Id = new Guid("f3ef292c-3957-4950-abed-6cee55208c14"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 198",
                             DestinationName = "Fake destination name for 198",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 198",
                             OriginName = "Fake origin name for 198",
                             Status = 1,
@@ -2490,11 +2494,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("11050f81-2d94-441b-b982-f47dd82d9189"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("516b8e17-5c01-4ce4-b739-20e8ba299417"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 199",
                             DestinationName = "Fake destination name for 199",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 199",
                             OriginName = "Fake origin name for 199",
                             Status = 2,
@@ -2502,19 +2506,19 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ef8e6e8b-94cf-4109-848d-f7ae301cdf61"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7318d1c1-119d-4a41-b003-1b02ae613e1a"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 200",
                             DestinationName = "Fake destination name for 200",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 200",
                             OriginName = "Fake origin name for 200",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN200-200"
                         },
                         new
                         {
-                            Id = new Guid("c6a3a499-7218-48c6-8bef-a5e2ffe70282"),
+                            Id = new Guid("66d98483-b395-4789-868c-92bfa0a1f68b"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 201",
                             DestinationName = "Fake destination name for 201",
@@ -2526,43 +2530,43 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("93755373-4e91-4b91-aa28-2cee449223ea"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("9e4c7278-3837-48f6-81a2-8d8fdbccd607"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 202",
                             DestinationName = "Fake destination name for 202",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 202",
                             OriginName = "Fake origin name for 202",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN202-202"
                         },
                         new
                         {
-                            Id = new Guid("4ccf0a41-7575-46e0-924d-1f326279ebb9"),
+                            Id = new Guid("d45379df-d3ab-4ca4-9391-126741880547"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 203",
                             DestinationName = "Fake destination name for 203",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 203",
                             OriginName = "Fake origin name for 203",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN203-203"
                         },
                         new
                         {
-                            Id = new Guid("15cc3817-fd6d-4c3e-ad5a-d3a23078a3d5"),
+                            Id = new Guid("d1cbfb48-fc9a-4103-a0ed-2f1c3ba46c74"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 204",
                             DestinationName = "Fake destination name for 204",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 204",
                             OriginName = "Fake origin name for 204",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN204-204"
                         },
                         new
                         {
-                            Id = new Guid("5a97428a-21bc-4e2f-95f0-e04e781dd9eb"),
+                            Id = new Guid("0a67c6a7-5229-46fc-a8a1-5afd19a5a0a0"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 205",
                             DestinationName = "Fake destination name for 205",
@@ -2574,212 +2578,212 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("33c2e08c-d08a-4eba-8472-5c9aa02ea960"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("58613e8e-ff1f-431a-ba45-2f44217981f2"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 206",
                             DestinationName = "Fake destination name for 206",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 206",
                             OriginName = "Fake origin name for 206",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN206-206"
                         },
                         new
                         {
-                            Id = new Guid("59b95499-b37d-4e9b-b9b5-8c27808ebc30"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("97113144-00dd-4937-98db-38f7ca81ef69"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 207",
                             DestinationName = "Fake destination name for 207",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 207",
                             OriginName = "Fake origin name for 207",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN207-207"
                         },
                         new
                         {
-                            Id = new Guid("ad88f53d-1fb0-4e20-a3b0-461dd079ff28"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ecca170d-7b3c-40ae-9dd9-a9e617d971f4"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 208",
                             DestinationName = "Fake destination name for 208",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 208",
                             OriginName = "Fake origin name for 208",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN208-208"
                         },
                         new
                         {
-                            Id = new Guid("d49c21df-6c28-4be7-8170-ec46baabc1b1"),
+                            Id = new Guid("62984828-bc5f-4d15-8c8d-b34e106c7160"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 209",
                             DestinationName = "Fake destination name for 209",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 209",
                             OriginName = "Fake origin name for 209",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN209-209"
                         },
                         new
                         {
-                            Id = new Guid("d45ecb1b-1cc9-472d-93ff-9f37672d2e08"),
+                            Id = new Guid("b6db1516-0070-438b-8e55-829c17aa95ac"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 210",
                             DestinationName = "Fake destination name for 210",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 210",
                             OriginName = "Fake origin name for 210",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN210-210"
                         },
                         new
                         {
-                            Id = new Guid("3a664a0a-1389-4604-a00d-8ae9275b33d4"),
+                            Id = new Guid("ba9f631b-b437-4029-91af-f600f613e9cc"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 211",
                             DestinationName = "Fake destination name for 211",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 211",
                             OriginName = "Fake origin name for 211",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN211-211"
                         },
                         new
                         {
-                            Id = new Guid("0c184e9f-47df-43dc-bb00-b2bdc49c1c85"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ed877570-7768-4a01-8ae4-21dc16fdfe01"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 212",
                             DestinationName = "Fake destination name for 212",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 212",
                             OriginName = "Fake origin name for 212",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN212-212"
                         },
                         new
                         {
-                            Id = new Guid("21c43cb5-23f0-42c8-9d08-cb7f965d6190"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("25ce5654-057f-458b-b7bf-0e51751a8c28"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 213",
                             DestinationName = "Fake destination name for 213",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 213",
                             OriginName = "Fake origin name for 213",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN213-213"
                         },
                         new
                         {
-                            Id = new Guid("e12a18c6-d93f-4771-9951-bc4c56b93b81"),
+                            Id = new Guid("2cdbcc7e-7cfa-4f1a-81bd-c6b03eec0638"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 214",
                             DestinationName = "Fake destination name for 214",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 214",
                             OriginName = "Fake origin name for 214",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN214-214"
                         },
                         new
                         {
-                            Id = new Guid("8fa8882a-f0df-4abf-bc16-909d1fba895c"),
+                            Id = new Guid("6a5a8136-34c0-4f15-9493-84f9220dcf94"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 215",
                             DestinationName = "Fake destination name for 215",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 215",
                             OriginName = "Fake origin name for 215",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN215-215"
                         },
                         new
                         {
-                            Id = new Guid("6cbe353e-3b07-4a36-8c4f-6756d608b5e2"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("52e09479-4d54-4312-81c7-13cc1f3eccbb"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 216",
                             DestinationName = "Fake destination name for 216",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 216",
                             OriginName = "Fake origin name for 216",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN216-216"
                         },
                         new
                         {
-                            Id = new Guid("2e03f873-0d31-4774-a654-c832fb19f796"),
+                            Id = new Guid("2132b99f-c54b-45eb-826a-41a9bf9a003b"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 217",
                             DestinationName = "Fake destination name for 217",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 217",
                             OriginName = "Fake origin name for 217",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN217-217"
                         },
                         new
                         {
-                            Id = new Guid("02144740-1b70-4e0f-bb29-778eefbf6d69"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e92a8915-413b-4900-a47a-3988afdc7ba2"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 218",
                             DestinationName = "Fake destination name for 218",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 218",
                             OriginName = "Fake origin name for 218",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN218-218"
                         },
                         new
                         {
-                            Id = new Guid("3d3f5f8e-48e0-494c-a54c-eddb061c7887"),
+                            Id = new Guid("a4775c94-e96e-4062-80d8-5e7bd6fe20fd"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 219",
                             DestinationName = "Fake destination name for 219",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 219",
                             OriginName = "Fake origin name for 219",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN219-219"
                         },
                         new
                         {
-                            Id = new Guid("2c8207f6-6163-49ea-9471-d0d61e533127"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("dab3c4b9-bd46-4db5-a481-f319a04768eb"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 220",
                             DestinationName = "Fake destination name for 220",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 220",
                             OriginName = "Fake origin name for 220",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN220-220"
                         },
                         new
                         {
-                            Id = new Guid("785515fc-95b9-45ba-abda-27936567d0d7"),
+                            Id = new Guid("7f480632-23fa-4f9d-b672-bd8f2a21234f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 221",
                             DestinationName = "Fake destination name for 221",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 221",
                             OriginName = "Fake origin name for 221",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN221-221"
                         },
                         new
                         {
-                            Id = new Guid("d98d1ece-f087-4230-9d5a-2d096b16a3da"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c1e10b7a-bd97-4bf7-924f-3afba8ced7f5"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 222",
                             DestinationName = "Fake destination name for 222",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 222",
                             OriginName = "Fake origin name for 222",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN222-222"
                         },
                         new
                         {
-                            Id = new Guid("7c7fa0f8-fce4-4e10-8871-17fbd807ff69"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("8b4cb971-76a3-4c2e-ae4e-119ffd1ffc34"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 223",
                             DestinationName = "Fake destination name for 223",
                             NumberOfPackeges = 0,
@@ -2790,71 +2794,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fd6b40da-a3d5-4720-9881-01465a61f20b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("77ad02bc-fc0c-4cf1-bbdd-64033ede5358"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 224",
                             DestinationName = "Fake destination name for 224",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 224",
                             OriginName = "Fake origin name for 224",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN224-224"
                         },
                         new
                         {
-                            Id = new Guid("7fe0d2ab-5adb-4e01-b3ff-fdc1cfd907c5"),
+                            Id = new Guid("bafa3b44-5a36-40cc-8c88-e6e35472587c"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 225",
                             DestinationName = "Fake destination name for 225",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 225",
                             OriginName = "Fake origin name for 225",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN225-225"
                         },
                         new
                         {
-                            Id = new Guid("3ffc788b-eff7-4759-87a5-09019aaefd8f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("11f73748-0979-4853-9c1a-bd7837589079"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 226",
                             DestinationName = "Fake destination name for 226",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 226",
                             OriginName = "Fake origin name for 226",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN226-226"
                         },
                         new
                         {
-                            Id = new Guid("a00f169c-7ef7-47a3-b8a7-47e8ccd7fcd0"),
+                            Id = new Guid("c1485f34-2be8-49c1-b0b5-481ce5fc7091"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 227",
                             DestinationName = "Fake destination name for 227",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 227",
                             OriginName = "Fake origin name for 227",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN227-227"
                         },
                         new
                         {
-                            Id = new Guid("38f78e41-d71b-4ece-988f-f68b445f77cc"),
+                            Id = new Guid("5724939a-8a18-4d26-8bff-1973903a1f65"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 228",
                             DestinationName = "Fake destination name for 228",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 228",
                             OriginName = "Fake origin name for 228",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN228-228"
                         },
                         new
                         {
-                            Id = new Guid("596e12c6-9c95-4c3a-84a1-1e0330a6e58d"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ef2a5935-b5a5-476b-860c-80b23e9d2519"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 229",
                             DestinationName = "Fake destination name for 229",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 229",
                             OriginName = "Fake origin name for 229",
                             Status = 2,
@@ -2862,47 +2866,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b94b6657-ef66-49a4-bfc9-601198f6e962"),
+                            Id = new Guid("feedb5ca-17a7-45e8-9d51-3c3688cdfb50"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 230",
                             DestinationName = "Fake destination name for 230",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 230",
                             OriginName = "Fake origin name for 230",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN230-230"
                         },
                         new
                         {
-                            Id = new Guid("4168df0e-4769-4768-9a0d-276cd8a01d4e"),
+                            Id = new Guid("ea9fc41a-ae6b-4a8d-be30-39b19d884df1"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 231",
                             DestinationName = "Fake destination name for 231",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 231",
                             OriginName = "Fake origin name for 231",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN231-231"
                         },
                         new
                         {
-                            Id = new Guid("d2510f66-2ce4-4e16-851f-037058e1af5a"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1e8af11a-0ac0-4bb0-8e09-a6415b997d90"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 232",
                             DestinationName = "Fake destination name for 232",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 232",
                             OriginName = "Fake origin name for 232",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN232-232"
                         },
                         new
                         {
-                            Id = new Guid("e91f55c2-ae50-4111-958b-719487872774"),
+                            Id = new Guid("d629602b-df5b-4376-b583-55c51ab96702"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 233",
                             DestinationName = "Fake destination name for 233",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 233",
                             OriginName = "Fake origin name for 233",
                             Status = 0,
@@ -2910,35 +2914,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f811cf98-04d5-4b5c-b729-3c9f002a7996"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("5dddaca8-8968-411f-8270-e8e9c68d741c"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 234",
                             DestinationName = "Fake destination name for 234",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 234",
                             OriginName = "Fake origin name for 234",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN234-234"
                         },
                         new
                         {
-                            Id = new Guid("c4eb5663-8436-49be-b046-ea56f2960d72"),
+                            Id = new Guid("e2fc14c6-4990-4068-8be7-0e2e39bb70b2"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 235",
                             DestinationName = "Fake destination name for 235",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 235",
                             OriginName = "Fake origin name for 235",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN235-235"
                         },
                         new
                         {
-                            Id = new Guid("75e19a86-e23b-4a3b-8d9e-3b09556c87cf"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("7e5a1d9d-40f1-4ab1-9f26-6ae50f04485b"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 236",
                             DestinationName = "Fake destination name for 236",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 236",
                             OriginName = "Fake origin name for 236",
                             Status = 2,
@@ -2946,71 +2950,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("54d55364-0a6d-4bfc-8c84-df9c19c6f600"),
+                            Id = new Guid("7d4ae6d8-3be8-4286-8ea0-b246e06cafb7"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 237",
                             DestinationName = "Fake destination name for 237",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 237",
                             OriginName = "Fake origin name for 237",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN237-237"
                         },
                         new
                         {
-                            Id = new Guid("8c3f45cd-4b9c-489c-8688-feae3d772e41"),
+                            Id = new Guid("eccff940-ac8c-44cb-885d-24be562e97c7"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 238",
                             DestinationName = "Fake destination name for 238",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 238",
                             OriginName = "Fake origin name for 238",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN238-238"
                         },
                         new
                         {
-                            Id = new Guid("6f08022c-fba5-4d03-a5a7-f5b20810f5e2"),
+                            Id = new Guid("0af539b1-48aa-4814-97d4-954bea2f658c"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 239",
                             DestinationName = "Fake destination name for 239",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 239",
                             OriginName = "Fake origin name for 239",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN239-239"
                         },
                         new
                         {
-                            Id = new Guid("e5b51b8c-75a6-4904-b1e5-2224d886bb5b"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("8d454b73-a640-47e7-a94e-8a03245aa712"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 240",
                             DestinationName = "Fake destination name for 240",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 240",
                             OriginName = "Fake origin name for 240",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN240-240"
                         },
                         new
                         {
-                            Id = new Guid("534c0758-4261-4487-b6d0-2fb91991bb01"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("098cd3cb-4298-494b-a9c3-49fabf799283"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 241",
                             DestinationName = "Fake destination name for 241",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 241",
                             OriginName = "Fake origin name for 241",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN241-241"
                         },
                         new
                         {
-                            Id = new Guid("35b5cf27-aa5d-4ab2-a79c-1b7208fc1e45"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("d402a63f-da6a-4fae-a9a8-23fc58d53c89"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 242",
                             DestinationName = "Fake destination name for 242",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 242",
                             OriginName = "Fake origin name for 242",
                             Status = 0,
@@ -3018,23 +3022,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c6910655-df50-4f4e-bcf8-650137cf123b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("cf8adbad-3a9c-4fe0-a2a2-13dd6a971c5a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 243",
                             DestinationName = "Fake destination name for 243",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 243",
                             OriginName = "Fake origin name for 243",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN243-243"
                         },
                         new
                         {
-                            Id = new Guid("728381e5-5ce0-4ada-a988-feda37e7db6d"),
+                            Id = new Guid("86d1aa15-fa1b-4a62-a594-b07ca9b8bb06"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 244",
                             DestinationName = "Fake destination name for 244",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 244",
                             OriginName = "Fake origin name for 244",
                             Status = 2,
@@ -3042,47 +3046,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("086a55c5-e1ed-4368-bba9-f9067d62cef7"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ddce20c8-d113-4148-a160-603f091f3a97"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 245",
                             DestinationName = "Fake destination name for 245",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 245",
                             OriginName = "Fake origin name for 245",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN245-245"
                         },
                         new
                         {
-                            Id = new Guid("fe5f2a6e-89cf-46d3-8bad-4f8aaca6b048"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1d07bf38-f717-4371-b972-ef9c89e5c339"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 246",
                             DestinationName = "Fake destination name for 246",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 246",
                             OriginName = "Fake origin name for 246",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN246-246"
                         },
                         new
                         {
-                            Id = new Guid("07fb1786-9e3f-4a43-ac1c-9a3869e77f79"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a0cf0d04-edb2-4449-95f3-5bc8b8b59183"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 247",
                             DestinationName = "Fake destination name for 247",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 247",
                             OriginName = "Fake origin name for 247",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN247-247"
                         },
                         new
                         {
-                            Id = new Guid("7d51c435-cf20-4916-940e-24cc6ddf52f7"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("a738b3d9-a943-4f80-8def-4654967a3d7f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 248",
                             DestinationName = "Fake destination name for 248",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 248",
                             OriginName = "Fake origin name for 248",
                             Status = 2,
@@ -3090,11 +3094,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("957ce4ca-de5c-4bf6-8963-eeeed1fc2c24"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("538bbc96-a9eb-49ab-a427-fc99638d2628"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 249",
                             DestinationName = "Fake destination name for 249",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 249",
                             OriginName = "Fake origin name for 249",
                             Status = 1,
@@ -3102,20 +3106,20 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7f28843d-bb30-4319-8b2d-a9755575aaa9"),
+                            Id = new Guid("906a3bab-1895-4c1d-b56d-75c76ea9fe7a"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 250",
                             DestinationName = "Fake destination name for 250",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 250",
                             OriginName = "Fake origin name for 250",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN250-250"
                         },
                         new
                         {
-                            Id = new Guid("5050acef-a90d-416a-a2a5-4da5510e3630"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("da455b8f-d7d0-4f2a-8306-9853fda9473b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 251",
                             DestinationName = "Fake destination name for 251",
                             NumberOfPackeges = 0,
@@ -3126,44 +3130,44 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("aeade985-a503-4e0b-ad73-0e803a53b3c0"),
+                            Id = new Guid("aba567a2-5f4f-46a1-a637-e4a9d9521576"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 252",
                             DestinationName = "Fake destination name for 252",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 252",
                             OriginName = "Fake origin name for 252",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN252-252"
                         },
                         new
                         {
-                            Id = new Guid("2f7d5d81-d2d9-49bf-8abe-78b256e17a88"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("988ad2fd-ea93-422a-8561-d020fad2c73b"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 253",
                             DestinationName = "Fake destination name for 253",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 253",
                             OriginName = "Fake origin name for 253",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN253-253"
                         },
                         new
                         {
-                            Id = new Guid("d6d7ec2c-732f-4335-890a-926fe43eff4d"),
+                            Id = new Guid("4a16377c-f4de-43a0-b8b6-00bfcc9d0cf6"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 254",
                             DestinationName = "Fake destination name for 254",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 254",
                             OriginName = "Fake origin name for 254",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN254-254"
                         },
                         new
                         {
-                            Id = new Guid("275352d5-db37-44dd-8ce1-b51c757b96bf"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("e31caf97-5b99-411a-8ccf-bed86d68c58e"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 255",
                             DestinationName = "Fake destination name for 255",
                             NumberOfPackeges = 3,
@@ -3174,23 +3178,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("60c09748-50af-4c86-905d-614b881e127f"),
+                            Id = new Guid("fb1ee2d8-dc82-4086-b55b-e87d64a42879"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 256",
                             DestinationName = "Fake destination name for 256",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 256",
                             OriginName = "Fake origin name for 256",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN256-256"
                         },
                         new
                         {
-                            Id = new Guid("53e0a10f-d2f9-4553-b1d9-bd544a0b92d5"),
+                            Id = new Guid("3a94d8a6-2035-4356-a659-f3944d189f98"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 257",
                             DestinationName = "Fake destination name for 257",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 257",
                             OriginName = "Fake origin name for 257",
                             Status = 1,
@@ -3198,47 +3202,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fef498e6-9204-45b8-9978-509b1bd86109"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a7a7cea7-2362-4e63-a5ba-ff741ab68812"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 258",
                             DestinationName = "Fake destination name for 258",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 258",
                             OriginName = "Fake origin name for 258",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN258-258"
                         },
                         new
                         {
-                            Id = new Guid("6cb46935-2a66-4d16-9bda-f356d1ede1a2"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("fbf322cf-5a60-4cb5-af23-57d1086f7452"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 259",
                             DestinationName = "Fake destination name for 259",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 259",
                             OriginName = "Fake origin name for 259",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN259-259"
                         },
                         new
                         {
-                            Id = new Guid("eb4d97cb-146a-4d37-acaa-023a47eee45a"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("5ffe6bfb-bfa4-479b-ad88-340d3098aab8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 260",
                             DestinationName = "Fake destination name for 260",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 260",
                             OriginName = "Fake origin name for 260",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN260-260"
                         },
                         new
                         {
-                            Id = new Guid("0bd62a6b-e546-4697-94eb-75427faf5fa5"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("f7f24305-1453-4440-bc65-3d74e9552b52"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 261",
                             DestinationName = "Fake destination name for 261",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 261",
                             OriginName = "Fake origin name for 261",
                             Status = 0,
@@ -3246,23 +3250,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dfc14283-120c-4f27-8ef5-2aff1b2cd70e"),
+                            Id = new Guid("9e50803b-14a0-4ddc-b937-c0e74ecd3050"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 262",
                             DestinationName = "Fake destination name for 262",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 262",
                             OriginName = "Fake origin name for 262",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN262-262"
                         },
                         new
                         {
-                            Id = new Guid("5a2577fb-7977-4cc5-9a9b-e7768c10aa40"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("c68034bd-83ca-4a59-862b-721ece4d6aa0"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 263",
                             DestinationName = "Fake destination name for 263",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 263",
                             OriginName = "Fake origin name for 263",
                             Status = 2,
@@ -3270,44 +3274,44 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ff559f69-fb17-4ddc-a290-987abeee2630"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("886b8fcf-fd9a-4510-8eca-e1538af440e3"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 264",
                             DestinationName = "Fake destination name for 264",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 264",
                             OriginName = "Fake origin name for 264",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN264-264"
                         },
                         new
                         {
-                            Id = new Guid("c25faf70-811c-495f-befd-f43c091c5033"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("4c11a9d3-ef40-4d16-b1be-c32387745623"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 265",
                             DestinationName = "Fake destination name for 265",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 265",
                             OriginName = "Fake origin name for 265",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN265-265"
                         },
                         new
                         {
-                            Id = new Guid("27fda03f-be4e-4b4d-8a4c-57201044b503"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1aed3846-84db-40d1-baf8-12c1c4acd07a"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 266",
                             DestinationName = "Fake destination name for 266",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 266",
                             OriginName = "Fake origin name for 266",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN266-266"
                         },
                         new
                         {
-                            Id = new Guid("81ee45e6-0ff4-47e1-8e61-5e2757426e90"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("01a4ef96-eb5f-444e-8b34-38afc87c34bb"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 267",
                             DestinationName = "Fake destination name for 267",
                             NumberOfPackeges = 4,
@@ -3318,35 +3322,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6e3c37ce-929f-413c-a099-90a4c5f51eb3"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("e7b82bc0-452e-46d9-8cfa-6b17c1adcda1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 268",
                             DestinationName = "Fake destination name for 268",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 268",
                             OriginName = "Fake origin name for 268",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN268-268"
                         },
                         new
                         {
-                            Id = new Guid("38d1e4ad-8413-419f-9dab-7426672933cf"),
+                            Id = new Guid("272c8782-d74b-44ec-ad1f-645fe412255c"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 269",
                             DestinationName = "Fake destination name for 269",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 269",
                             OriginName = "Fake origin name for 269",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN269-269"
                         },
                         new
                         {
-                            Id = new Guid("6ac427b9-2e4c-4b1e-a739-dc2b7fdbcae8"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("67d6a741-7d74-48c4-975e-1d9b74d8e8ad"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 270",
                             DestinationName = "Fake destination name for 270",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 270",
                             OriginName = "Fake origin name for 270",
                             Status = 1,
@@ -3354,11 +3358,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6edaefb2-5121-4b70-a1b6-dd358ada8a2a"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8b819908-58c1-4e87-826c-db833e0e5bef"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 271",
                             DestinationName = "Fake destination name for 271",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 271",
                             OriginName = "Fake origin name for 271",
                             Status = 2,
@@ -3366,23 +3370,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a94c5cf4-c649-4518-92c7-acb8b014e103"),
+                            Id = new Guid("da554325-86e8-465f-bf3d-3c8faa199fc0"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 272",
                             DestinationName = "Fake destination name for 272",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 272",
                             OriginName = "Fake origin name for 272",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN272-272"
                         },
                         new
                         {
-                            Id = new Guid("158e1d27-8e9f-480e-b265-e46646142fc6"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("665920a3-4e37-42b5-8e1c-41826e9b3bd6"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 273",
                             DestinationName = "Fake destination name for 273",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 273",
                             OriginName = "Fake origin name for 273",
                             Status = 1,
@@ -3390,8 +3394,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c338c2a2-d032-40ff-b9f7-57681ae747d8"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0705ec6f-cf1b-4c51-aee7-fc9917c6d704"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 274",
                             DestinationName = "Fake destination name for 274",
                             NumberOfPackeges = 1,
@@ -3402,11 +3406,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e82df64d-86fd-4a63-84fa-323c828183cf"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("fffd2512-0b0f-42ce-a9f2-50d4db1d4890"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 275",
                             DestinationName = "Fake destination name for 275",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 275",
                             OriginName = "Fake origin name for 275",
                             Status = 1,
@@ -3414,35 +3418,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7bbc3cfc-30e7-459c-bed1-d957c586ecbc"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("6a5edb9e-1462-4c83-bdf1-bdcc64fff33c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 276",
                             DestinationName = "Fake destination name for 276",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 276",
                             OriginName = "Fake origin name for 276",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN276-276"
                         },
                         new
                         {
-                            Id = new Guid("a9d06f27-a0ef-4096-b35e-ea97173592fb"),
+                            Id = new Guid("639d4d76-5c32-4e83-9918-9b62b553df5e"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 277",
                             DestinationName = "Fake destination name for 277",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 277",
                             OriginName = "Fake origin name for 277",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN277-277"
                         },
                         new
                         {
-                            Id = new Guid("977335e4-964e-42a4-bce5-97cead3249f9"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("260ac6f0-c74e-44cd-ae6d-c823c5b96eef"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 278",
                             DestinationName = "Fake destination name for 278",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 278",
                             OriginName = "Fake origin name for 278",
                             Status = 0,
@@ -3450,11 +3454,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bc79dc1a-a9e9-4ba7-b121-fc0a636c8033"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("bd473586-de0f-4cfb-9000-7997efa71535"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 279",
                             DestinationName = "Fake destination name for 279",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 279",
                             OriginName = "Fake origin name for 279",
                             Status = 0,
@@ -3462,11 +3466,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0b71fa04-cd5c-42b6-a106-c9c1173f61ac"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("4c9e6e73-598b-4a74-a165-788112ab3290"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 280",
                             DestinationName = "Fake destination name for 280",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 280",
                             OriginName = "Fake origin name for 280",
                             Status = 2,
@@ -3474,11 +3478,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ecdc50b2-00e8-47ad-b8f8-4fd56bc0ba52"),
+                            Id = new Guid("e28de45f-56d7-4089-bb29-960d4a328f15"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 281",
                             DestinationName = "Fake destination name for 281",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 281",
                             OriginName = "Fake origin name for 281",
                             Status = 2,
@@ -3486,31 +3490,31 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d17b31e5-ffa7-4c5a-90f5-2bd7628af9ec"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("87225e9c-063a-4ba4-867d-7472583b7708"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 282",
                             DestinationName = "Fake destination name for 282",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 282",
                             OriginName = "Fake origin name for 282",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN282-282"
                         },
                         new
                         {
-                            Id = new Guid("58e99ab2-4320-4735-b92a-4f0b012b3cd5"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("ac6b8873-9707-4245-a20a-ee2b388a3de0"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 283",
                             DestinationName = "Fake destination name for 283",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 283",
                             OriginName = "Fake origin name for 283",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN283-283"
                         },
                         new
                         {
-                            Id = new Guid("e90cb696-06d1-4eed-8202-09e0d8e66166"),
+                            Id = new Guid("7c9057ac-5d1e-4250-a284-37dc0d4ffec0"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 284",
                             DestinationName = "Fake destination name for 284",
@@ -3522,23 +3526,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b4d4d9f0-d554-433e-b215-f06161676186"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("9e673cd3-302b-4adb-9db7-d4d4324e7aea"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 285",
                             DestinationName = "Fake destination name for 285",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 285",
                             OriginName = "Fake origin name for 285",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN285-285"
                         },
                         new
                         {
-                            Id = new Guid("5a1fa99d-0964-461a-bf2b-021cf7b66b2d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("9fdd963e-3832-406e-92d4-9b4c63470b7a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 286",
                             DestinationName = "Fake destination name for 286",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 286",
                             OriginName = "Fake origin name for 286",
                             Status = 1,
@@ -3546,11 +3550,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8463ba3c-771b-4ddc-be3e-f900a50f3a09"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("a4be470e-0f7d-4aca-aa6f-1836d2d79376"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 287",
                             DestinationName = "Fake destination name for 287",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 287",
                             OriginName = "Fake origin name for 287",
                             Status = 1,
@@ -3558,23 +3562,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8ce9dc70-2d80-4c4c-9c10-0c7130ee7d70"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b1260927-6361-4d76-860b-779aa13428d2"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 288",
                             DestinationName = "Fake destination name for 288",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 288",
                             OriginName = "Fake origin name for 288",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN288-288"
                         },
                         new
                         {
-                            Id = new Guid("52ae979c-257e-4f3d-a949-286dbc5b241a"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("eb0b0ac7-681d-4ef9-b15a-3ea83f826325"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 289",
                             DestinationName = "Fake destination name for 289",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 289",
                             OriginName = "Fake origin name for 289",
                             Status = 0,
@@ -3582,11 +3586,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cd074745-073d-4fdb-a51f-5ed79d693eaa"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("80855267-7753-44d3-8b16-2a1d98f49b9a"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 290",
                             DestinationName = "Fake destination name for 290",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 290",
                             OriginName = "Fake origin name for 290",
                             Status = 1,
@@ -3594,23 +3598,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("45ad0c25-cd74-4cfa-8a0a-3debb3173539"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("da108971-86bb-4f8b-82d1-ba9a70c27668"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 291",
                             DestinationName = "Fake destination name for 291",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 291",
                             OriginName = "Fake origin name for 291",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN291-291"
                         },
                         new
                         {
-                            Id = new Guid("8ec0f2c7-d97e-47ed-8b7b-8ea0d483dcc9"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("efed5135-05fd-4d56-aba3-01fde14b2160"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 292",
                             DestinationName = "Fake destination name for 292",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 292",
                             OriginName = "Fake origin name for 292",
                             Status = 0,
@@ -3618,47 +3622,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4c71879a-88df-4ed8-82dd-bf6ff94db0f4"),
+                            Id = new Guid("36072011-f6f9-400d-a353-c364ced0de16"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 293",
                             DestinationName = "Fake destination name for 293",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 293",
                             OriginName = "Fake origin name for 293",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN293-293"
                         },
                         new
                         {
-                            Id = new Guid("6ee0dc09-9080-44f0-9c3f-38609cb37cb8"),
+                            Id = new Guid("031b3a81-5bab-4f76-a145-de9ce925cda8"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 294",
                             DestinationName = "Fake destination name for 294",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 294",
                             OriginName = "Fake origin name for 294",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN294-294"
                         },
                         new
                         {
-                            Id = new Guid("6ad54ec2-f676-4d93-ae7c-402905524288"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("9f4452bb-f857-4c63-a2e0-ea5a801b7e3d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 295",
                             DestinationName = "Fake destination name for 295",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 295",
                             OriginName = "Fake origin name for 295",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN295-295"
                         },
                         new
                         {
-                            Id = new Guid("1177a87f-f255-49a9-a70a-b21cd7da43bd"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("69cc2de5-4d9b-42d5-b596-9956f38cb73a"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 296",
                             DestinationName = "Fake destination name for 296",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 296",
                             OriginName = "Fake origin name for 296",
                             Status = 1,
@@ -3666,8 +3670,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e9ead09a-615e-4815-8f0b-43fd3e391a9f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("176b7cf3-7203-4716-9cab-7617333f1c67"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 297",
                             DestinationName = "Fake destination name for 297",
                             NumberOfPackeges = 0,
@@ -3678,23 +3682,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8f8ede60-3f0d-4a56-9a8d-186c43168b92"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("01281153-260f-420f-a34d-87c2287fde2f"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 298",
                             DestinationName = "Fake destination name for 298",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 298",
                             OriginName = "Fake origin name for 298",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN298-298"
                         },
                         new
                         {
-                            Id = new Guid("c2f48a3c-6a32-4b7d-a65f-8ce19ba88d4e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("37de4155-7fba-4b84-be8c-64810059a767"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 299",
                             DestinationName = "Fake destination name for 299",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 299",
                             OriginName = "Fake origin name for 299",
                             Status = 1,
@@ -3702,59 +3706,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d862b256-9e4d-4003-954b-0906fee4903f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("496e5032-b5ac-4f2c-92fa-393606b9efc2"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 300",
                             DestinationName = "Fake destination name for 300",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 300",
                             OriginName = "Fake origin name for 300",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN300-300"
                         },
                         new
                         {
-                            Id = new Guid("fa0b1be0-c734-4b56-8b55-0cb936f337fd"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("88ad061a-69c5-46de-88fb-89b63fa9bcb8"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 301",
                             DestinationName = "Fake destination name for 301",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 301",
                             OriginName = "Fake origin name for 301",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN301-301"
                         },
                         new
                         {
-                            Id = new Guid("f8f040ab-1d2a-4f22-a500-af818ce89c24"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f62ef9df-ef06-42f3-96c2-dbf3637d1429"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 302",
                             DestinationName = "Fake destination name for 302",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 302",
                             OriginName = "Fake origin name for 302",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN302-302"
                         },
                         new
                         {
-                            Id = new Guid("b38de176-a5bb-4b8e-a690-9cf9ff15f4ff"),
+                            Id = new Guid("58b98f6f-0a33-4f92-85db-e82978707fe6"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 303",
                             DestinationName = "Fake destination name for 303",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 303",
                             OriginName = "Fake origin name for 303",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN303-303"
                         },
                         new
                         {
-                            Id = new Guid("326bd7d9-fa36-4169-88cd-366206bc2d25"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2fd49c62-da96-4d22-b9dc-f968945b6fce"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 304",
                             DestinationName = "Fake destination name for 304",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 304",
                             OriginName = "Fake origin name for 304",
                             Status = 2,
@@ -3762,35 +3766,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("18809e1a-e525-4e9d-9f0c-7ffebada68dc"),
+                            Id = new Guid("19802ece-7599-468b-b7ee-cfb7106cbb0d"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 305",
                             DestinationName = "Fake destination name for 305",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 305",
                             OriginName = "Fake origin name for 305",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN305-305"
                         },
                         new
                         {
-                            Id = new Guid("b3cd2aee-09f3-4182-81fd-8febeb84884c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("3bed1e86-c789-40e8-aaef-6e692a736eb3"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 306",
                             DestinationName = "Fake destination name for 306",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 306",
                             OriginName = "Fake origin name for 306",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN306-306"
                         },
                         new
                         {
-                            Id = new Guid("302ee013-9b56-4105-9d96-e21a2d678a76"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("c8c5138e-ba74-4b5f-9f43-d93935ebd566"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 307",
                             DestinationName = "Fake destination name for 307",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 307",
                             OriginName = "Fake origin name for 307",
                             Status = 0,
@@ -3798,35 +3802,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dd0054d8-84fa-4e7c-8c98-66f9acc46ff6"),
+                            Id = new Guid("c59319ac-80ea-453d-a9ff-ca7123972aa5"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 308",
                             DestinationName = "Fake destination name for 308",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 308",
                             OriginName = "Fake origin name for 308",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN308-308"
                         },
                         new
                         {
-                            Id = new Guid("3c7ae5f6-b17c-41f7-b996-a86cee62ddac"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d7556c0c-095e-4c19-9e9e-485ff077263a"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 309",
                             DestinationName = "Fake destination name for 309",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 309",
                             OriginName = "Fake origin name for 309",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN309-309"
                         },
                         new
                         {
-                            Id = new Guid("b2d66fdb-1f01-4655-86ca-7707cccac6dd"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5ffe3648-5863-46c8-85d5-e4186598b514"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 310",
                             DestinationName = "Fake destination name for 310",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 310",
                             OriginName = "Fake origin name for 310",
                             Status = 2,
@@ -3834,23 +3838,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("998d8487-c0b3-4c84-81ed-8ec0e0e5bf69"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("d59e7503-cf9c-4397-871a-355c75bf65ac"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 311",
                             DestinationName = "Fake destination name for 311",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 311",
                             OriginName = "Fake origin name for 311",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN311-311"
                         },
                         new
                         {
-                            Id = new Guid("07525816-2ea0-4711-9eea-8f1db1dc7608"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("00147b04-7122-4ecf-8de9-8804b7daf0c2"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 312",
                             DestinationName = "Fake destination name for 312",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 312",
                             OriginName = "Fake origin name for 312",
                             Status = 0,
@@ -3858,8 +3862,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4f0e2cfd-0a4c-4555-99c3-eea4a86264f1"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("e57a33cb-0238-4656-8c74-ec19780798bd"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 313",
                             DestinationName = "Fake destination name for 313",
                             NumberOfPackeges = 1,
@@ -3870,11 +3874,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("72a10384-5272-4710-a2ce-80a2304c3c09"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("95476b46-04db-44f9-bc11-ee53a3b8dc0a"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 314",
                             DestinationName = "Fake destination name for 314",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 314",
                             OriginName = "Fake origin name for 314",
                             Status = 0,
@@ -3882,103 +3886,103 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5df98c53-30d9-496c-8066-22d9bb091b23"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ce31ac3c-6daa-4673-9c42-79562925d4ed"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 315",
                             DestinationName = "Fake destination name for 315",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 315",
                             OriginName = "Fake origin name for 315",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN315-315"
                         },
                         new
                         {
-                            Id = new Guid("e9531eaa-4935-47b8-94f8-363655d56c23"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("bc610581-b0d2-45a8-8eb2-1c9c6b3fdd13"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 316",
                             DestinationName = "Fake destination name for 316",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 316",
                             OriginName = "Fake origin name for 316",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN316-316"
                         },
                         new
                         {
-                            Id = new Guid("eacb641a-5c3b-499e-9a95-cc1f7c6f866a"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("4ab1d1cd-cd35-4feb-bd95-ab32fd64f3b6"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 317",
                             DestinationName = "Fake destination name for 317",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 317",
                             OriginName = "Fake origin name for 317",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN317-317"
                         },
                         new
                         {
-                            Id = new Guid("75400a18-3a66-4fe7-819a-a691e8bb4bda"),
+                            Id = new Guid("b4ebf054-e368-4bdc-8fc8-b1df962b9b32"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 318",
                             DestinationName = "Fake destination name for 318",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 318",
                             OriginName = "Fake origin name for 318",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN318-318"
                         },
                         new
                         {
-                            Id = new Guid("a66bf86b-3380-4856-be7a-5ab35dc758ea"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("56ba7bc3-0c4c-4b8f-a79e-a9c11c4435c8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 319",
                             DestinationName = "Fake destination name for 319",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 319",
                             OriginName = "Fake origin name for 319",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN319-319"
                         },
                         new
                         {
-                            Id = new Guid("177e88ed-ff58-4a54-b9cd-e79d79bb28fb"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2cda76de-0e92-41bc-a72f-9035460d9540"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 320",
                             DestinationName = "Fake destination name for 320",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 320",
                             OriginName = "Fake origin name for 320",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN320-320"
                         },
                         new
                         {
-                            Id = new Guid("dbd18c32-7d88-43c2-9d4f-f45712ed1a40"),
+                            Id = new Guid("5efcc34a-bd6d-4c04-917c-9ec5c62e23f2"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 321",
                             DestinationName = "Fake destination name for 321",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 321",
                             OriginName = "Fake origin name for 321",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN321-321"
                         },
                         new
                         {
-                            Id = new Guid("ef2bcfbf-720a-4593-93b1-3688742dfe08"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("740c33e6-24ae-46f8-973c-5ef9c199eb4c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 322",
                             DestinationName = "Fake destination name for 322",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 322",
                             OriginName = "Fake origin name for 322",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN322-322"
                         },
                         new
                         {
-                            Id = new Guid("57dedd68-6351-4160-aea5-8f30ca32d508"),
+                            Id = new Guid("35ef5515-65de-46f4-8eeb-993576b575b3"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 323",
                             DestinationName = "Fake destination name for 323",
@@ -3990,11 +3994,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("957b5249-aabc-467d-a4cc-563b335d31a0"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("833db484-ec41-4237-870a-d580b95f0e61"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 324",
                             DestinationName = "Fake destination name for 324",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 324",
                             OriginName = "Fake origin name for 324",
                             Status = 1,
@@ -4002,59 +4006,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f86db7ec-3bed-444f-921f-c808ab497628"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("436cf02a-c548-46ab-9577-ed5459eaaebc"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 325",
                             DestinationName = "Fake destination name for 325",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 325",
                             OriginName = "Fake origin name for 325",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN325-325"
                         },
                         new
                         {
-                            Id = new Guid("47884ad9-6bcc-48ed-8ec8-22e2be839d28"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("fc359f03-c0f5-4a52-8c8e-87b836ee1d3e"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 326",
                             DestinationName = "Fake destination name for 326",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 326",
                             OriginName = "Fake origin name for 326",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN326-326"
                         },
                         new
                         {
-                            Id = new Guid("5012eed1-6183-41d9-8af1-577ee5a33d6d"),
+                            Id = new Guid("440ab86b-1677-4ad5-adf2-fa114bb9fadd"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 327",
                             DestinationName = "Fake destination name for 327",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 327",
                             OriginName = "Fake origin name for 327",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN327-327"
                         },
                         new
                         {
-                            Id = new Guid("2369c47a-1b9a-4285-9daf-5f77d1633cb5"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("36b2833f-2e87-40b5-970c-50bc668d198c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 328",
                             DestinationName = "Fake destination name for 328",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 328",
                             OriginName = "Fake origin name for 328",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN328-328"
                         },
                         new
                         {
-                            Id = new Guid("df964556-8ba8-41f8-924e-88d2b89d84b6"),
+                            Id = new Guid("6538de4b-b1f3-4589-b4ea-32fa6c795097"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 329",
                             DestinationName = "Fake destination name for 329",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 329",
                             OriginName = "Fake origin name for 329",
                             Status = 0,
@@ -4062,11 +4066,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ffdf9f7c-dd89-453e-86ae-d1cfae511c62"),
+                            Id = new Guid("3ff98f9c-e5ac-43bb-b697-ec1623766810"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 330",
                             DestinationName = "Fake destination name for 330",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 330",
                             OriginName = "Fake origin name for 330",
                             Status = 2,
@@ -4074,23 +4078,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0a84ad0e-af54-4aa0-afb0-f245fd4aff60"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("8d83eae3-4840-4a93-b0ee-7ca9f4a5e3a8"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 331",
                             DestinationName = "Fake destination name for 331",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 331",
                             OriginName = "Fake origin name for 331",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN331-331"
                         },
                         new
                         {
-                            Id = new Guid("be9a3e83-2217-488a-8c28-9f55c5e32d5e"),
+                            Id = new Guid("7f84f358-599d-44b0-b143-5f83689be53e"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 332",
                             DestinationName = "Fake destination name for 332",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 332",
                             OriginName = "Fake origin name for 332",
                             Status = 1,
@@ -4098,35 +4102,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0414eee1-226c-4171-abf5-4ad177bc6e60"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("22fff4b0-1aa5-499b-af03-fa29fee4f349"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 333",
                             DestinationName = "Fake destination name for 333",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 333",
                             OriginName = "Fake origin name for 333",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN333-333"
                         },
                         new
                         {
-                            Id = new Guid("1f2543ea-385e-42bc-90a5-03f4a6ac4ef8"),
+                            Id = new Guid("563759a3-3ede-49a5-b154-a4b54c44b22a"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 334",
                             DestinationName = "Fake destination name for 334",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 334",
                             OriginName = "Fake origin name for 334",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN334-334"
                         },
                         new
                         {
-                            Id = new Guid("02674397-2e3f-49be-a2a4-ceffc12777f3"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("184adbd7-4436-4cc0-bdc0-66a49100e07e"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 335",
                             DestinationName = "Fake destination name for 335",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 335",
                             OriginName = "Fake origin name for 335",
                             Status = 0,
@@ -4134,83 +4138,83 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5da2b0d9-2ccf-4698-80d8-e673279dad70"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("548f35a8-2405-4618-8d8c-18c001f991e0"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 336",
                             DestinationName = "Fake destination name for 336",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 336",
                             OriginName = "Fake origin name for 336",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN336-336"
                         },
                         new
                         {
-                            Id = new Guid("4c384c49-be6c-4597-aca0-88e18d32e9c4"),
+                            Id = new Guid("600b18a7-5d09-43bf-a9f2-5db4f7354da1"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 337",
                             DestinationName = "Fake destination name for 337",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 337",
                             OriginName = "Fake origin name for 337",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN337-337"
                         },
                         new
                         {
-                            Id = new Guid("d8f48975-7cd2-4c45-b573-ee1a15e10581"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("476ea7fe-eb60-456c-9bfa-2b2c53f26d61"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 338",
                             DestinationName = "Fake destination name for 338",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 338",
                             OriginName = "Fake origin name for 338",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN338-338"
                         },
                         new
                         {
-                            Id = new Guid("d0a8a3ee-a5c9-4e83-94d3-f726898c2a22"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("84603a46-1d8f-475f-8fba-2ac2ed56e86d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 339",
                             DestinationName = "Fake destination name for 339",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 339",
                             OriginName = "Fake origin name for 339",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN339-339"
                         },
                         new
                         {
-                            Id = new Guid("87d9bced-81e0-4a63-b799-1b1d39227757"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("83458115-eb1c-4611-8e06-0120adf0997f"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 340",
                             DestinationName = "Fake destination name for 340",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 340",
                             OriginName = "Fake origin name for 340",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN340-340"
                         },
                         new
                         {
-                            Id = new Guid("6c41f5c3-584b-4981-8a5f-92d9327a4bec"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0b79dc0e-9f28-4855-b47a-08476622cf52"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 341",
                             DestinationName = "Fake destination name for 341",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 341",
                             OriginName = "Fake origin name for 341",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN341-341"
                         },
                         new
                         {
-                            Id = new Guid("8b7b71b6-e9f9-485d-9890-2f2defc679ed"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("17ab3603-3bfa-4da7-9f53-fddc739d2196"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 342",
                             DestinationName = "Fake destination name for 342",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 342",
                             OriginName = "Fake origin name for 342",
                             Status = 2,
@@ -4218,23 +4222,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("54c51332-5f11-4edd-9136-8ba77673a1aa"),
+                            Id = new Guid("79197c5b-11f3-4c09-837b-924862e92c67"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 343",
                             DestinationName = "Fake destination name for 343",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 343",
                             OriginName = "Fake origin name for 343",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN343-343"
                         },
                         new
                         {
-                            Id = new Guid("adcba3a4-9856-4b7f-84bd-50658dcce335"),
+                            Id = new Guid("3f47e11c-87f1-4696-ba12-68af9b40b915"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 344",
                             DestinationName = "Fake destination name for 344",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 344",
                             OriginName = "Fake origin name for 344",
                             Status = 0,
@@ -4242,11 +4246,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9fd07907-726c-4966-b30e-c4b4b836ee6c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("6e435322-b3c7-4299-9823-d100d99ba1df"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 345",
                             DestinationName = "Fake destination name for 345",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 345",
                             OriginName = "Fake origin name for 345",
                             Status = 0,
@@ -4254,11 +4258,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d242093c-a50d-4465-8dc1-708b2bda9e54"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8dc4bcd0-a129-4811-b8aa-de96d946e715"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 346",
                             DestinationName = "Fake destination name for 346",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 346",
                             OriginName = "Fake origin name for 346",
                             Status = 0,
@@ -4266,23 +4270,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("54fc19b0-02a5-4d02-a00f-763de771ff34"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b4f2bdcd-9aae-4171-b06f-ff282249443d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 347",
                             DestinationName = "Fake destination name for 347",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 347",
                             OriginName = "Fake origin name for 347",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN347-347"
                         },
                         new
                         {
-                            Id = new Guid("410020eb-1fc0-40cc-ae87-2133287c2f4d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("9ddbd2ae-a4e7-40d3-ab3c-ad85fa0bf1c8"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 348",
                             DestinationName = "Fake destination name for 348",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 348",
                             OriginName = "Fake origin name for 348",
                             Status = 1,
@@ -4290,11 +4294,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6eeba6a9-71a4-4b18-beb9-74718f5c7d4a"),
+                            Id = new Guid("b25f4c97-118a-41ad-b005-a54167099f2e"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 349",
                             DestinationName = "Fake destination name for 349",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 349",
                             OriginName = "Fake origin name for 349",
                             Status = 2,
@@ -4302,11 +4306,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0e655c75-05b1-404f-96b5-b23297e02e98"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("dff132dd-9dbe-4345-b953-0a51f2890340"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 350",
                             DestinationName = "Fake destination name for 350",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 350",
                             OriginName = "Fake origin name for 350",
                             Status = 0,
@@ -4314,23 +4318,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0f397fae-399f-4162-9c04-ef4760944bd5"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("60a52dbe-5daf-427c-b89d-d47f147c5def"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 351",
                             DestinationName = "Fake destination name for 351",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 351",
                             OriginName = "Fake origin name for 351",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN351-351"
                         },
                         new
                         {
-                            Id = new Guid("d767190a-558e-4110-bc37-9159c2505aa8"),
+                            Id = new Guid("8ab05756-04ab-45ce-9ec0-6fcf4db1f71a"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 352",
                             DestinationName = "Fake destination name for 352",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 352",
                             OriginName = "Fake origin name for 352",
                             Status = 2,
@@ -4338,31 +4342,31 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("16a34535-33d5-467e-96a2-7106d6dbaeb5"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b33336fb-60ea-4a90-a186-a82c75f51f92"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 353",
                             DestinationName = "Fake destination name for 353",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 353",
                             OriginName = "Fake origin name for 353",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN353-353"
                         },
                         new
                         {
-                            Id = new Guid("82b4f8eb-688c-4683-ac8f-6fe85f38fac4"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("c39e9692-0771-446d-9ac4-ddb026d99e83"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 354",
                             DestinationName = "Fake destination name for 354",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 354",
                             OriginName = "Fake origin name for 354",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN354-354"
                         },
                         new
                         {
-                            Id = new Guid("e42b9d52-c527-49cc-82d0-2c92861f75c2"),
+                            Id = new Guid("5e123249-3e60-4d45-aa08-30c7c21102ab"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 355",
                             DestinationName = "Fake destination name for 355",
@@ -4374,11 +4378,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f255734a-6eb7-4552-988f-3280ff67cc7f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("dcde3576-703b-40c2-ada0-4cea3839814c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 356",
                             DestinationName = "Fake destination name for 356",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 356",
                             OriginName = "Fake origin name for 356",
                             Status = 1,
@@ -4386,11 +4390,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b2712713-baaa-4e34-8157-eedc40e6080e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("80e78b2c-b5c2-4545-a10a-83bbd6734665"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 357",
                             DestinationName = "Fake destination name for 357",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 357",
                             OriginName = "Fake origin name for 357",
                             Status = 2,
@@ -4398,11 +4402,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d5e58590-da46-4bf0-a9c9-4f0aed501645"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1c07e9a7-8b2e-41ed-bc71-88277634fe26"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 358",
                             DestinationName = "Fake destination name for 358",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 358",
                             OriginName = "Fake origin name for 358",
                             Status = 0,
@@ -4410,11 +4414,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d3182cfc-8f30-4f68-a3da-8002e26b22c4"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("898fda4a-cd8d-4685-a2da-019c0322f63f"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 359",
                             DestinationName = "Fake destination name for 359",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 359",
                             OriginName = "Fake origin name for 359",
                             Status = 0,
@@ -4422,23 +4426,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("deebd0b3-277e-43d2-af7d-62745bf4604d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f3a55591-261e-4ab7-80f1-d3d4415fff0f"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 360",
                             DestinationName = "Fake destination name for 360",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 360",
                             OriginName = "Fake origin name for 360",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN360-360"
                         },
                         new
                         {
-                            Id = new Guid("d1b93a8c-a912-426d-8c07-e805dad62c69"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5bc6e07f-3d0d-4f49-9bd6-e178dc249308"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 361",
                             DestinationName = "Fake destination name for 361",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 361",
                             OriginName = "Fake origin name for 361",
                             Status = 1,
@@ -4446,95 +4450,95 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("86bd6f05-96dc-496e-8a26-438a9847bbda"),
+                            Id = new Guid("1f2b2911-adce-411a-9aae-ba427ed4c9bc"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 362",
                             DestinationName = "Fake destination name for 362",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 362",
                             OriginName = "Fake origin name for 362",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN362-362"
                         },
                         new
                         {
-                            Id = new Guid("92d74d5a-043f-4611-baa9-1410cecf0d7a"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("552fec74-4da6-4509-a4fa-e84cdf9f5b00"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 363",
                             DestinationName = "Fake destination name for 363",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 363",
                             OriginName = "Fake origin name for 363",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN363-363"
                         },
                         new
                         {
-                            Id = new Guid("aa11d7f8-012d-44ab-9852-6bf245d55a15"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("277c4376-ea84-4c26-8119-443cc964cfa7"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 364",
                             DestinationName = "Fake destination name for 364",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 364",
                             OriginName = "Fake origin name for 364",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN364-364"
                         },
                         new
                         {
-                            Id = new Guid("3b9803de-4d7c-4105-894a-9c220ffcaae7"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("030d94ca-d845-4945-a215-c650ae803614"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 365",
                             DestinationName = "Fake destination name for 365",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 365",
                             OriginName = "Fake origin name for 365",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN365-365"
                         },
                         new
                         {
-                            Id = new Guid("b012e995-f352-4a1f-bdfd-b75081120d70"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("00780707-efe1-4aa2-b6cc-a3acdab84b5c"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 366",
                             DestinationName = "Fake destination name for 366",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 366",
                             OriginName = "Fake origin name for 366",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN366-366"
                         },
                         new
                         {
-                            Id = new Guid("8041ba9d-67cf-428f-bf9c-16cc04acde42"),
+                            Id = new Guid("9372270b-fe8c-4876-ac43-ff499277381d"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 367",
                             DestinationName = "Fake destination name for 367",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 367",
                             OriginName = "Fake origin name for 367",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN367-367"
                         },
                         new
                         {
-                            Id = new Guid("d5f080d3-efa5-4c01-9eb7-bb1b7f496c85"),
+                            Id = new Guid("f64a61e0-0c17-481a-87ec-d39d4f465b1e"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 368",
                             DestinationName = "Fake destination name for 368",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 368",
                             OriginName = "Fake origin name for 368",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN368-368"
                         },
                         new
                         {
-                            Id = new Guid("701e6db4-a6c0-47c8-8817-d6f3918a6224"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("81c6b6a0-a59f-44f3-8210-c5ee1e7fcb4d"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 369",
                             DestinationName = "Fake destination name for 369",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 369",
                             OriginName = "Fake origin name for 369",
                             Status = 2,
@@ -4542,11 +4546,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("011af1e7-4d84-4e5d-b9db-491e06a2fc7a"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("acd58d73-89fd-4872-9126-ebbfd56c87ad"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 370",
                             DestinationName = "Fake destination name for 370",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 370",
                             OriginName = "Fake origin name for 370",
                             Status = 1,
@@ -4554,71 +4558,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0cbd4cc1-c81a-4f31-9de8-9cf8968c400b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("94880c9a-c225-4abc-b258-6bdf65599c6a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 371",
                             DestinationName = "Fake destination name for 371",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 371",
                             OriginName = "Fake origin name for 371",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN371-371"
                         },
                         new
                         {
-                            Id = new Guid("db4a5fba-c0ee-49b7-b15c-bf00fc32fb3f"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1d024066-1b93-4469-829c-765e03132134"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 372",
                             DestinationName = "Fake destination name for 372",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 372",
                             OriginName = "Fake origin name for 372",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN372-372"
                         },
                         new
                         {
-                            Id = new Guid("42941564-7bab-4c2b-93ca-65455780346f"),
+                            Id = new Guid("9d35856a-3078-4e3a-9fbb-0b5892dc057c"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 373",
                             DestinationName = "Fake destination name for 373",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 373",
                             OriginName = "Fake origin name for 373",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN373-373"
                         },
                         new
                         {
-                            Id = new Guid("e6dab86a-d2f1-4f5f-bc73-f60b9c81381e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("cae4061f-0432-415a-8905-b15a10141524"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 374",
                             DestinationName = "Fake destination name for 374",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 374",
                             OriginName = "Fake origin name for 374",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN374-374"
                         },
                         new
                         {
-                            Id = new Guid("28ce9d8a-4adc-4c02-8316-2f61cf6f641c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("51306285-4334-4c08-b491-5977aaf8c95a"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 375",
                             DestinationName = "Fake destination name for 375",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 375",
                             OriginName = "Fake origin name for 375",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN375-375"
                         },
                         new
                         {
-                            Id = new Guid("97384357-2933-4c19-ba12-c1529c0c4680"),
+                            Id = new Guid("4e511c87-70be-46eb-a228-794a39cc8af3"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 376",
                             DestinationName = "Fake destination name for 376",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 376",
                             OriginName = "Fake origin name for 376",
                             Status = 0,
@@ -4626,23 +4630,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5db345b7-dae5-4cdd-b386-4942bca3e7d8"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("dc4eb459-4293-4c95-8828-01ca253830c9"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 377",
                             DestinationName = "Fake destination name for 377",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 377",
                             OriginName = "Fake origin name for 377",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN377-377"
                         },
                         new
                         {
-                            Id = new Guid("826dbf0b-8051-4968-966e-8dc9528db9ea"),
+                            Id = new Guid("10555aa6-c07b-4269-bb02-547aeeecf826"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 378",
                             DestinationName = "Fake destination name for 378",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 378",
                             OriginName = "Fake origin name for 378",
                             Status = 1,
@@ -4650,80 +4654,80 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fc7e6a95-c419-4493-bb63-e3257f569adc"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("4b74377e-e1f6-46e9-87f6-09f63ad51e51"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 379",
                             DestinationName = "Fake destination name for 379",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 379",
                             OriginName = "Fake origin name for 379",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN379-379"
                         },
                         new
                         {
-                            Id = new Guid("cf8df188-93c6-4e50-bdc8-b285816e5f2a"),
+                            Id = new Guid("c06b6ac4-7de6-422c-bdb1-fa5770a1c9fa"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 380",
                             DestinationName = "Fake destination name for 380",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 380",
                             OriginName = "Fake origin name for 380",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN380-380"
                         },
                         new
                         {
-                            Id = new Guid("22a337fe-29dd-4f26-a8a8-15ab6c9aa04e"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d4ce79eb-8a78-425c-9a3e-ae57363319e1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 381",
                             DestinationName = "Fake destination name for 381",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 381",
                             OriginName = "Fake origin name for 381",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN381-381"
                         },
                         new
                         {
-                            Id = new Guid("ae732481-378b-43dd-9b6b-09ffc5f7776d"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("84e86c99-770a-4a00-b59f-87e4541766e7"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 382",
                             DestinationName = "Fake destination name for 382",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 382",
                             OriginName = "Fake origin name for 382",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN382-382"
                         },
                         new
                         {
-                            Id = new Guid("2672ea30-1b85-4b80-a4aa-37a227d0827c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("4d3737be-e92f-49c8-8a59-8132bee3f633"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 383",
                             DestinationName = "Fake destination name for 383",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 383",
                             OriginName = "Fake origin name for 383",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN383-383"
                         },
                         new
                         {
-                            Id = new Guid("de2fcea4-1c4b-486f-a6f5-4fa7d1631075"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("de63b91e-10ee-418c-b452-9eff82c49ee7"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 384",
                             DestinationName = "Fake destination name for 384",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 384",
                             OriginName = "Fake origin name for 384",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN384-384"
                         },
                         new
                         {
-                            Id = new Guid("90d91ae1-a2f4-44e4-8378-15c5a9c83f98"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b7dbe3cf-68d4-4bd6-9756-c28b44e634a6"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 385",
                             DestinationName = "Fake destination name for 385",
                             NumberOfPackeges = 2,
@@ -4734,11 +4738,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c96f5653-d414-4917-9a1a-aca7fa558ab8"),
+                            Id = new Guid("1f37160f-b9f0-48a1-9352-e45de8c7e660"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 386",
                             DestinationName = "Fake destination name for 386",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 386",
                             OriginName = "Fake origin name for 386",
                             Status = 0,
@@ -4746,23 +4750,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5ec87c19-b830-4eb8-bb90-2043f317f2d5"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("0197d869-83f9-4a9f-b9e8-042a68ae40db"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 387",
                             DestinationName = "Fake destination name for 387",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 387",
                             OriginName = "Fake origin name for 387",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN387-387"
                         },
                         new
                         {
-                            Id = new Guid("fbc035e0-317f-43e3-8354-60c31352c02e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b21d201d-44bc-4848-9b11-b12c37584f48"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 388",
                             DestinationName = "Fake destination name for 388",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 388",
                             OriginName = "Fake origin name for 388",
                             Status = 1,
@@ -4770,32 +4774,32 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("562719e6-0bc4-4b7d-9652-5a2448cb18e9"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("cc7d9fc9-f332-4f1d-b142-4fe12b3fcfe0"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 389",
                             DestinationName = "Fake destination name for 389",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 389",
                             OriginName = "Fake origin name for 389",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN389-389"
                         },
                         new
                         {
-                            Id = new Guid("ac5d623c-9f4b-4ae1-9a0f-a67368f5df44"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("4bceab79-3284-4305-8c7c-12dbeb030aed"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 390",
                             DestinationName = "Fake destination name for 390",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 390",
                             OriginName = "Fake origin name for 390",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN390-390"
                         },
                         new
                         {
-                            Id = new Guid("f5a891c7-12bb-4634-9f15-2f117df5afe9"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c2af4fe1-086f-4ebc-9b49-7f8ff8a6880a"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 391",
                             DestinationName = "Fake destination name for 391",
                             NumberOfPackeges = 1,
@@ -4806,32 +4810,32 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("be8088ce-4d83-4a27-ab14-67a7a8af28a2"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("9e5104d8-c651-43af-aecc-29d1b1b879bf"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 392",
                             DestinationName = "Fake destination name for 392",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 392",
                             OriginName = "Fake origin name for 392",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN392-392"
                         },
                         new
                         {
-                            Id = new Guid("e3c5968e-52a0-4f63-9a0d-23ecd903e017"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("96c3c8ec-68c5-4630-9c21-cb909604a0f7"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 393",
                             DestinationName = "Fake destination name for 393",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 393",
                             OriginName = "Fake origin name for 393",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN393-393"
                         },
                         new
                         {
-                            Id = new Guid("63ccb2c0-8a74-4283-9f26-262e371cde7d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("52151d03-b13a-46b8-9a3c-6b27909e0fca"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 394",
                             DestinationName = "Fake destination name for 394",
                             NumberOfPackeges = 3,
@@ -4842,71 +4846,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6194812e-f5c0-46d6-ae96-638fc00a03c9"),
+                            Id = new Guid("18e060b5-86b2-428e-87af-ea1b15359310"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 395",
                             DestinationName = "Fake destination name for 395",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 395",
                             OriginName = "Fake origin name for 395",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN395-395"
                         },
                         new
                         {
-                            Id = new Guid("3aabbc14-891c-4a03-8659-387615f5a14e"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("410bf493-86a3-4dc5-ae87-f1bf3850aeac"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 396",
                             DestinationName = "Fake destination name for 396",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 396",
                             OriginName = "Fake origin name for 396",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN396-396"
                         },
                         new
                         {
-                            Id = new Guid("e2c342e7-92e5-4290-909e-ed18e36f8308"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("507897ae-ba18-4916-9794-6181cd087a19"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 397",
                             DestinationName = "Fake destination name for 397",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 397",
                             OriginName = "Fake origin name for 397",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN397-397"
                         },
                         new
                         {
-                            Id = new Guid("d5fa46bc-bf27-4dd5-8b7b-a15c6e1a790f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("4fbc11e3-7910-40fb-8d43-f05e5e00c575"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 398",
                             DestinationName = "Fake destination name for 398",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 398",
                             OriginName = "Fake origin name for 398",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN398-398"
                         },
                         new
                         {
-                            Id = new Guid("792491ab-2292-4381-b775-5da10c6cb7cd"),
+                            Id = new Guid("2bc695ce-ebc8-413c-8ef5-dcdc4025e035"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 399",
                             DestinationName = "Fake destination name for 399",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 399",
                             OriginName = "Fake origin name for 399",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN399-399"
                         },
                         new
                         {
-                            Id = new Guid("674e9edb-4793-4cfd-8e37-b51cb407b2a1"),
+                            Id = new Guid("f664cd0d-368a-4245-939c-d5ddc456c639"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 400",
                             DestinationName = "Fake destination name for 400",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 400",
                             OriginName = "Fake origin name for 400",
                             Status = 1,
@@ -4914,35 +4918,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ccded87a-8ade-44b5-8e70-da767b3ab7f8"),
+                            Id = new Guid("c87fad01-6bf6-4c33-8182-36c7c6186e4b"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 401",
                             DestinationName = "Fake destination name for 401",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 401",
                             OriginName = "Fake origin name for 401",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN401-401"
                         },
                         new
                         {
-                            Id = new Guid("7584b603-f995-4ff3-afc1-b35ca80a3257"),
+                            Id = new Guid("3918b5fd-a133-4193-b6e3-961987471a35"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 402",
                             DestinationName = "Fake destination name for 402",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 402",
                             OriginName = "Fake origin name for 402",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN402-402"
                         },
                         new
                         {
-                            Id = new Guid("5257f284-b3a5-40e3-9fc9-7b3d5f503b4a"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a3c7bddf-a6ea-4070-80cd-915189801fec"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 403",
                             DestinationName = "Fake destination name for 403",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 403",
                             OriginName = "Fake origin name for 403",
                             Status = 1,
@@ -4950,23 +4954,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9d9b090f-53b0-4086-88d0-359800c23564"),
+                            Id = new Guid("b82e04ca-68c6-4cb9-a6a2-9764cc62171a"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 404",
                             DestinationName = "Fake destination name for 404",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 404",
                             OriginName = "Fake origin name for 404",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN404-404"
                         },
                         new
                         {
-                            Id = new Guid("5d0b3e12-e638-4e93-929b-ea4953f0df69"),
+                            Id = new Guid("dc7351e6-a4ad-431f-b02d-afb6cf0df9c6"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 405",
                             DestinationName = "Fake destination name for 405",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 405",
                             OriginName = "Fake origin name for 405",
                             Status = 1,
@@ -4974,7 +4978,7 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7144ca77-a5f2-4d37-a07f-37b76c3fcedb"),
+                            Id = new Guid("6f8a240e-b326-4a7a-88dc-9ba93b727ba1"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 406",
                             DestinationName = "Fake destination name for 406",
@@ -4986,23 +4990,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3e873e84-bd3f-4161-8e85-19cea13eb8ea"),
+                            Id = new Guid("bc4246f3-7b2f-4632-8875-6b8d03115892"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 407",
                             DestinationName = "Fake destination name for 407",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 407",
                             OriginName = "Fake origin name for 407",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN407-407"
                         },
                         new
                         {
-                            Id = new Guid("ea68c903-dd69-4e71-9808-87b3da95f93b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b89a2caf-e610-4e53-9d0c-e1142c91b66c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 408",
                             DestinationName = "Fake destination name for 408",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 408",
                             OriginName = "Fake origin name for 408",
                             Status = 0,
@@ -5010,31 +5014,31 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c998d52d-e998-4966-85e7-dcba5e90f817"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("5d472f3a-42f9-40bd-826c-27446101018e"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 409",
                             DestinationName = "Fake destination name for 409",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 409",
                             OriginName = "Fake origin name for 409",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN409-409"
                         },
                         new
                         {
-                            Id = new Guid("d48f0c39-9db4-42f6-9580-ffd636661c71"),
+                            Id = new Guid("76979b91-5e17-421d-b941-5e0cd88317f0"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 410",
                             DestinationName = "Fake destination name for 410",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 410",
                             OriginName = "Fake origin name for 410",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN410-410"
                         },
                         new
                         {
-                            Id = new Guid("a8733ce7-8728-4826-b038-44eb243afa53"),
+                            Id = new Guid("fb726637-b4e5-4ed2-ab8e-11cdcc120d8a"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 411",
                             DestinationName = "Fake destination name for 411",
@@ -5046,11 +5050,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("395369d0-36cb-4955-bf78-a008ea8f6050"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1e5c51c1-9951-451c-b5ea-5e2d546a0f4d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 412",
                             DestinationName = "Fake destination name for 412",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 412",
                             OriginName = "Fake origin name for 412",
                             Status = 2,
@@ -5058,11 +5062,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("67faef9a-9ad3-44ef-9085-7b88f9628eea"),
+                            Id = new Guid("c43cb187-757f-44c9-8cfd-749497ca4d7b"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 413",
                             DestinationName = "Fake destination name for 413",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 413",
                             OriginName = "Fake origin name for 413",
                             Status = 0,
@@ -5070,71 +5074,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("01699479-109c-4233-8269-af167b44f496"),
+                            Id = new Guid("6116cd30-eb38-44b5-8302-7445d1868ccb"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 414",
                             DestinationName = "Fake destination name for 414",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 414",
                             OriginName = "Fake origin name for 414",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN414-414"
                         },
                         new
                         {
-                            Id = new Guid("aa0fac93-7536-4b0e-9fa9-bec5965ff9a8"),
+                            Id = new Guid("7049c80b-785d-4a80-b82e-f72df1ba6550"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 415",
                             DestinationName = "Fake destination name for 415",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 415",
                             OriginName = "Fake origin name for 415",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN415-415"
                         },
                         new
                         {
-                            Id = new Guid("1020ee61-61f1-43e8-8abd-cf2e8cfdfc12"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("7481be28-69ce-450f-8b09-7da94834fefc"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 416",
                             DestinationName = "Fake destination name for 416",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 416",
                             OriginName = "Fake origin name for 416",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN416-416"
                         },
                         new
                         {
-                            Id = new Guid("45bf4aef-e95e-4786-b811-977160e1d7b7"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("539daf30-73c1-43f7-a845-c05bf21563ca"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 417",
                             DestinationName = "Fake destination name for 417",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 417",
                             OriginName = "Fake origin name for 417",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN417-417"
                         },
                         new
                         {
-                            Id = new Guid("92a9f25c-cc74-44c9-a52f-ddcba641f792"),
+                            Id = new Guid("83c9ea77-7313-4b6f-84ea-95ab3fcaff62"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 418",
                             DestinationName = "Fake destination name for 418",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 418",
                             OriginName = "Fake origin name for 418",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN418-418"
                         },
                         new
                         {
-                            Id = new Guid("257ae839-e651-4c4a-845f-c537a5ef61cd"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8f057ba0-0d63-407e-9e1b-419901bc52b6"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 419",
                             DestinationName = "Fake destination name for 419",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 419",
                             OriginName = "Fake origin name for 419",
                             Status = 0,
@@ -5142,11 +5146,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b216bc4b-5fd0-41c0-bcf8-7c6765be8307"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f0a142f6-707e-4bc8-b0ad-46faf41ee8b8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 420",
                             DestinationName = "Fake destination name for 420",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 420",
                             OriginName = "Fake origin name for 420",
                             Status = 0,
@@ -5154,23 +5158,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d72af3c2-26e8-420d-baac-385f1e902aef"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("c27a78a5-b6fe-44bf-bdfd-6c9d2ad21985"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 421",
                             DestinationName = "Fake destination name for 421",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 421",
                             OriginName = "Fake origin name for 421",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN421-421"
                         },
                         new
                         {
-                            Id = new Guid("1ec36f14-3b11-406b-a0a4-f6ffffa34280"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("08aa4b03-a117-4b00-a733-8d2d134b2325"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 422",
                             DestinationName = "Fake destination name for 422",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 422",
                             OriginName = "Fake origin name for 422",
                             Status = 0,
@@ -5178,11 +5182,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4eafca69-2e58-40fc-9ce4-a60f228455c3"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("9bfe2051-9c52-4c88-a2be-a2c06d92698d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 423",
                             DestinationName = "Fake destination name for 423",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 423",
                             OriginName = "Fake origin name for 423",
                             Status = 0,
@@ -5190,23 +5194,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c2294456-c233-40ee-9cfd-22cb40b042d1"),
+                            Id = new Guid("21e3505e-6dc9-4f16-b26c-79ae35a29bf3"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 424",
                             DestinationName = "Fake destination name for 424",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 424",
                             OriginName = "Fake origin name for 424",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN424-424"
                         },
                         new
                         {
-                            Id = new Guid("b60768e3-3db4-458c-8396-c7a922439868"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("eaa62faf-e59a-4422-9a4f-50c820c2ba19"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 425",
                             DestinationName = "Fake destination name for 425",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 425",
                             OriginName = "Fake origin name for 425",
                             Status = 2,
@@ -5214,31 +5218,31 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2693182c-ab35-4dcd-8762-44e3969389bf"),
+                            Id = new Guid("ede2f19a-a00e-4c93-b908-bc4fefa29a87"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 426",
                             DestinationName = "Fake destination name for 426",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 426",
                             OriginName = "Fake origin name for 426",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN426-426"
                         },
                         new
                         {
-                            Id = new Guid("b8c7523d-e714-4b63-a8e1-368dcef34b31"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e2b7bed7-aae3-40d2-a3f5-ce589b6fdfca"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 427",
                             DestinationName = "Fake destination name for 427",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 427",
                             OriginName = "Fake origin name for 427",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN427-427"
                         },
                         new
                         {
-                            Id = new Guid("0b433831-b5d6-4527-93b8-af0f7c639cfb"),
+                            Id = new Guid("a07e6090-919a-410e-a446-f12fac31f489"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 428",
                             DestinationName = "Fake destination name for 428",
@@ -5250,23 +5254,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("054f89e2-0dbd-4d37-aced-661187df2fec"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f09c9022-fad8-4663-bd8f-9531748168a1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 429",
                             DestinationName = "Fake destination name for 429",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 429",
                             OriginName = "Fake origin name for 429",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN429-429"
                         },
                         new
                         {
-                            Id = new Guid("23c510f6-153b-410e-80bc-4de41ca8abbc"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("71087b4e-046c-4a44-9534-bb07f176c97d"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 430",
                             DestinationName = "Fake destination name for 430",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 430",
                             OriginName = "Fake origin name for 430",
                             Status = 1,
@@ -5274,20 +5278,20 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("51f2d862-5f16-41e7-abda-7c3cea9fe1fb"),
+                            Id = new Guid("47fdb5c9-5455-414b-b691-8a63f11da2d8"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 431",
                             DestinationName = "Fake destination name for 431",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 431",
                             OriginName = "Fake origin name for 431",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN431-431"
                         },
                         new
                         {
-                            Id = new Guid("dbda1a72-449e-43e1-87f8-e4a21e5110ea"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8fb1033e-c972-42fc-bde3-1b0517b4d95c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 432",
                             DestinationName = "Fake destination name for 432",
                             NumberOfPackeges = 1,
@@ -5298,7 +5302,7 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6dcae8e9-1f6a-4eab-bdc4-0442619a4ef6"),
+                            Id = new Guid("7d183e76-b4ba-408e-9b81-38120d5219f8"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 433",
                             DestinationName = "Fake destination name for 433",
@@ -5310,23 +5314,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d16e8dc6-f295-4749-bcc7-fab885adb96f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("66e3c754-1d13-4aa1-a5e2-0d58cc699813"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 434",
                             DestinationName = "Fake destination name for 434",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 434",
                             OriginName = "Fake origin name for 434",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN434-434"
                         },
                         new
                         {
-                            Id = new Guid("f65f136b-6410-40ba-adbe-a4283e6a9aa2"),
+                            Id = new Guid("07ebb57e-472b-48ad-b0f9-365456b57515"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 435",
                             DestinationName = "Fake destination name for 435",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 435",
                             OriginName = "Fake origin name for 435",
                             Status = 1,
@@ -5334,83 +5338,83 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0f73bcee-5546-4ff8-bc8d-0bee51c619f4"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("7927e3d7-d3a2-4ab9-892f-111909cf91f6"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 436",
                             DestinationName = "Fake destination name for 436",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 436",
                             OriginName = "Fake origin name for 436",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN436-436"
                         },
                         new
                         {
-                            Id = new Guid("eba6160c-6fd7-41b2-ae5d-3ef6ee7e4f37"),
+                            Id = new Guid("4db4a6c4-5056-4a0c-8ec5-3b77d393035b"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 437",
                             DestinationName = "Fake destination name for 437",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 437",
                             OriginName = "Fake origin name for 437",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN437-437"
                         },
                         new
                         {
-                            Id = new Guid("07334791-00f2-41df-8da5-eee65e6c37c6"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("7367475b-7ca9-4f60-b948-59a942573cd9"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 438",
                             DestinationName = "Fake destination name for 438",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 438",
                             OriginName = "Fake origin name for 438",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN438-438"
                         },
                         new
                         {
-                            Id = new Guid("92375f8c-3926-40c9-b1fd-8cbd77c1ce61"),
+                            Id = new Guid("7fcd2339-bb63-499e-af11-36fa5cde18ea"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 439",
                             DestinationName = "Fake destination name for 439",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 439",
                             OriginName = "Fake origin name for 439",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN439-439"
                         },
                         new
                         {
-                            Id = new Guid("7528a085-b450-4cf8-b2f6-4d150cb36a34"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f43e2523-29ce-4b00-9962-7b920832550e"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 440",
                             DestinationName = "Fake destination name for 440",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 440",
                             OriginName = "Fake origin name for 440",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN440-440"
                         },
                         new
                         {
-                            Id = new Guid("9e2d20f0-ff1f-4f9f-9737-49c3a6080bd2"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("21cd8ff6-cf48-4ff6-ab6b-674fb785c425"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 441",
                             DestinationName = "Fake destination name for 441",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 441",
                             OriginName = "Fake origin name for 441",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN441-441"
                         },
                         new
                         {
-                            Id = new Guid("d333a50c-ae0d-4b38-9819-ee1612c340df"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("703110c7-e1d6-495d-af5b-0a4db05ce188"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 442",
                             DestinationName = "Fake destination name for 442",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 442",
                             OriginName = "Fake origin name for 442",
                             Status = 2,
@@ -5418,35 +5422,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fcd46d6b-357f-4c6b-b611-fff547233feb"),
+                            Id = new Guid("84727bd8-5cad-440e-926f-f49006a23452"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 443",
                             DestinationName = "Fake destination name for 443",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 443",
                             OriginName = "Fake origin name for 443",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN443-443"
                         },
                         new
                         {
-                            Id = new Guid("741f85a8-8c92-482b-8b1c-e5653c84dd48"),
+                            Id = new Guid("64c85f6b-8f72-4ba1-a7d2-02bea2a94844"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 444",
                             DestinationName = "Fake destination name for 444",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 444",
                             OriginName = "Fake origin name for 444",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN444-444"
                         },
                         new
                         {
-                            Id = new Guid("0f68d71f-7d72-454c-8cb5-e97e7f92264c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d845aa2d-a49b-4897-b613-9a6e75c21717"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 445",
                             DestinationName = "Fake destination name for 445",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 445",
                             OriginName = "Fake origin name for 445",
                             Status = 2,
@@ -5454,47 +5458,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8eee905c-49d8-424b-a9f0-52e73e2f4cc8"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("13236e15-8a66-4b40-8ef9-1e9a7d5c9e62"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 446",
                             DestinationName = "Fake destination name for 446",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 446",
                             OriginName = "Fake origin name for 446",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN446-446"
                         },
                         new
                         {
-                            Id = new Guid("d5ac8f5b-3ec8-4a74-822d-650bcead3c41"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4e4bfceb-15c4-4d86-8416-01e7ffff9f81"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 447",
                             DestinationName = "Fake destination name for 447",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 447",
                             OriginName = "Fake origin name for 447",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN447-447"
                         },
                         new
                         {
-                            Id = new Guid("0d686a54-399a-453a-a868-a4cfa4bf57b7"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("dc5a4ec3-befa-4d93-b646-8ea123d4fe7c"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 448",
                             DestinationName = "Fake destination name for 448",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 448",
                             OriginName = "Fake origin name for 448",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN448-448"
                         },
                         new
                         {
-                            Id = new Guid("ec1cf983-47da-4cc3-ba2b-4351b7f096c7"),
+                            Id = new Guid("d66a7644-168e-4461-9c50-7b00c491ef14"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 449",
                             DestinationName = "Fake destination name for 449",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 449",
                             OriginName = "Fake origin name for 449",
                             Status = 0,
@@ -5502,35 +5506,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2cdc727c-bd72-4ee9-a240-15cc2cd341ad"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f94a579b-176d-4f9f-909a-fd88d1117005"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 450",
                             DestinationName = "Fake destination name for 450",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 450",
                             OriginName = "Fake origin name for 450",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN450-450"
                         },
                         new
                         {
-                            Id = new Guid("1d687c1a-2385-4fcb-9ab6-b5a63afd9e6e"),
+                            Id = new Guid("4e0ea0b3-0096-4f43-b623-fd332e32c0af"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 451",
                             DestinationName = "Fake destination name for 451",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 451",
                             OriginName = "Fake origin name for 451",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN451-451"
                         },
                         new
                         {
-                            Id = new Guid("26c64ae1-9d28-47f7-bbf5-a6343270cb55"),
+                            Id = new Guid("4db45154-6fad-4f82-a7cf-cc84f3e90926"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 452",
                             DestinationName = "Fake destination name for 452",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 452",
                             OriginName = "Fake origin name for 452",
                             Status = 1,
@@ -5538,23 +5542,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("da15b43a-7521-4b63-ae65-d95ea60d75c3"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7d741795-5445-4e85-9b44-56485ebdd963"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 453",
                             DestinationName = "Fake destination name for 453",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 453",
                             OriginName = "Fake origin name for 453",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN453-453"
                         },
                         new
                         {
-                            Id = new Guid("6a8bb080-0510-461d-8cd4-f6d2fea97875"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("3ff4dd82-cab8-4763-b51f-c63baf51a256"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 454",
                             DestinationName = "Fake destination name for 454",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 454",
                             OriginName = "Fake origin name for 454",
                             Status = 2,
@@ -5562,23 +5566,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("edff2796-0a9d-4981-9bce-2b2eeea35826"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("926ef9c1-342a-4a35-8f0d-abd3ce3b0294"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 455",
                             DestinationName = "Fake destination name for 455",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 455",
                             OriginName = "Fake origin name for 455",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN455-455"
                         },
                         new
                         {
-                            Id = new Guid("d3c2bd59-58d0-46ef-a791-fa9093e2162e"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("a0783ff2-b8ff-495d-8ecc-9382c597a2e2"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 456",
                             DestinationName = "Fake destination name for 456",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 456",
                             OriginName = "Fake origin name for 456",
                             Status = 0,
@@ -5586,71 +5590,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("de598ab3-17e9-49fb-987f-5917e3ef146f"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ee739736-c305-4a6e-86a0-b798679094eb"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 457",
                             DestinationName = "Fake destination name for 457",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 457",
                             OriginName = "Fake origin name for 457",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN457-457"
                         },
                         new
                         {
-                            Id = new Guid("abbc7370-3792-4fff-a425-3028a0b27c55"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("14806cb3-a59e-4bf4-8ee2-6fc9034f7299"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 458",
                             DestinationName = "Fake destination name for 458",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 458",
                             OriginName = "Fake origin name for 458",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN458-458"
                         },
                         new
                         {
-                            Id = new Guid("6facaaf7-e990-4f79-88bf-a58645f5d4d7"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("31638d7e-6b5c-456f-bab8-77ca26317a9d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 459",
                             DestinationName = "Fake destination name for 459",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 459",
                             OriginName = "Fake origin name for 459",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN459-459"
                         },
                         new
                         {
-                            Id = new Guid("7094d3f6-1b17-4ff8-a516-c03b472bab7d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("684d0224-87ce-4d23-897a-298e56f28889"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 460",
                             DestinationName = "Fake destination name for 460",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 460",
                             OriginName = "Fake origin name for 460",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN460-460"
                         },
                         new
                         {
-                            Id = new Guid("b42c5b14-63be-421f-aaa7-d71982e24608"),
+                            Id = new Guid("99c143d8-75f1-48a6-b3fa-5485324134a2"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 461",
                             DestinationName = "Fake destination name for 461",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 461",
                             OriginName = "Fake origin name for 461",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN461-461"
                         },
                         new
                         {
-                            Id = new Guid("9a2d9d78-5d16-41b5-b5a0-103eaa31cd01"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("09ebc760-bb2d-4a99-9f4f-5ef3afdcd7f3"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 462",
                             DestinationName = "Fake destination name for 462",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 462",
                             OriginName = "Fake origin name for 462",
                             Status = 2,
@@ -5658,56 +5662,56 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0507c789-3191-4190-8dce-f2e8775fa5fb"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("d0fa2ac8-4986-4276-8069-eaa6982413b6"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 463",
                             DestinationName = "Fake destination name for 463",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 463",
                             OriginName = "Fake origin name for 463",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN463-463"
                         },
                         new
                         {
-                            Id = new Guid("3531b60b-c20e-4f04-bf86-e1aebc834795"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("fff53046-45fa-440a-b854-75e6e578d36c"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 464",
                             DestinationName = "Fake destination name for 464",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 464",
                             OriginName = "Fake origin name for 464",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN464-464"
                         },
                         new
                         {
-                            Id = new Guid("29ee9ab6-9905-4475-ae8a-5eda5f96af8b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("300d1036-c37f-4356-b17f-c1806e5e2dd1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 465",
                             DestinationName = "Fake destination name for 465",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 465",
                             OriginName = "Fake origin name for 465",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN465-465"
                         },
                         new
                         {
-                            Id = new Guid("4e618410-d6ba-42f4-bde0-cec4961facc2"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b3f5d760-b86d-43f5-bf96-b456e453a5a3"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 466",
                             DestinationName = "Fake destination name for 466",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 466",
                             OriginName = "Fake origin name for 466",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN466-466"
                         },
                         new
                         {
-                            Id = new Guid("fd0db4a5-9211-4032-819c-f612647fd88d"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("f9db24ac-65df-4d05-a9f1-76df85e7040f"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 467",
                             DestinationName = "Fake destination name for 467",
                             NumberOfPackeges = 0,
@@ -5718,8 +5722,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f976fb98-7551-4cca-975a-3db20da62254"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("c24b659a-b6ac-4cfe-a44b-f601cb50b389"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 468",
                             DestinationName = "Fake destination name for 468",
                             NumberOfPackeges = 1,
@@ -5730,35 +5734,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("28b1954c-ab0f-4fd1-bf8c-21b34498df30"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("2fb2fbb6-99cf-435c-bc4e-632a8c3479a2"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 469",
                             DestinationName = "Fake destination name for 469",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 469",
                             OriginName = "Fake origin name for 469",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN469-469"
                         },
                         new
                         {
-                            Id = new Guid("5014b234-02b8-454c-817e-6ae8cb4bf5a6"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("25e2a107-2214-4476-a91d-b628710f54a2"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 470",
                             DestinationName = "Fake destination name for 470",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 470",
                             OriginName = "Fake origin name for 470",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN470-470"
                         },
                         new
                         {
-                            Id = new Guid("1fadab10-08ef-4005-a249-d51130eae9dd"),
+                            Id = new Guid("69690648-dbe0-4fd7-a689-c323e5ca5df7"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 471",
                             DestinationName = "Fake destination name for 471",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 471",
                             OriginName = "Fake origin name for 471",
                             Status = 0,
@@ -5766,32 +5770,32 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("911f0ed3-8d28-491c-982b-9b19651ecd03"),
+                            Id = new Guid("57365444-8f49-4580-8596-1071682de192"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 472",
                             DestinationName = "Fake destination name for 472",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 472",
                             OriginName = "Fake origin name for 472",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN472-472"
                         },
                         new
                         {
-                            Id = new Guid("99fb5511-3128-4a80-84e5-f89fe2532ea2"),
+                            Id = new Guid("e353b926-33b9-459a-a57e-678b439b0374"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 473",
                             DestinationName = "Fake destination name for 473",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 473",
                             OriginName = "Fake origin name for 473",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN473-473"
                         },
                         new
                         {
-                            Id = new Guid("8071fa16-c9fe-4642-94a8-1990532cfa45"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b47a38a0-361b-4b88-bdff-e47f8eaa2727"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 474",
                             DestinationName = "Fake destination name for 474",
                             NumberOfPackeges = 1,
@@ -5802,19 +5806,19 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("58b1413f-1900-4319-be16-d81b5b836e1a"),
+                            Id = new Guid("3f160162-0a35-4464-a033-14beb4078746"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 475",
                             DestinationName = "Fake destination name for 475",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 475",
                             OriginName = "Fake origin name for 475",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN475-475"
                         },
                         new
                         {
-                            Id = new Guid("2ff05188-6428-4327-a138-3588e4aee370"),
+                            Id = new Guid("9e5fa278-63cf-4b59-a575-ef57043c5465"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 476",
                             DestinationName = "Fake destination name for 476",
@@ -5826,7 +5830,7 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("aeac722d-fb36-4295-a014-24a988c70951"),
+                            Id = new Guid("1c878e84-fb95-41d5-9e51-d20cdf64ac41"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 477",
                             DestinationName = "Fake destination name for 477",
@@ -5838,35 +5842,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cb327562-576c-4376-bdec-bff24dc912e7"),
+                            Id = new Guid("e942a20a-f095-4532-87c1-5fc5639660be"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 478",
                             DestinationName = "Fake destination name for 478",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 478",
                             OriginName = "Fake origin name for 478",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN478-478"
                         },
                         new
                         {
-                            Id = new Guid("bd017533-733b-40d2-86db-c855573055ff"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("3f72fefc-b6a7-4a14-8ae1-a9d02fca2488"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 479",
                             DestinationName = "Fake destination name for 479",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 479",
                             OriginName = "Fake origin name for 479",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN479-479"
                         },
                         new
                         {
-                            Id = new Guid("fe9b29e8-5327-4051-bea1-a9cc037a5720"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("26df2ded-c8e7-4119-a1f8-ebbd085f6dc0"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 480",
                             DestinationName = "Fake destination name for 480",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 480",
                             OriginName = "Fake origin name for 480",
                             Status = 2,
@@ -5874,11 +5878,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b450987f-095f-4032-b98e-4e63995f928c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("261224f9-261d-40fa-96ae-ce40a332ef53"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 481",
                             DestinationName = "Fake destination name for 481",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 481",
                             OriginName = "Fake origin name for 481",
                             Status = 1,
@@ -5886,35 +5890,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("caaeff8d-64ad-4d83-95e9-b41b04f9ac9f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e6dbc18b-fec5-4fce-8128-93815e98ff14"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 482",
                             DestinationName = "Fake destination name for 482",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 482",
                             OriginName = "Fake origin name for 482",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN482-482"
                         },
                         new
                         {
-                            Id = new Guid("31bff7be-4536-4829-bbf5-bfe69c314828"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("817ad59c-2b3d-4a21-aa2b-f470d474d1c4"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 483",
                             DestinationName = "Fake destination name for 483",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 483",
                             OriginName = "Fake origin name for 483",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN483-483"
                         },
                         new
                         {
-                            Id = new Guid("52f7c93b-716d-40b5-9a55-70ca74f0b449"),
+                            Id = new Guid("987ed0f2-5cee-4604-8bc4-478bab675cb2"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 484",
                             DestinationName = "Fake destination name for 484",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 484",
                             OriginName = "Fake origin name for 484",
                             Status = 2,
@@ -5922,95 +5926,95 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("68262992-6083-4b45-afb5-c97126eaccb9"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("8593e0b0-9150-4350-a3ef-64aea81a50df"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 485",
                             DestinationName = "Fake destination name for 485",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 485",
                             OriginName = "Fake origin name for 485",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN485-485"
                         },
                         new
                         {
-                            Id = new Guid("cf498b47-fc21-4e49-a5db-820c5d9f859c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a30d0821-c06b-44d5-b0af-cfa37a2c0346"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 486",
                             DestinationName = "Fake destination name for 486",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 486",
                             OriginName = "Fake origin name for 486",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN486-486"
                         },
                         new
                         {
-                            Id = new Guid("881b213a-c8c5-4863-9df5-d10309096ad3"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("a9b8ff79-7a81-4a21-8b67-43841211d4a3"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 487",
                             DestinationName = "Fake destination name for 487",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 487",
                             OriginName = "Fake origin name for 487",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN487-487"
                         },
                         new
                         {
-                            Id = new Guid("dda86a00-a695-4e97-98fd-2ffe6ddf475d"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("064c4143-13f3-42b9-b3d7-a923f6e3bd8e"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 488",
                             DestinationName = "Fake destination name for 488",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 488",
                             OriginName = "Fake origin name for 488",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN488-488"
                         },
                         new
                         {
-                            Id = new Guid("49472355-0fba-4793-8121-65c135d0ee1c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("9cd6afa0-2b66-453d-9db8-f30dfeaae079"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 489",
                             DestinationName = "Fake destination name for 489",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 489",
                             OriginName = "Fake origin name for 489",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN489-489"
                         },
                         new
                         {
-                            Id = new Guid("73654bce-d0ef-432b-9f56-83ac77b47995"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("7599e948-3fb3-4d71-8f40-579ca81f46d6"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 490",
                             DestinationName = "Fake destination name for 490",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 490",
                             OriginName = "Fake origin name for 490",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN490-490"
                         },
                         new
                         {
-                            Id = new Guid("b5232bdc-4168-4c32-b360-892f90bcb310"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2c4d9bab-9965-44f2-ab1d-013bc18e7805"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 491",
                             DestinationName = "Fake destination name for 491",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 491",
                             OriginName = "Fake origin name for 491",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN491-491"
                         },
                         new
                         {
-                            Id = new Guid("bdaaa603-3d2b-459c-915b-fe268f4f3eba"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("6b38c094-450e-43b5-a5af-6b020186d475"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 492",
                             DestinationName = "Fake destination name for 492",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 492",
                             OriginName = "Fake origin name for 492",
                             Status = 1,
@@ -6018,35 +6022,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("14772d8e-92ba-4754-96ae-791619d3d76c"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("48a9ee16-bc29-4f8e-b168-182db6708b66"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 493",
                             DestinationName = "Fake destination name for 493",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 493",
                             OriginName = "Fake origin name for 493",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN493-493"
                         },
                         new
                         {
-                            Id = new Guid("bd9dc871-bab6-476c-b99f-a24bacafdca1"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("8073d2c5-9bf9-49d9-9d91-ae89994de97a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 494",
                             DestinationName = "Fake destination name for 494",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 494",
                             OriginName = "Fake origin name for 494",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN494-494"
                         },
                         new
                         {
-                            Id = new Guid("006d7907-ee9d-4bb9-9ff3-4712ed61c0ef"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("266ddc40-ac30-4d21-9408-4b24f48c5616"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 495",
                             DestinationName = "Fake destination name for 495",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 495",
                             OriginName = "Fake origin name for 495",
                             Status = 0,
@@ -6054,56 +6058,56 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("086b73ea-49ce-4d04-b7f0-ed237be24267"),
+                            Id = new Guid("fb6fb536-a038-4816-9fb3-97ea2127ecb1"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 496",
                             DestinationName = "Fake destination name for 496",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 496",
                             OriginName = "Fake origin name for 496",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN496-496"
                         },
                         new
                         {
-                            Id = new Guid("2b3c1cc2-5b88-4c5a-a106-5a60eb6a9ef7"),
+                            Id = new Guid("7ec36b44-a5c1-4df7-b62d-f77e23f14fd0"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 497",
                             DestinationName = "Fake destination name for 497",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 497",
                             OriginName = "Fake origin name for 497",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN497-497"
                         },
                         new
                         {
-                            Id = new Guid("040a5b37-b465-47c7-9103-8a8c62800354"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("7369ca93-61ea-4bdc-89d9-079c24733ece"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 498",
                             DestinationName = "Fake destination name for 498",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 498",
                             OriginName = "Fake origin name for 498",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN498-498"
                         },
                         new
                         {
-                            Id = new Guid("669ab102-5394-4d3c-ba3f-b619efcbdb9e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("70ea53f2-a1bc-4f86-9705-37be1d43f14b"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 499",
                             DestinationName = "Fake destination name for 499",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 499",
                             OriginName = "Fake origin name for 499",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN499-499"
                         },
                         new
                         {
-                            Id = new Guid("ea5d28e5-3ed0-4be1-a77a-1e46700dadd2"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4132cf8b-dc49-49a8-8afb-49d70e6af926"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 500",
                             DestinationName = "Fake destination name for 500",
                             NumberOfPackeges = 4,
@@ -6114,92 +6118,92 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c4b86d62-26a6-44dd-9aa2-26100602ea38"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("481a236a-1322-4cfe-9251-74b8a89a28ba"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 501",
                             DestinationName = "Fake destination name for 501",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 501",
                             OriginName = "Fake origin name for 501",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN501-501"
                         },
                         new
                         {
-                            Id = new Guid("92cb7744-6ae5-4710-aad4-e9662654f3cf"),
+                            Id = new Guid("2cc7e9b7-b224-46ff-89af-637e19d9b0ed"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 502",
                             DestinationName = "Fake destination name for 502",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 502",
                             OriginName = "Fake origin name for 502",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN502-502"
                         },
                         new
                         {
-                            Id = new Guid("5ef12ccd-347d-4605-b64b-caa7470179fd"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("fd219211-503f-47ba-a585-960c88a2b69d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 503",
                             DestinationName = "Fake destination name for 503",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 503",
                             OriginName = "Fake origin name for 503",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN503-503"
                         },
                         new
                         {
-                            Id = new Guid("5c603e45-fe46-4789-bf0a-968ce2aed9ba"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("6aea030d-f75e-4345-9060-fea88d9ccd79"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 504",
                             DestinationName = "Fake destination name for 504",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 504",
                             OriginName = "Fake origin name for 504",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN504-504"
                         },
                         new
                         {
-                            Id = new Guid("d0741621-eb3a-417f-b598-6e10b604c974"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c4ad1c59-408a-483c-bc08-cec8b9100a76"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 505",
                             DestinationName = "Fake destination name for 505",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 505",
                             OriginName = "Fake origin name for 505",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN505-505"
                         },
                         new
                         {
-                            Id = new Guid("d7708ff1-f1ab-40f8-8fdb-1d44fa9b8796"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("c4c3b30c-b93f-4b0a-b51e-ef2ceb1f9032"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 506",
                             DestinationName = "Fake destination name for 506",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 506",
                             OriginName = "Fake origin name for 506",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN506-506"
                         },
                         new
                         {
-                            Id = new Guid("452626bb-66cb-4efe-922a-1cd73a0081ef"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f86674b5-69c4-4ea3-84f6-31ef57f91a11"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 507",
                             DestinationName = "Fake destination name for 507",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 507",
                             OriginName = "Fake origin name for 507",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN507-507"
                         },
                         new
                         {
-                            Id = new Guid("e8e824b5-fea2-4853-a3c6-4ac3a9ab8e02"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("042c0428-bd2c-47e6-a1f9-311cd57a8704"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 508",
                             DestinationName = "Fake destination name for 508",
                             NumberOfPackeges = 4,
@@ -6210,35 +6214,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("51a9b373-6178-4c12-93ce-1979590acca9"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1031bb5c-534b-425a-a4aa-597870c71389"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 509",
                             DestinationName = "Fake destination name for 509",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 509",
                             OriginName = "Fake origin name for 509",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN509-509"
                         },
                         new
                         {
-                            Id = new Guid("1270b724-bb6b-46d6-b252-909456b19deb"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("5bd5e3b0-1e12-4eb7-adaf-523bf190cb30"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 510",
                             DestinationName = "Fake destination name for 510",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 510",
                             OriginName = "Fake origin name for 510",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN510-510"
                         },
                         new
                         {
-                            Id = new Guid("77988d46-b3fa-4406-8c65-2c1e7024c251"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("07f73b3f-9989-44df-b608-c5854d8b8f6c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 511",
                             DestinationName = "Fake destination name for 511",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 511",
                             OriginName = "Fake origin name for 511",
                             Status = 2,
@@ -6246,11 +6250,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b99a2183-d1ca-484e-a710-87bd59e927ab"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("060934ed-cc34-416d-b09b-5588233489a8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 512",
                             DestinationName = "Fake destination name for 512",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 512",
                             OriginName = "Fake origin name for 512",
                             Status = 0,
@@ -6258,83 +6262,83 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("335b2126-19a6-4827-988c-67cd891f24c3"),
+                            Id = new Guid("f9d86baf-073c-478f-976a-857a957106d5"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 513",
                             DestinationName = "Fake destination name for 513",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 513",
                             OriginName = "Fake origin name for 513",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN513-513"
                         },
                         new
                         {
-                            Id = new Guid("70ba58e6-b4bc-456d-bf5d-fa040b31345c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a7615b4e-63f5-4fd7-90a9-e777db4e4dc1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 514",
                             DestinationName = "Fake destination name for 514",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 514",
                             OriginName = "Fake origin name for 514",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN514-514"
                         },
                         new
                         {
-                            Id = new Guid("84aa3baf-e1c7-478a-a661-7e1fa9d5f43b"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("7f7e6392-4bd3-40d1-aae8-7191e6b2199e"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 515",
                             DestinationName = "Fake destination name for 515",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 515",
                             OriginName = "Fake origin name for 515",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN515-515"
                         },
                         new
                         {
-                            Id = new Guid("2ef39850-9f3a-494f-9271-d6113f846de8"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a32fe190-4d42-4c5f-9ca7-ab3e25382a58"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 516",
                             DestinationName = "Fake destination name for 516",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 516",
                             OriginName = "Fake origin name for 516",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN516-516"
                         },
                         new
                         {
-                            Id = new Guid("877512a7-b577-41dc-abcf-410f4375a663"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("72596030-8a50-447f-8c7c-58c39dd26d9b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 517",
                             DestinationName = "Fake destination name for 517",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 517",
                             OriginName = "Fake origin name for 517",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN517-517"
                         },
                         new
                         {
-                            Id = new Guid("223dbeee-37a2-4845-867d-653e955c0701"),
+                            Id = new Guid("90d8b7f0-05bc-4309-b7fc-991aea7cd9e4"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 518",
                             DestinationName = "Fake destination name for 518",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 518",
                             OriginName = "Fake origin name for 518",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN518-518"
                         },
                         new
                         {
-                            Id = new Guid("f628d387-b2a6-4cea-ab05-bbb79842ec24"),
+                            Id = new Guid("da99d9a0-502f-4c61-adc8-201d0e5bb71a"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 519",
                             DestinationName = "Fake destination name for 519",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 519",
                             OriginName = "Fake origin name for 519",
                             Status = 1,
@@ -6342,7 +6346,7 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b4921b96-79b9-4b3d-a872-371890ab3133"),
+                            Id = new Guid("973ed8b8-138d-43b7-aa26-6cb7d7434471"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 520",
                             DestinationName = "Fake destination name for 520",
@@ -6354,23 +6358,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("371c066e-47b8-482f-ad60-cafc7d4b040f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("e27ed72b-a069-4b77-988b-b207e41372d2"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 521",
                             DestinationName = "Fake destination name for 521",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 521",
                             OriginName = "Fake origin name for 521",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN521-521"
                         },
                         new
                         {
-                            Id = new Guid("3060a816-165e-4015-9053-c16cb216908f"),
+                            Id = new Guid("cf81aff0-224d-4a67-9f5d-7d1e2c64eaa9"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 522",
                             DestinationName = "Fake destination name for 522",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 522",
                             OriginName = "Fake origin name for 522",
                             Status = 1,
@@ -6378,107 +6382,107 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("201f7cfb-d593-445a-8450-258f8dad2380"),
+                            Id = new Guid("1a9fdc16-128c-42b4-804b-464b56393c05"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 523",
                             DestinationName = "Fake destination name for 523",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 523",
                             OriginName = "Fake origin name for 523",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN523-523"
                         },
                         new
                         {
-                            Id = new Guid("f7548bae-b09c-4329-917b-82ff2e9f6691"),
+                            Id = new Guid("beb0bbc0-1ffd-4c21-b730-56a009fcbbba"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 524",
                             DestinationName = "Fake destination name for 524",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 524",
                             OriginName = "Fake origin name for 524",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN524-524"
                         },
                         new
                         {
-                            Id = new Guid("65845c39-c3b5-4ff1-89cd-10a98d4ea939"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d0b234c3-12eb-4176-bf7c-d8312fafee6d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 525",
                             DestinationName = "Fake destination name for 525",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 525",
                             OriginName = "Fake origin name for 525",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN525-525"
                         },
                         new
                         {
-                            Id = new Guid("68b4a834-a0a8-41e5-b6fa-666b5c50fcc4"),
+                            Id = new Guid("4fef2f12-db08-4cd2-be4c-61aed43ecca3"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 526",
                             DestinationName = "Fake destination name for 526",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 526",
                             OriginName = "Fake origin name for 526",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN526-526"
                         },
                         new
                         {
-                            Id = new Guid("f694b5cc-882d-415f-9a57-62e37a2b5934"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("d8f17b4e-b858-456e-8541-9341ac7c02be"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 527",
                             DestinationName = "Fake destination name for 527",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 527",
                             OriginName = "Fake origin name for 527",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN527-527"
                         },
                         new
                         {
-                            Id = new Guid("d6b2cd70-ad7c-4e08-afc7-bc760f7dab09"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("77825768-ac45-4b07-a4a9-daba97a63aa0"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 528",
                             DestinationName = "Fake destination name for 528",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 528",
                             OriginName = "Fake origin name for 528",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN528-528"
                         },
                         new
                         {
-                            Id = new Guid("8c977f5e-9a3a-4124-b9d5-d84a4c1e9318"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("aff53615-f748-4efe-a3db-8a4e3b885448"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 529",
                             DestinationName = "Fake destination name for 529",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 529",
                             OriginName = "Fake origin name for 529",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN529-529"
                         },
                         new
                         {
-                            Id = new Guid("5feae0e6-3a66-4a4a-8d04-5f9cf969392a"),
+                            Id = new Guid("79e3130d-8578-4a35-af8f-aacb344d96b6"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 530",
                             DestinationName = "Fake destination name for 530",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 530",
                             OriginName = "Fake origin name for 530",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN530-530"
                         },
                         new
                         {
-                            Id = new Guid("353578d4-7db6-476a-9bd6-feb2f753fac1"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("12a611c8-b154-41aa-a9e0-544a16994d7f"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 531",
                             DestinationName = "Fake destination name for 531",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 531",
                             OriginName = "Fake origin name for 531",
                             Status = 2,
@@ -6486,35 +6490,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8f0e1a52-814c-492d-86ed-1ec2241ad384"),
+                            Id = new Guid("cf6ae182-ef50-40f1-b8ba-376164e9831d"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 532",
                             DestinationName = "Fake destination name for 532",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 532",
                             OriginName = "Fake origin name for 532",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN532-532"
                         },
                         new
                         {
-                            Id = new Guid("21590420-7e34-486d-b7b1-2844f751b661"),
+                            Id = new Guid("327b6099-3c7e-4740-b919-1d8366517488"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 533",
                             DestinationName = "Fake destination name for 533",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 533",
                             OriginName = "Fake origin name for 533",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN533-533"
                         },
                         new
                         {
-                            Id = new Guid("78a5d580-6b20-4878-bf14-913d954fddc9"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("e4df3a18-5540-4e08-9865-5172fe1ce948"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 534",
                             DestinationName = "Fake destination name for 534",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 534",
                             OriginName = "Fake origin name for 534",
                             Status = 2,
@@ -6522,11 +6526,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("210f6ee3-60cf-4d6f-ba74-6bc3e9069736"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0697ca97-7938-478c-9115-2b5f7bbcddff"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 535",
                             DestinationName = "Fake destination name for 535",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 535",
                             OriginName = "Fake origin name for 535",
                             Status = 2,
@@ -6534,11 +6538,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6d00754e-2507-4a5f-86c9-374b579808e7"),
+                            Id = new Guid("f614bb41-2082-4375-8364-1968ead3f608"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 536",
                             DestinationName = "Fake destination name for 536",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 536",
                             OriginName = "Fake origin name for 536",
                             Status = 1,
@@ -6546,23 +6550,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("44649def-8ccd-420c-9503-baa22adc293c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b3d9896b-5192-4874-b6a6-800bd03a677d"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 537",
                             DestinationName = "Fake destination name for 537",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 537",
                             OriginName = "Fake origin name for 537",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN537-537"
                         },
                         new
                         {
-                            Id = new Guid("f551f9d7-aaaa-4288-8d9c-bcdb5d07080a"),
+                            Id = new Guid("a9436611-5a52-47b9-bb02-4a6c57397bb9"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 538",
                             DestinationName = "Fake destination name for 538",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 538",
                             OriginName = "Fake origin name for 538",
                             Status = 2,
@@ -6570,35 +6574,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0f11203e-a4fb-4d35-b565-36b3e8776e95"),
+                            Id = new Guid("3fe2f52f-a44b-4f46-bc7b-60f453e670da"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 539",
                             DestinationName = "Fake destination name for 539",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 539",
                             OriginName = "Fake origin name for 539",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN539-539"
                         },
                         new
                         {
-                            Id = new Guid("129038ea-2383-4083-ad6f-127f94e92e6b"),
+                            Id = new Guid("5a137aa0-a744-4378-9243-276edfd00e32"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 540",
                             DestinationName = "Fake destination name for 540",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 540",
                             OriginName = "Fake origin name for 540",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN540-540"
                         },
                         new
                         {
-                            Id = new Guid("9242f1d2-d01e-460e-b5a3-748aade1890a"),
+                            Id = new Guid("7653b46f-2c56-47b8-90a2-784ddd7fecab"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 541",
                             DestinationName = "Fake destination name for 541",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 541",
                             OriginName = "Fake origin name for 541",
                             Status = 0,
@@ -6606,47 +6610,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2f462e4e-00c8-4c45-bf8d-56bcdcf85a90"),
+                            Id = new Guid("d6f281ff-7f12-4c0f-9e93-89d0dd2348e1"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 542",
                             DestinationName = "Fake destination name for 542",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 542",
                             OriginName = "Fake origin name for 542",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN542-542"
                         },
                         new
                         {
-                            Id = new Guid("01c283f7-3c6c-4c8a-92df-b51a8ceec759"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("befe804c-96be-40c0-9ffe-a6a2b0726525"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 543",
                             DestinationName = "Fake destination name for 543",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 543",
                             OriginName = "Fake origin name for 543",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN543-543"
                         },
                         new
                         {
-                            Id = new Guid("50d794ea-1b01-45aa-ae55-2d01ce00bade"),
+                            Id = new Guid("ec104c8c-7290-4b57-8b6a-77fad0a5e8bb"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 544",
                             DestinationName = "Fake destination name for 544",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 544",
                             OriginName = "Fake origin name for 544",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN544-544"
                         },
                         new
                         {
-                            Id = new Guid("edff4c4d-8e5e-4b7c-bd8d-daebcce9aac8"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("de2b039a-910a-4a3c-bdc1-79ea9e304cca"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 545",
                             DestinationName = "Fake destination name for 545",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 545",
                             OriginName = "Fake origin name for 545",
                             Status = 2,
@@ -6654,95 +6658,95 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bbab05d3-433a-4753-87c9-49cd8758a6de"),
+                            Id = new Guid("b6c5b431-ba6d-4ee7-b1a1-2746e90ce3f4"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 546",
                             DestinationName = "Fake destination name for 546",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 546",
                             OriginName = "Fake origin name for 546",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN546-546"
                         },
                         new
                         {
-                            Id = new Guid("88a939b6-0026-4b14-9071-7e0b3ea60e3e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c7868522-932a-4699-af87-2fdb3f94fc57"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 547",
                             DestinationName = "Fake destination name for 547",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 547",
                             OriginName = "Fake origin name for 547",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN547-547"
                         },
                         new
                         {
-                            Id = new Guid("de627781-79ee-440f-b087-c6b5ad19b568"),
+                            Id = new Guid("301a1baa-c013-4cdd-89fc-3dbd1ab6c719"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 548",
                             DestinationName = "Fake destination name for 548",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 548",
                             OriginName = "Fake origin name for 548",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN548-548"
                         },
                         new
                         {
-                            Id = new Guid("919a20cd-d631-4467-bbde-843fcd36420d"),
+                            Id = new Guid("9c27ed67-e23c-4e91-aed5-e20c8b0a190a"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 549",
                             DestinationName = "Fake destination name for 549",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 549",
                             OriginName = "Fake origin name for 549",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN549-549"
                         },
                         new
                         {
-                            Id = new Guid("0ee37633-6c8a-4ce0-ad21-7611a0134efc"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("8d9a4695-23cd-4192-928e-ac68ffa8709d"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 550",
                             DestinationName = "Fake destination name for 550",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 550",
                             OriginName = "Fake origin name for 550",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN550-550"
                         },
                         new
                         {
-                            Id = new Guid("f77491ea-2cfb-46ab-bf30-d91cb60be7ee"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("1ba90f0d-dba4-48f0-9634-4efce229d91b"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 551",
                             DestinationName = "Fake destination name for 551",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 551",
                             OriginName = "Fake origin name for 551",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN551-551"
                         },
                         new
                         {
-                            Id = new Guid("19e93659-5d1c-463e-a518-bd690ee0155e"),
+                            Id = new Guid("ab9cabd6-55bf-4634-8c66-ca16b0ec21fe"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 552",
                             DestinationName = "Fake destination name for 552",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 552",
                             OriginName = "Fake origin name for 552",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN552-552"
                         },
                         new
                         {
-                            Id = new Guid("5acacbcf-6f88-4a71-a198-b1c0a21a3955"),
+                            Id = new Guid("a4e88c93-7c55-4a68-a81a-978c0c1e79f2"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 553",
                             DestinationName = "Fake destination name for 553",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 553",
                             OriginName = "Fake origin name for 553",
                             Status = 0,
@@ -6750,35 +6754,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("977249cf-71e5-4a23-936c-df38d7aab137"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("76a8e1fc-53fb-40de-9aa5-a998ab2d1eab"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 554",
                             DestinationName = "Fake destination name for 554",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 554",
                             OriginName = "Fake origin name for 554",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN554-554"
                         },
                         new
                         {
-                            Id = new Guid("8b06f6cf-2895-4d4a-ab73-5730cca14f03"),
+                            Id = new Guid("8415712f-bb9f-48ff-ab6f-6045f7e4e674"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 555",
                             DestinationName = "Fake destination name for 555",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 555",
                             OriginName = "Fake origin name for 555",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN555-555"
                         },
                         new
                         {
-                            Id = new Guid("68c4a06b-18e5-4f8c-bc69-93710cfdf5e4"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b27e636e-e934-464b-ba06-a506f1b5f48f"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 556",
                             DestinationName = "Fake destination name for 556",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 556",
                             OriginName = "Fake origin name for 556",
                             Status = 2,
@@ -6786,35 +6790,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("49378a9f-618c-4164-9d32-d0ca513863d1"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("efd4fb50-2e07-445d-be2e-bb23084f0836"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 557",
                             DestinationName = "Fake destination name for 557",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 557",
                             OriginName = "Fake origin name for 557",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN557-557"
                         },
                         new
                         {
-                            Id = new Guid("b3ae1637-5b29-41a2-a081-f5b2fac3353f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("d7c35f3e-abc6-4864-bcdc-42ec9887b567"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 558",
                             DestinationName = "Fake destination name for 558",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 558",
                             OriginName = "Fake origin name for 558",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN558-558"
                         },
                         new
                         {
-                            Id = new Guid("5e3f058b-80fe-44fe-bb0d-b0ce240795dd"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("fb646ed4-8066-4c0d-8dfe-b71b8e6e8e82"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 559",
                             DestinationName = "Fake destination name for 559",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 559",
                             OriginName = "Fake origin name for 559",
                             Status = 1,
@@ -6822,236 +6826,236 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d29103e7-b65e-413c-85e9-ebff49a78127"),
+                            Id = new Guid("8a33e595-4b53-4693-a3ad-732c806adde8"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 560",
                             DestinationName = "Fake destination name for 560",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 560",
                             OriginName = "Fake origin name for 560",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN560-560"
                         },
                         new
                         {
-                            Id = new Guid("510b319b-5d7e-4877-9e9b-1a74bf746afe"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a0d45fa6-0716-4947-9e8e-22d8654af5de"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 561",
                             DestinationName = "Fake destination name for 561",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 561",
                             OriginName = "Fake origin name for 561",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN561-561"
                         },
                         new
                         {
-                            Id = new Guid("8bb84c88-7e14-4d8d-a2fc-6e3671d5af0a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("dd89e8ce-48bc-4458-a700-a00362c371ee"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 562",
                             DestinationName = "Fake destination name for 562",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 562",
                             OriginName = "Fake origin name for 562",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN562-562"
                         },
                         new
                         {
-                            Id = new Guid("c7aaa3b2-2c3d-444c-848d-63a0dd9e64ca"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f1373f9b-0c5c-4186-8ff7-e66cde896806"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 563",
                             DestinationName = "Fake destination name for 563",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 563",
                             OriginName = "Fake origin name for 563",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN563-563"
                         },
                         new
                         {
-                            Id = new Guid("f41cc795-b9a7-4a87-bf28-8f4ba8693672"),
+                            Id = new Guid("a9a4c6bd-1403-4d4a-ae94-3bb462a22a4a"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 564",
                             DestinationName = "Fake destination name for 564",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 564",
                             OriginName = "Fake origin name for 564",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN564-564"
                         },
                         new
                         {
-                            Id = new Guid("97682df3-9d88-4b1c-b6be-e0be7b4dfe07"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f1e9de90-4dc2-47aa-93a5-d8dbeb22f138"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 565",
                             DestinationName = "Fake destination name for 565",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 565",
                             OriginName = "Fake origin name for 565",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN565-565"
                         },
                         new
                         {
-                            Id = new Guid("b37abba0-9de5-4a93-83f8-65a61b6f46ac"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ee9c3bb6-24a2-400d-869c-3bff68ecf74a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 566",
                             DestinationName = "Fake destination name for 566",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 566",
                             OriginName = "Fake origin name for 566",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN566-566"
                         },
                         new
                         {
-                            Id = new Guid("faa4e874-066c-4447-83cf-a00fe0f3c30d"),
+                            Id = new Guid("4d1492ce-a7e8-446f-a631-0d9a80cf67e9"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 567",
                             DestinationName = "Fake destination name for 567",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 567",
                             OriginName = "Fake origin name for 567",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN567-567"
                         },
                         new
                         {
-                            Id = new Guid("6be7b2c1-b7b2-4388-849b-a35fb99920c1"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("45f6d815-c6ba-4db1-a76f-0ea95b07315f"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 568",
                             DestinationName = "Fake destination name for 568",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 568",
                             OriginName = "Fake origin name for 568",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN568-568"
                         },
                         new
                         {
-                            Id = new Guid("258f80bf-be78-4754-9c68-3d85a9830be0"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("728a0838-ecc1-4a69-954f-faf5262a4ea6"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 569",
                             DestinationName = "Fake destination name for 569",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 569",
                             OriginName = "Fake origin name for 569",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN569-569"
                         },
                         new
                         {
-                            Id = new Guid("55c33cb0-e2a5-4908-99a9-96cb835edf68"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("a10d8d11-fc3e-4c9d-8e52-3f70fd00eb0c"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 570",
                             DestinationName = "Fake destination name for 570",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 570",
                             OriginName = "Fake origin name for 570",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN570-570"
                         },
                         new
                         {
-                            Id = new Guid("4a183ec4-2c8e-4f6a-898a-ab7857328251"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("3a27be44-a874-4307-a716-447eb5b65d3a"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 571",
                             DestinationName = "Fake destination name for 571",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 571",
                             OriginName = "Fake origin name for 571",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN571-571"
                         },
                         new
                         {
-                            Id = new Guid("7b51f9ee-6db8-4357-a1b3-0296b3d0cdbb"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("1793bca4-4635-45c1-886d-1bb06a972506"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 572",
                             DestinationName = "Fake destination name for 572",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 572",
                             OriginName = "Fake origin name for 572",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN572-572"
                         },
                         new
                         {
-                            Id = new Guid("d0f352ba-b7a1-453e-8fd3-a2ec788bcaf8"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("387f9c71-6f53-42b6-8f55-f4cbffd67e37"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 573",
                             DestinationName = "Fake destination name for 573",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 573",
                             OriginName = "Fake origin name for 573",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN573-573"
                         },
                         new
                         {
-                            Id = new Guid("acdc7982-d619-4ae6-b8f2-cac239f61b4f"),
+                            Id = new Guid("2b5c5b3c-917c-438d-94c2-55d4781268bc"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 574",
                             DestinationName = "Fake destination name for 574",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 574",
                             OriginName = "Fake origin name for 574",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN574-574"
                         },
                         new
                         {
-                            Id = new Guid("0840e82b-3fdb-4b9c-a258-e3978d4f2f18"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("7e3a74c2-bc67-40c7-9741-334945283882"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 575",
                             DestinationName = "Fake destination name for 575",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 575",
                             OriginName = "Fake origin name for 575",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN575-575"
                         },
                         new
                         {
-                            Id = new Guid("b344749d-63b2-4582-b0b4-45fd4c994d72"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f4f3da18-c3be-4820-9a1d-2367e94f534c"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 576",
                             DestinationName = "Fake destination name for 576",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 576",
                             OriginName = "Fake origin name for 576",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN576-576"
                         },
                         new
                         {
-                            Id = new Guid("b809c270-4a4b-4ceb-a110-760b2caaccc5"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("345e27f4-0cee-4c90-b6ca-a7dcce973f92"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 577",
                             DestinationName = "Fake destination name for 577",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 577",
                             OriginName = "Fake origin name for 577",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN577-577"
                         },
                         new
                         {
-                            Id = new Guid("60ef2ad5-ebd5-4758-8086-c1c331c76f5b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("94c7ee9b-c1a7-4220-9d9b-ba05c8a53757"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 578",
                             DestinationName = "Fake destination name for 578",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 578",
                             OriginName = "Fake origin name for 578",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN578-578"
                         },
                         new
                         {
-                            Id = new Guid("bbb842e5-0e83-452c-992d-c51cbd147a38"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("659d7417-9307-4046-bdb3-d6737c9f8aa8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 579",
                             DestinationName = "Fake destination name for 579",
                             NumberOfPackeges = 2,
@@ -7062,11 +7066,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4e903764-8a90-4d94-80ab-c93405cf773e"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b44fd2f6-bc20-4c33-9efd-8c2e5b623d93"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 580",
                             DestinationName = "Fake destination name for 580",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 580",
                             OriginName = "Fake origin name for 580",
                             Status = 0,
@@ -7074,8 +7078,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("75912dac-d888-4eae-9a61-7244d2a4e051"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b96e6330-9845-40c0-bf0b-4ca1e7e02239"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 581",
                             DestinationName = "Fake destination name for 581",
                             NumberOfPackeges = 1,
@@ -7086,11 +7090,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("365d45f9-2030-4455-b2ed-969e2dc756ce"),
+                            Id = new Guid("9a8748bb-0af1-4124-a8f6-df988a11651b"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 582",
                             DestinationName = "Fake destination name for 582",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 582",
                             OriginName = "Fake origin name for 582",
                             Status = 0,
@@ -7098,59 +7102,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5183ada7-4815-4792-b1de-14f2084c22f4"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("aaf9eb04-92f5-4433-b7af-33094ebaa515"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 583",
                             DestinationName = "Fake destination name for 583",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 583",
                             OriginName = "Fake origin name for 583",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN583-583"
                         },
                         new
                         {
-                            Id = new Guid("e00b30ef-308f-4371-aef4-61826061726f"),
+                            Id = new Guid("b88fa0c5-cdb2-455a-a15e-ea8990cf67cc"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 584",
                             DestinationName = "Fake destination name for 584",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 584",
                             OriginName = "Fake origin name for 584",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN584-584"
                         },
                         new
                         {
-                            Id = new Guid("15c0536e-a324-4f47-8955-283f27b12503"),
+                            Id = new Guid("7d06a3f1-f654-400f-ad6c-52af2dee0ebf"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 585",
                             DestinationName = "Fake destination name for 585",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 585",
                             OriginName = "Fake origin name for 585",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN585-585"
                         },
                         new
                         {
-                            Id = new Guid("9921397f-ae69-4a68-8561-7f372912eb80"),
+                            Id = new Guid("969b30d8-f01c-4e6d-9787-c90fbac76650"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 586",
                             DestinationName = "Fake destination name for 586",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 586",
                             OriginName = "Fake origin name for 586",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN586-586"
                         },
                         new
                         {
-                            Id = new Guid("8d6853a6-060f-4a72-8f9b-c5cf68fcd8dd"),
+                            Id = new Guid("65c9e191-afff-4955-aac7-e2d114ce20fe"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 587",
                             DestinationName = "Fake destination name for 587",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 587",
                             OriginName = "Fake origin name for 587",
                             Status = 0,
@@ -7158,95 +7162,95 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("db15ecb7-b1fe-465b-8028-7a35de6b3cc2"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("345e214e-ef15-47ef-b596-69bd86cf25c8"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 588",
                             DestinationName = "Fake destination name for 588",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 588",
                             OriginName = "Fake origin name for 588",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN588-588"
                         },
                         new
                         {
-                            Id = new Guid("dc073b52-065e-4533-86d0-88062a5b1f1f"),
+                            Id = new Guid("34116e84-5aca-4ee1-ab0b-4845d91f29f9"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 589",
                             DestinationName = "Fake destination name for 589",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 589",
                             OriginName = "Fake origin name for 589",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN589-589"
                         },
                         new
                         {
-                            Id = new Guid("25009f14-6ec0-485c-9383-59555f3c8670"),
+                            Id = new Guid("59caf1c8-c2b4-4bd5-be00-1380246a08ad"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 590",
                             DestinationName = "Fake destination name for 590",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 590",
                             OriginName = "Fake origin name for 590",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN590-590"
                         },
                         new
                         {
-                            Id = new Guid("586bbfa7-afd0-44e3-8b2e-79d9082d8975"),
+                            Id = new Guid("48e9ec20-b61e-4730-9347-54f089bf0154"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 591",
                             DestinationName = "Fake destination name for 591",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 591",
                             OriginName = "Fake origin name for 591",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN591-591"
                         },
                         new
                         {
-                            Id = new Guid("9f346906-c0c3-435e-bfaf-a79900381fd5"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("e245ba1a-5f83-4f5c-93eb-b2c270e466b5"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 592",
                             DestinationName = "Fake destination name for 592",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 592",
                             OriginName = "Fake origin name for 592",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN592-592"
                         },
                         new
                         {
-                            Id = new Guid("be97c92d-9cf5-4acf-9a4c-6849ff3bf278"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1d5ee400-75f5-4851-aad0-095ccd68ff40"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 593",
                             DestinationName = "Fake destination name for 593",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 593",
                             OriginName = "Fake origin name for 593",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN593-593"
                         },
                         new
                         {
-                            Id = new Guid("ea8950b1-618f-42f8-a582-48bee5e77adf"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("33f77fe9-8edb-4083-8ee6-e3973bd34cca"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 594",
                             DestinationName = "Fake destination name for 594",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 594",
                             OriginName = "Fake origin name for 594",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN594-594"
                         },
                         new
                         {
-                            Id = new Guid("78855e13-d91e-4e42-9a5a-82fe79bd6cf9"),
+                            Id = new Guid("4e4d4df0-c4f2-4d66-967e-c51e532c627f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 595",
                             DestinationName = "Fake destination name for 595",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 595",
                             OriginName = "Fake origin name for 595",
                             Status = 0,
@@ -7254,59 +7258,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("33510335-dc14-40fc-beba-bcf5c5b0716a"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("32f44ded-192a-4e7b-8772-4c22a4611b41"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 596",
                             DestinationName = "Fake destination name for 596",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 596",
                             OriginName = "Fake origin name for 596",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN596-596"
                         },
                         new
                         {
-                            Id = new Guid("37496778-7e72-4e73-a894-2552d349f3c9"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("0646e497-bcf0-4c1f-84d0-b974b0461bfe"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 597",
                             DestinationName = "Fake destination name for 597",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 597",
                             OriginName = "Fake origin name for 597",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN597-597"
                         },
                         new
                         {
-                            Id = new Guid("efe3d471-2c41-49d6-a221-dd280b936241"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("926447f5-a7c1-40ee-9570-9fe56c701af5"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 598",
                             DestinationName = "Fake destination name for 598",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 598",
                             OriginName = "Fake origin name for 598",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN598-598"
                         },
                         new
                         {
-                            Id = new Guid("5106dc7f-59f1-4a9b-a692-9147719f41b4"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("47f54876-6727-44a4-805e-fe75dd5d4132"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 599",
                             DestinationName = "Fake destination name for 599",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 599",
                             OriginName = "Fake origin name for 599",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN599-599"
                         },
                         new
                         {
-                            Id = new Guid("17d1c67a-48ce-48fa-9b0b-6672aff4e922"),
+                            Id = new Guid("10feb604-2a66-4fa4-a6ba-c529cb68fb0f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 600",
                             DestinationName = "Fake destination name for 600",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 600",
                             OriginName = "Fake origin name for 600",
                             Status = 1,
@@ -7314,59 +7318,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c2c09b74-442d-491e-a468-32f6b8cc76f2"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("5da0d725-ad33-4be0-a977-63b46f3f9982"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 601",
                             DestinationName = "Fake destination name for 601",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 601",
                             OriginName = "Fake origin name for 601",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN601-601"
                         },
                         new
                         {
-                            Id = new Guid("83318695-9d79-4764-bad6-333b75dd5832"),
+                            Id = new Guid("ccfa4184-f84d-4d66-8613-de20270806bb"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 602",
                             DestinationName = "Fake destination name for 602",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 602",
                             OriginName = "Fake origin name for 602",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN602-602"
                         },
                         new
                         {
-                            Id = new Guid("25fdb7d4-8a41-4f12-b03d-8d883a6c9013"),
+                            Id = new Guid("924cc6d3-99f5-4c07-9ae5-53215db3f812"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 603",
                             DestinationName = "Fake destination name for 603",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 603",
                             OriginName = "Fake origin name for 603",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN603-603"
                         },
                         new
                         {
-                            Id = new Guid("e0a93397-c412-4b0f-9b75-faba48f6322b"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("4c1b3a7b-5f89-45b8-b501-413eb9a1f420"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 604",
                             DestinationName = "Fake destination name for 604",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 604",
                             OriginName = "Fake origin name for 604",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN604-604"
                         },
                         new
                         {
-                            Id = new Guid("677e50a1-7880-4158-b090-95bc571d011f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ae9defa2-8b42-4152-a1af-55bbbdb1ca55"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 605",
                             DestinationName = "Fake destination name for 605",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 605",
                             OriginName = "Fake origin name for 605",
                             Status = 2,
@@ -7374,11 +7378,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4ac7c6e7-fa63-4bd6-b6f9-bc5ffcf8c28b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("0a726121-b45a-403f-a020-b7cf2b8b7f29"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 606",
                             DestinationName = "Fake destination name for 606",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 606",
                             OriginName = "Fake origin name for 606",
                             Status = 2,
@@ -7386,23 +7390,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("36336323-1b2c-4034-88a3-112f04b08d49"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("d1c374ff-d17f-43d2-832f-63113afc8d2a"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 607",
                             DestinationName = "Fake destination name for 607",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 607",
                             OriginName = "Fake origin name for 607",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN607-607"
                         },
                         new
                         {
-                            Id = new Guid("cc009436-8002-4319-80cf-cd2e821f1791"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d914856f-f46c-431e-8b12-d1653d1fb47d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 608",
                             DestinationName = "Fake destination name for 608",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 608",
                             OriginName = "Fake origin name for 608",
                             Status = 2,
@@ -7410,11 +7414,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a43dad69-f76e-4865-96f1-d8387b475eb0"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("203a7bd9-acb4-434c-aa2b-4e21658955c2"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 609",
                             DestinationName = "Fake destination name for 609",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 609",
                             OriginName = "Fake origin name for 609",
                             Status = 0,
@@ -7422,23 +7426,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b7c5698f-caaa-4a63-b5ea-2bc643a155e5"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("6e9657f0-ac8d-4cdf-abf9-535231f3c444"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 610",
                             DestinationName = "Fake destination name for 610",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 610",
                             OriginName = "Fake origin name for 610",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN610-610"
                         },
                         new
                         {
-                            Id = new Guid("2c3ec9a4-bd95-4d54-bb1d-fb0b358a9c7c"),
+                            Id = new Guid("e763f1a3-7fb2-4dc9-acb0-085ffa67051b"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 611",
                             DestinationName = "Fake destination name for 611",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 611",
                             OriginName = "Fake origin name for 611",
                             Status = 0,
@@ -7446,71 +7450,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("588828d7-9289-4f54-8c5c-f298ae6c03c8"),
+                            Id = new Guid("515e2263-0fb0-4936-947d-4308d1e1a3fe"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 612",
                             DestinationName = "Fake destination name for 612",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 612",
                             OriginName = "Fake origin name for 612",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN612-612"
                         },
                         new
                         {
-                            Id = new Guid("f61725af-7083-488a-bf28-cb2b337a8adc"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("49a9c960-ec6f-4d81-8980-ff77e0331e28"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 613",
                             DestinationName = "Fake destination name for 613",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 613",
                             OriginName = "Fake origin name for 613",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN613-613"
                         },
                         new
                         {
-                            Id = new Guid("1cd50aee-edaf-4cf2-a0ce-700ac52215ff"),
+                            Id = new Guid("0a84d4a7-3ca5-4964-97b6-5e71cccf21ed"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 614",
                             DestinationName = "Fake destination name for 614",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 614",
                             OriginName = "Fake origin name for 614",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN614-614"
                         },
                         new
                         {
-                            Id = new Guid("e2f7ae9d-fa3e-47ea-a101-d40d7e3f17ee"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("3333d59f-73df-4a2f-a64c-1ca76fafa215"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 615",
                             DestinationName = "Fake destination name for 615",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 615",
                             OriginName = "Fake origin name for 615",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN615-615"
                         },
                         new
                         {
-                            Id = new Guid("e55702b5-d115-492c-8c0f-6ae442792e7d"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e5a39ce5-f1ff-4cbb-9ed3-4c441bf049e1"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 616",
                             DestinationName = "Fake destination name for 616",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 616",
                             OriginName = "Fake origin name for 616",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN616-616"
                         },
                         new
                         {
-                            Id = new Guid("ae08f4f5-2c25-4c0d-aa00-586f5c65948d"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("9fdf9028-d1a0-4b5d-8313-5bc810c2ed2d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 617",
                             DestinationName = "Fake destination name for 617",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 617",
                             OriginName = "Fake origin name for 617",
                             Status = 2,
@@ -7518,47 +7522,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6c7fc05c-eca6-4841-bd13-458d53b5b44f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("8ef3f1e0-114c-4f09-86ad-4333aebab479"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 618",
                             DestinationName = "Fake destination name for 618",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 618",
                             OriginName = "Fake origin name for 618",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN618-618"
                         },
                         new
                         {
-                            Id = new Guid("276c3cb0-4bfa-4197-b1e0-1781ecb81239"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("0164d5a1-28a3-4db2-8532-1f675581af04"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 619",
                             DestinationName = "Fake destination name for 619",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 619",
                             OriginName = "Fake origin name for 619",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN619-619"
                         },
                         new
                         {
-                            Id = new Guid("f233405f-6c06-4956-b7a8-4c2659b55fcb"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5adbe593-86d5-4d68-9fc3-00d64e94d30a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 620",
                             DestinationName = "Fake destination name for 620",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 620",
                             OriginName = "Fake origin name for 620",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN620-620"
                         },
                         new
                         {
-                            Id = new Guid("8d6c9827-91fe-4c71-aa3b-2aad786cd338"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("26f2803e-bf60-47da-aaba-5c3614f6c311"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 621",
                             DestinationName = "Fake destination name for 621",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 621",
                             OriginName = "Fake origin name for 621",
                             Status = 0,
@@ -7566,23 +7570,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4ceb99b9-76f1-439c-9b0b-2ec7ce5d6852"),
+                            Id = new Guid("fd7a92a6-570f-4382-8250-ffc623d24e43"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 622",
                             DestinationName = "Fake destination name for 622",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 622",
                             OriginName = "Fake origin name for 622",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN622-622"
                         },
                         new
                         {
-                            Id = new Guid("44387650-5606-494d-9ec1-649b578db49b"),
+                            Id = new Guid("8cebc4cc-f2e2-44e3-ba62-70ffa5a66be4"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 623",
                             DestinationName = "Fake destination name for 623",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 623",
                             OriginName = "Fake origin name for 623",
                             Status = 1,
@@ -7590,59 +7594,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c63b9139-9d4d-4759-b5f0-fbf159c02e93"),
+                            Id = new Guid("a53ba0b0-a6c9-4e7b-98bb-c9a986d11ae3"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 624",
                             DestinationName = "Fake destination name for 624",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 624",
                             OriginName = "Fake origin name for 624",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN624-624"
                         },
                         new
                         {
-                            Id = new Guid("e2f02f2d-cd3f-4552-b9be-9f7731d9ea7f"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("a940e9db-e0aa-4b6c-bb11-db3f6f45a996"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 625",
                             DestinationName = "Fake destination name for 625",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 625",
                             OriginName = "Fake origin name for 625",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN625-625"
                         },
                         new
                         {
-                            Id = new Guid("a81488ec-0673-4434-9c3a-39718521c98e"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0c94931a-e629-4c1c-a4d5-b3f965fd94b3"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 626",
                             DestinationName = "Fake destination name for 626",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 626",
                             OriginName = "Fake origin name for 626",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN626-626"
                         },
                         new
                         {
-                            Id = new Guid("670d014f-37aa-47e5-ab2e-451c71941066"),
+                            Id = new Guid("c9db6231-adda-4f7c-af6c-d7aec9ddc1da"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 627",
                             DestinationName = "Fake destination name for 627",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 627",
                             OriginName = "Fake origin name for 627",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN627-627"
                         },
                         new
                         {
-                            Id = new Guid("0558f714-276d-4542-8e18-8315d21656f0"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("becfcc09-30f9-4015-9429-832a31204eeb"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 628",
                             DestinationName = "Fake destination name for 628",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 628",
                             OriginName = "Fake origin name for 628",
                             Status = 1,
@@ -7650,11 +7654,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5af87ddb-a2c4-43fb-bfa9-3dd39a39179d"),
+                            Id = new Guid("c93f2aee-8b72-4387-b6ac-affb70c6e99f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 629",
                             DestinationName = "Fake destination name for 629",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 629",
                             OriginName = "Fake origin name for 629",
                             Status = 0,
@@ -7662,47 +7666,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ea1fb857-52f9-454d-8895-162873814301"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8c8eed86-4b78-42c8-b9cb-c6d13bd819bb"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 630",
                             DestinationName = "Fake destination name for 630",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 630",
                             OriginName = "Fake origin name for 630",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN630-630"
                         },
                         new
                         {
-                            Id = new Guid("82f5c0c5-b4a9-46fc-878d-96b442fd98e9"),
+                            Id = new Guid("80f44aea-71a2-45bf-be26-4c16997afab4"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 631",
                             DestinationName = "Fake destination name for 631",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 631",
                             OriginName = "Fake origin name for 631",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN631-631"
                         },
                         new
                         {
-                            Id = new Guid("76f5db43-ba8d-4df9-9772-e506fb57ba4f"),
+                            Id = new Guid("21318f46-0564-4bfb-bf26-3685939c5121"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 632",
                             DestinationName = "Fake destination name for 632",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 632",
                             OriginName = "Fake origin name for 632",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN632-632"
                         },
                         new
                         {
-                            Id = new Guid("69a7ae02-3eb8-4358-9a54-b99c3cc5dd94"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("e983fef1-3956-4e3f-ac59-3700c6ce7e23"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 633",
                             DestinationName = "Fake destination name for 633",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 633",
                             OriginName = "Fake origin name for 633",
                             Status = 1,
@@ -7710,23 +7714,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fc8d0e68-eb6f-4ccc-9598-7a7d51de85bd"),
+                            Id = new Guid("702bd642-e218-4bca-ba01-ab6a43e5e405"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 634",
                             DestinationName = "Fake destination name for 634",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 634",
                             OriginName = "Fake origin name for 634",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN634-634"
                         },
                         new
                         {
-                            Id = new Guid("93dc26c5-f7eb-424c-8db2-bf2f97070574"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("3cca16c1-a8d4-4f97-91ce-6c0a70f1bdc7"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 635",
                             DestinationName = "Fake destination name for 635",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 635",
                             OriginName = "Fake origin name for 635",
                             Status = 2,
@@ -7734,19 +7738,19 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5475e14c-c3d5-4ebd-956b-f908cc50cca1"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("660e4f0a-306a-4b6b-a4be-8122d32a8016"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 636",
                             DestinationName = "Fake destination name for 636",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 636",
                             OriginName = "Fake origin name for 636",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN636-636"
                         },
                         new
                         {
-                            Id = new Guid("301bdb89-a297-4030-95b5-7d73d530d8ec"),
+                            Id = new Guid("3bc7bcbe-1906-4277-9cbf-d50cd38126a8"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 637",
                             DestinationName = "Fake destination name for 637",
@@ -7758,119 +7762,119 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5c092baf-9622-4ca6-8bd5-5fb46a1db68d"),
+                            Id = new Guid("abacfd2a-9b9e-464d-ae89-d9494f75b19d"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 638",
                             DestinationName = "Fake destination name for 638",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 638",
                             OriginName = "Fake origin name for 638",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN638-638"
                         },
                         new
                         {
-                            Id = new Guid("09984350-535b-4549-a810-222d3964b75f"),
+                            Id = new Guid("b77b2f8d-746f-469f-ac43-680fdc4beaf4"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 639",
                             DestinationName = "Fake destination name for 639",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 639",
                             OriginName = "Fake origin name for 639",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN639-639"
                         },
                         new
                         {
-                            Id = new Guid("7c81874f-6581-409d-9388-0a1b4e42f533"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("2ad792ce-faf2-476c-92dd-d40dd18e1c4f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 640",
                             DestinationName = "Fake destination name for 640",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 640",
                             OriginName = "Fake origin name for 640",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN640-640"
                         },
                         new
                         {
-                            Id = new Guid("cd8e5745-996d-4fe9-87dd-2cb9c1c96b6d"),
+                            Id = new Guid("3362bba6-2684-47f9-8f56-421039e75229"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 641",
                             DestinationName = "Fake destination name for 641",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 641",
                             OriginName = "Fake origin name for 641",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN641-641"
                         },
                         new
                         {
-                            Id = new Guid("40716798-308f-45e3-a4db-d79064ebfcaf"),
+                            Id = new Guid("3a5a3ab2-27dd-49e6-b14c-560a74a52504"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 642",
                             DestinationName = "Fake destination name for 642",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 642",
                             OriginName = "Fake origin name for 642",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN642-642"
                         },
                         new
                         {
-                            Id = new Guid("c5e62fe1-0a91-4e5b-8319-11bd9d4f838d"),
+                            Id = new Guid("a85745d6-5e64-4e35-aed5-89cc090196f1"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 643",
                             DestinationName = "Fake destination name for 643",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 643",
                             OriginName = "Fake origin name for 643",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN643-643"
                         },
                         new
                         {
-                            Id = new Guid("f76d1d00-e8bf-4b67-8f17-d8ae8428d222"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("802669f3-4e45-43e3-9558-5c9628a33223"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 644",
                             DestinationName = "Fake destination name for 644",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 644",
                             OriginName = "Fake origin name for 644",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN644-644"
                         },
                         new
                         {
-                            Id = new Guid("c7083fea-f76a-4e23-80a4-4f35a3e1f04f"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d4fb9ad1-d1bb-41e7-b75a-13c0b211d6bf"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 645",
                             DestinationName = "Fake destination name for 645",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 645",
                             OriginName = "Fake origin name for 645",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN645-645"
                         },
                         new
                         {
-                            Id = new Guid("71a70407-85bf-4ca0-ad44-0b02061baba3"),
+                            Id = new Guid("ed848674-273b-4678-ab17-47fda2af8204"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 646",
                             DestinationName = "Fake destination name for 646",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 646",
                             OriginName = "Fake origin name for 646",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN646-646"
                         },
                         new
                         {
-                            Id = new Guid("a9980585-3d64-452a-b4fd-c733e9ab5814"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("ac5dd770-99c8-407a-95e3-e5b0d2574781"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 647",
                             DestinationName = "Fake destination name for 647",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 647",
                             OriginName = "Fake origin name for 647",
                             Status = 2,
@@ -7878,95 +7882,95 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d6ca5a12-c76f-4910-bb5d-2b227c436918"),
+                            Id = new Guid("16dfd8dd-edbd-4caf-8cca-b96d755c1e8a"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 648",
                             DestinationName = "Fake destination name for 648",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 648",
                             OriginName = "Fake origin name for 648",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN648-648"
                         },
                         new
                         {
-                            Id = new Guid("d29b978c-ad0c-4c81-9796-83550b5812c9"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("aced646c-c298-43b9-8669-578ecabb06ea"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 649",
                             DestinationName = "Fake destination name for 649",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 649",
                             OriginName = "Fake origin name for 649",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN649-649"
                         },
                         new
                         {
-                            Id = new Guid("08830e14-016a-41f6-bae2-bde5fc5069be"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("40e06931-0530-4a2b-9693-3be131c48e1b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 650",
                             DestinationName = "Fake destination name for 650",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 650",
                             OriginName = "Fake origin name for 650",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN650-650"
                         },
                         new
                         {
-                            Id = new Guid("60683076-499f-446c-a811-8c8bf600e95d"),
+                            Id = new Guid("ad012b52-3664-41da-a51a-0c41e4502d56"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 651",
                             DestinationName = "Fake destination name for 651",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 651",
                             OriginName = "Fake origin name for 651",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN651-651"
                         },
                         new
                         {
-                            Id = new Guid("6c5410f7-4e48-4219-b892-375628ffa3a8"),
+                            Id = new Guid("a6cc8b85-bf72-49dd-b400-630e341d0ba4"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 652",
                             DestinationName = "Fake destination name for 652",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 652",
                             OriginName = "Fake origin name for 652",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN652-652"
                         },
                         new
                         {
-                            Id = new Guid("405ab83c-e2db-4ed9-a7a1-aa1c918eea98"),
+                            Id = new Guid("2aa0b5bf-7cac-406d-9222-9993d9f8650a"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 653",
                             DestinationName = "Fake destination name for 653",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 653",
                             OriginName = "Fake origin name for 653",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN653-653"
                         },
                         new
                         {
-                            Id = new Guid("856f21c9-7b1f-4a78-b67e-6e9481c42a84"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("78ad22e2-132b-4db3-b4ae-6207d3237050"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 654",
                             DestinationName = "Fake destination name for 654",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 654",
                             OriginName = "Fake origin name for 654",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN654-654"
                         },
                         new
                         {
-                            Id = new Guid("1988074d-7748-47e6-9021-e9d312a4be2a"),
+                            Id = new Guid("d79d813c-0378-40bb-8b54-ea3b311eb427"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 655",
                             DestinationName = "Fake destination name for 655",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 655",
                             OriginName = "Fake origin name for 655",
                             Status = 0,
@@ -7974,44 +7978,44 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("29951986-a18f-4881-9adf-3bf738af90b9"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b91d49c6-4eb3-4610-91b0-d62eaf5fe82c"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 656",
                             DestinationName = "Fake destination name for 656",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 656",
                             OriginName = "Fake origin name for 656",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN656-656"
                         },
                         new
                         {
-                            Id = new Guid("5bce973b-d183-4301-91bb-a07f8bba478f"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("8e82e238-5a90-45c3-b023-e2e0cc3286eb"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 657",
                             DestinationName = "Fake destination name for 657",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 657",
                             OriginName = "Fake origin name for 657",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN657-657"
                         },
                         new
                         {
-                            Id = new Guid("798064ea-abbc-4693-a77b-6540f5bb157c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5cf0f002-2e15-4562-870f-80db228ed9ed"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 658",
                             DestinationName = "Fake destination name for 658",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 658",
                             OriginName = "Fake origin name for 658",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN658-658"
                         },
                         new
                         {
-                            Id = new Guid("dbfa62cc-314f-4a74-8a42-77c096d45bd0"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("33ed5a5f-615e-490b-aa7b-6342b29ebb23"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 659",
                             DestinationName = "Fake destination name for 659",
                             NumberOfPackeges = 0,
@@ -8022,11 +8026,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3684356b-119f-40ae-9d5b-412ee9159960"),
+                            Id = new Guid("5f1d4e16-7a31-4d81-a392-d061c7502d1e"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 660",
                             DestinationName = "Fake destination name for 660",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 660",
                             OriginName = "Fake origin name for 660",
                             Status = 0,
@@ -8034,23 +8038,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fb6d95c4-e5fa-4200-a23c-ecfb399e26e4"),
+                            Id = new Guid("ba7814a9-57ca-4bef-a16a-4166799c3a76"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 661",
                             DestinationName = "Fake destination name for 661",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 661",
                             OriginName = "Fake origin name for 661",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN661-661"
                         },
                         new
                         {
-                            Id = new Guid("1ad03562-0504-4315-b94a-5196cab78632"),
+                            Id = new Guid("7c544e05-0300-4264-81b9-b07c4597e288"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 662",
                             DestinationName = "Fake destination name for 662",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 662",
                             OriginName = "Fake origin name for 662",
                             Status = 0,
@@ -8058,23 +8062,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3e93c724-e080-4275-bd5b-3b5dc9eeae98"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("da70fa96-9862-4da0-bde1-51f5f4b0a510"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 663",
                             DestinationName = "Fake destination name for 663",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 663",
                             OriginName = "Fake origin name for 663",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN663-663"
                         },
                         new
                         {
-                            Id = new Guid("1fcfeef0-6141-464f-af0e-b4029ca57f44"),
+                            Id = new Guid("2b045a75-b2d4-48ef-89f5-c32eca1d4bde"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 664",
                             DestinationName = "Fake destination name for 664",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 664",
                             OriginName = "Fake origin name for 664",
                             Status = 0,
@@ -8082,11 +8086,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("54afe0c1-c39a-4fb7-a823-db7d62e4058c"),
+                            Id = new Guid("4310164c-3fba-44b6-aeae-7bf74adeef59"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 665",
                             DestinationName = "Fake destination name for 665",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 665",
                             OriginName = "Fake origin name for 665",
                             Status = 1,
@@ -8094,119 +8098,119 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b2ec9b33-7709-461c-9685-919b8da8b907"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4c0d67d2-c0d9-4d57-9a6c-375bc51becff"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 666",
                             DestinationName = "Fake destination name for 666",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 666",
                             OriginName = "Fake origin name for 666",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN666-666"
                         },
                         new
                         {
-                            Id = new Guid("6be2a024-2fba-4e5c-9307-461cfec5afc3"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("d6e12014-e95f-487e-bfa3-c4c3bd72b85b"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 667",
                             DestinationName = "Fake destination name for 667",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 667",
                             OriginName = "Fake origin name for 667",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN667-667"
                         },
                         new
                         {
-                            Id = new Guid("da153b84-c860-4292-8df8-9db525bd896c"),
+                            Id = new Guid("16dfac19-7c9f-44fd-8782-a71e93d902f2"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 668",
                             DestinationName = "Fake destination name for 668",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 668",
                             OriginName = "Fake origin name for 668",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN668-668"
                         },
                         new
                         {
-                            Id = new Guid("7d6da839-6e24-4bbb-93c9-64dce2db5866"),
+                            Id = new Guid("950d22ce-7e89-4d8c-8288-500b3a5c1119"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 669",
                             DestinationName = "Fake destination name for 669",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 669",
                             OriginName = "Fake origin name for 669",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN669-669"
                         },
                         new
                         {
-                            Id = new Guid("eafe3693-6b57-43dd-a1e1-c213ac1507d7"),
+                            Id = new Guid("32e65e6e-5efb-4c28-8071-137430006bac"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 670",
                             DestinationName = "Fake destination name for 670",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 670",
                             OriginName = "Fake origin name for 670",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN670-670"
                         },
                         new
                         {
-                            Id = new Guid("cbfa9874-08a6-4390-830c-c5de3f67f33a"),
+                            Id = new Guid("89f59448-8c30-4d7a-b364-6aa4313939fc"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 671",
                             DestinationName = "Fake destination name for 671",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 671",
                             OriginName = "Fake origin name for 671",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN671-671"
                         },
                         new
                         {
-                            Id = new Guid("565824cc-ac72-4d1b-a611-d9f64666dc8d"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f465680c-7f0c-4cfd-963d-bcfe7855d5c9"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 672",
                             DestinationName = "Fake destination name for 672",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 672",
                             OriginName = "Fake origin name for 672",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN672-672"
                         },
                         new
                         {
-                            Id = new Guid("9e9d97f6-d76e-4791-8683-43f3fdac3acd"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("73d7e876-c1c5-426a-856a-342251539050"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 673",
                             DestinationName = "Fake destination name for 673",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 673",
                             OriginName = "Fake origin name for 673",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN673-673"
                         },
                         new
                         {
-                            Id = new Guid("b09d41df-b4fd-407b-ab01-6b058c5af5be"),
+                            Id = new Guid("33af1eab-a934-4d1a-95be-a2ab88185875"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 674",
                             DestinationName = "Fake destination name for 674",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 674",
                             OriginName = "Fake origin name for 674",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN674-674"
                         },
                         new
                         {
-                            Id = new Guid("913264ac-35c2-46c7-844b-30cf0efc6f65"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b4d9b708-6912-4adb-b48b-8cb5f45a4494"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 675",
                             DestinationName = "Fake destination name for 675",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 675",
                             OriginName = "Fake origin name for 675",
                             Status = 0,
@@ -8214,8 +8218,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7f5813b7-adc1-4677-b1b7-295bc1bf98fe"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("3559a003-0ca2-4f8a-bdb2-b7e7de7ab843"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 676",
                             DestinationName = "Fake destination name for 676",
                             NumberOfPackeges = 2,
@@ -8226,19 +8230,19 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c38c9346-79d1-4dc2-8e52-e54ec9a428e7"),
+                            Id = new Guid("26aabb47-0a55-42a9-8e78-b9ebe77b9d79"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 677",
                             DestinationName = "Fake destination name for 677",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 677",
                             OriginName = "Fake origin name for 677",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN677-677"
                         },
                         new
                         {
-                            Id = new Guid("19cfabe8-d75c-4bb9-acbf-6a3b8915c4a6"),
+                            Id = new Guid("8c4852d0-e20f-4aac-8ef7-f6fdcc005b05"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 678",
                             DestinationName = "Fake destination name for 678",
@@ -8250,59 +8254,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4a164cb0-acbe-4b76-b390-66ec20371ab3"),
+                            Id = new Guid("980207fa-78e0-4c8e-a7b6-816c27588083"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 679",
                             DestinationName = "Fake destination name for 679",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 679",
                             OriginName = "Fake origin name for 679",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN679-679"
                         },
                         new
                         {
-                            Id = new Guid("9153cb1e-3a6b-4c04-b4a5-f1727d3fcbf9"),
+                            Id = new Guid("c624ba8e-57ac-49f8-a738-b816668d7c4f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 680",
                             DestinationName = "Fake destination name for 680",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 680",
                             OriginName = "Fake origin name for 680",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN680-680"
                         },
                         new
                         {
-                            Id = new Guid("f24f126b-6901-466a-8b3e-304862b453de"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("4032c64c-ce1e-43cb-9770-a21dff1eb194"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 681",
                             DestinationName = "Fake destination name for 681",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 681",
                             OriginName = "Fake origin name for 681",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN681-681"
                         },
                         new
                         {
-                            Id = new Guid("ccad0d11-9e18-44df-9d7d-3f89fdd40dbd"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("0a6fc489-3cf8-4b5e-b9de-cd8d8f0919cf"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 682",
                             DestinationName = "Fake destination name for 682",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 682",
                             OriginName = "Fake origin name for 682",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN682-682"
                         },
                         new
                         {
-                            Id = new Guid("728cfffd-d85b-4e0e-aea1-c6f8dd2c0b1f"),
+                            Id = new Guid("f3bb585d-cdae-4893-abcb-571945792a51"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 683",
                             DestinationName = "Fake destination name for 683",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 683",
                             OriginName = "Fake origin name for 683",
                             Status = 2,
@@ -8310,11 +8314,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ec9d0498-69d9-46d2-898f-dcad10b7a2ed"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("aaaa1594-f545-4363-b81b-e7aa04f25c29"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 684",
                             DestinationName = "Fake destination name for 684",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 684",
                             OriginName = "Fake origin name for 684",
                             Status = 1,
@@ -8322,71 +8326,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a67f3b8d-3995-4d38-ae22-2721792d2919"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("9f0df3d0-ddfa-4319-b33f-843965377623"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 685",
                             DestinationName = "Fake destination name for 685",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 685",
                             OriginName = "Fake origin name for 685",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN685-685"
                         },
                         new
                         {
-                            Id = new Guid("e4b222d9-9d8a-4a15-a786-1133d79f2960"),
+                            Id = new Guid("0464cbe6-2178-495e-8eaa-1bcc762f18b9"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 686",
                             DestinationName = "Fake destination name for 686",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 686",
                             OriginName = "Fake origin name for 686",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN686-686"
                         },
                         new
                         {
-                            Id = new Guid("a92af397-f583-4b42-9de0-cbc163a5d9f9"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("c8a55280-c7f9-4755-986f-e74fcb73cbc5"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 687",
                             DestinationName = "Fake destination name for 687",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 687",
                             OriginName = "Fake origin name for 687",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN687-687"
                         },
                         new
                         {
-                            Id = new Guid("ccd92b72-ed79-483d-87ec-f22009855979"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ac303a08-b102-4541-ab09-5d7441cf4a82"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 688",
                             DestinationName = "Fake destination name for 688",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 688",
                             OriginName = "Fake origin name for 688",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN688-688"
                         },
                         new
                         {
-                            Id = new Guid("38a2c4f3-ab4c-4a9e-bdfe-5413074f40bb"),
+                            Id = new Guid("13ea07a8-4eb6-4a30-9b32-51094bf4dd6f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 689",
                             DestinationName = "Fake destination name for 689",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 689",
                             OriginName = "Fake origin name for 689",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN689-689"
                         },
                         new
                         {
-                            Id = new Guid("d19d19ae-0b24-47f7-9106-b618fe823c6b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a1b11a55-880b-4ecf-85cf-2f07d59e21b3"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 690",
                             DestinationName = "Fake destination name for 690",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 690",
                             OriginName = "Fake origin name for 690",
                             Status = 2,
@@ -8394,47 +8398,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("873da81d-2671-4be6-90d0-69ae7ee87991"),
+                            Id = new Guid("dbeafeb0-fa49-4537-a6f2-292e5ba7dcd8"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 691",
                             DestinationName = "Fake destination name for 691",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 691",
                             OriginName = "Fake origin name for 691",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN691-691"
                         },
                         new
                         {
-                            Id = new Guid("ef9e6e5e-07fc-4d0f-ac28-83e781ab01af"),
+                            Id = new Guid("65e30dc4-a3b7-4bf7-92c3-f9049f1a709a"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 692",
                             DestinationName = "Fake destination name for 692",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 692",
                             OriginName = "Fake origin name for 692",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN692-692"
                         },
                         new
                         {
-                            Id = new Guid("9c67b9c7-bc04-4fb9-a6da-6d481528a146"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4cdd296f-04c0-4444-8e33-294efbfc9b3e"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 693",
                             DestinationName = "Fake destination name for 693",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 693",
                             OriginName = "Fake origin name for 693",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN693-693"
                         },
                         new
                         {
-                            Id = new Guid("6fa519d6-fbf6-480c-b384-590d579e6f77"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("cef5453c-249b-4ef6-8a0c-12a9eedc8971"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 694",
                             DestinationName = "Fake destination name for 694",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 694",
                             OriginName = "Fake origin name for 694",
                             Status = 2,
@@ -8442,23 +8446,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("370de0cc-3d1b-4151-9653-6df23ad3f4da"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b5bc2a27-97b1-4cb2-aee6-aed0646d3c42"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 695",
                             DestinationName = "Fake destination name for 695",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 695",
                             OriginName = "Fake origin name for 695",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN695-695"
                         },
                         new
                         {
-                            Id = new Guid("37fbed8f-40af-483a-b46a-d6929521f9b2"),
+                            Id = new Guid("e1e6715f-44f6-42f5-8b9b-eb0a3540dcfa"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 696",
                             DestinationName = "Fake destination name for 696",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 696",
                             OriginName = "Fake origin name for 696",
                             Status = 2,
@@ -8466,11 +8470,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("969d2281-cf74-48c4-824d-e71f74d0c5ea"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7afcae4b-4ee0-47d6-88d1-034d2ae027b8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 697",
                             DestinationName = "Fake destination name for 697",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 697",
                             OriginName = "Fake origin name for 697",
                             Status = 0,
@@ -8478,11 +8482,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("83d50518-81fd-4a5e-9b63-e158f232ed74"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b8992bfc-f32c-42a1-9a98-77f4dac68cc9"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 698",
                             DestinationName = "Fake destination name for 698",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 698",
                             OriginName = "Fake origin name for 698",
                             Status = 2,
@@ -8490,59 +8494,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e40bced6-4a3e-4c8c-9e4e-65116448dd6e"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("c96a73b0-658f-44ea-b548-7d57a88f2cce"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 699",
                             DestinationName = "Fake destination name for 699",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 699",
                             OriginName = "Fake origin name for 699",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN699-699"
                         },
                         new
                         {
-                            Id = new Guid("c974a31b-f4db-4d82-b109-3dcb571974a4"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("624b87e4-9067-47e5-8a16-89109e5dba00"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 700",
                             DestinationName = "Fake destination name for 700",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 700",
                             OriginName = "Fake origin name for 700",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN700-700"
                         },
                         new
                         {
-                            Id = new Guid("ca62b5aa-a951-4b91-a6b6-9cffdc03fc82"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b6fe9041-4c7e-43a3-8c7f-3f49d5fc1bc5"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 701",
                             DestinationName = "Fake destination name for 701",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 701",
                             OriginName = "Fake origin name for 701",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN701-701"
                         },
                         new
                         {
-                            Id = new Guid("97c8c4d9-4079-49d0-9625-e89d08fcabd1"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ddacec5c-c260-485f-b69f-14bdf88f4cf0"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 702",
                             DestinationName = "Fake destination name for 702",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 702",
                             OriginName = "Fake origin name for 702",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN702-702"
                         },
                         new
                         {
-                            Id = new Guid("7aec5232-154e-47b5-a82e-83d952da8569"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("e6e0d7ee-7319-4dd5-9fb2-bc3a10ee8b09"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 703",
                             DestinationName = "Fake destination name for 703",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 703",
                             OriginName = "Fake origin name for 703",
                             Status = 2,
@@ -8550,83 +8554,83 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a30542c0-9eb1-466c-8d56-184a48e554b2"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("33e668ea-1205-4ee6-bba6-e18152752335"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 704",
                             DestinationName = "Fake destination name for 704",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 704",
                             OriginName = "Fake origin name for 704",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN704-704"
                         },
                         new
                         {
-                            Id = new Guid("3ea686b9-117d-4fc9-858e-9e00ef3535d3"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f1cef0d2-ceb5-4653-8ed9-38355a686b12"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 705",
                             DestinationName = "Fake destination name for 705",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 705",
                             OriginName = "Fake origin name for 705",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN705-705"
                         },
                         new
                         {
-                            Id = new Guid("356d6631-28a2-4f4d-b901-87545162720e"),
+                            Id = new Guid("d5dbb233-202f-4048-82d8-90b7773cfebd"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 706",
                             DestinationName = "Fake destination name for 706",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 706",
                             OriginName = "Fake origin name for 706",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN706-706"
                         },
                         new
                         {
-                            Id = new Guid("a87802d7-1ebb-4895-b855-e922d91701e0"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a3e34572-7867-4dae-9c0c-68e13f32d84e"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 707",
                             DestinationName = "Fake destination name for 707",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 707",
                             OriginName = "Fake origin name for 707",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN707-707"
                         },
                         new
                         {
-                            Id = new Guid("c578bb9a-24ec-49f4-9868-e0e44e8071f8"),
+                            Id = new Guid("f98362e3-026b-4243-926a-db7ab474f56c"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 708",
                             DestinationName = "Fake destination name for 708",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 708",
                             OriginName = "Fake origin name for 708",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN708-708"
                         },
                         new
                         {
-                            Id = new Guid("238cb5e7-97a0-4835-99dd-94917ebd9244"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("3b137c46-934e-446f-9e4a-dca2bb77566d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 709",
                             DestinationName = "Fake destination name for 709",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 709",
                             OriginName = "Fake origin name for 709",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN709-709"
                         },
                         new
                         {
-                            Id = new Guid("d07d8516-3597-4915-8178-783051436b1c"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("66615421-c351-4d8d-b6f7-4cbfea83dd21"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 710",
                             DestinationName = "Fake destination name for 710",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 710",
                             OriginName = "Fake origin name for 710",
                             Status = 0,
@@ -8634,92 +8638,92 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ddfbd7f6-e3f3-41cb-8c3d-7c7ba1af23b1"),
+                            Id = new Guid("558fcbe2-f6f0-4ca1-a5dc-c886bb4d423a"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 711",
                             DestinationName = "Fake destination name for 711",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 711",
                             OriginName = "Fake origin name for 711",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN711-711"
                         },
                         new
                         {
-                            Id = new Guid("dc73cf9d-d67d-4bc9-9ad5-5708eff4c5fc"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4c4b5a79-567c-454e-8039-a1deac87a9d4"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 712",
                             DestinationName = "Fake destination name for 712",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 712",
                             OriginName = "Fake origin name for 712",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN712-712"
                         },
                         new
                         {
-                            Id = new Guid("c37e040c-0258-418d-ab78-587c2c8f9488"),
+                            Id = new Guid("040c713e-63ad-40b7-8df2-e990e56bea6c"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 713",
                             DestinationName = "Fake destination name for 713",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 713",
                             OriginName = "Fake origin name for 713",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN713-713"
                         },
                         new
                         {
-                            Id = new Guid("c15bc003-b4bc-40b9-9e80-b8c32e46ea41"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("2152da2e-ee03-4460-9eb4-4fe6671e51a8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 714",
                             DestinationName = "Fake destination name for 714",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 714",
                             OriginName = "Fake origin name for 714",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN714-714"
                         },
                         new
                         {
-                            Id = new Guid("305f1223-df30-4cd6-aa44-e0f48e45df4e"),
+                            Id = new Guid("d29d155a-7e91-46e9-b6d1-82b235a0a83f"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 715",
                             DestinationName = "Fake destination name for 715",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 715",
                             OriginName = "Fake origin name for 715",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN715-715"
                         },
                         new
                         {
-                            Id = new Guid("0fe23031-e5c1-4170-9caa-c9e92ded2525"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ad7cafcc-8332-46e5-bf93-b01c26627e39"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 716",
                             DestinationName = "Fake destination name for 716",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 716",
                             OriginName = "Fake origin name for 716",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN716-716"
                         },
                         new
                         {
-                            Id = new Guid("3efacc7c-77df-4931-a2c0-2517ca878d4c"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a8deb479-01b3-4b94-bb52-0d6e4f623dc0"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 717",
                             DestinationName = "Fake destination name for 717",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 717",
                             OriginName = "Fake origin name for 717",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN717-717"
                         },
                         new
                         {
-                            Id = new Guid("a90ed402-b6f4-4d6f-b191-6ca9a771d400"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("5861f3da-f73f-4b16-8d79-0076999dbddd"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 718",
                             DestinationName = "Fake destination name for 718",
                             NumberOfPackeges = 0,
@@ -8730,83 +8734,83 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1e736864-e86e-466b-bb37-0efb835baa9d"),
+                            Id = new Guid("0dfd45ae-4e04-4143-a117-4aeb94008fab"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 719",
                             DestinationName = "Fake destination name for 719",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 719",
                             OriginName = "Fake origin name for 719",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN719-719"
                         },
                         new
                         {
-                            Id = new Guid("438e85e4-d0d7-4b9c-bcfc-c5eacd4feb33"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b04d94c1-e3b6-4074-97b7-5cab26715650"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 720",
                             DestinationName = "Fake destination name for 720",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 720",
                             OriginName = "Fake origin name for 720",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN720-720"
                         },
                         new
                         {
-                            Id = new Guid("1bc96481-1b29-4903-9da9-31f6fffe489e"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("31baa096-3d3e-42d9-ac1a-e6b89ed84fba"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 721",
                             DestinationName = "Fake destination name for 721",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 721",
                             OriginName = "Fake origin name for 721",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN721-721"
                         },
                         new
                         {
-                            Id = new Guid("3e96edb9-d3ba-4830-b8a1-59e727048014"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1d6d2d2c-1651-4097-9783-2b2dcbb6d30e"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 722",
                             DestinationName = "Fake destination name for 722",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 722",
                             OriginName = "Fake origin name for 722",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN722-722"
                         },
                         new
                         {
-                            Id = new Guid("a337814d-c5d5-421f-a0ff-03c88eb53b81"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("77fb19c1-d25d-4143-9984-b3b9e893101b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 723",
                             DestinationName = "Fake destination name for 723",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 723",
                             OriginName = "Fake origin name for 723",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN723-723"
                         },
                         new
                         {
-                            Id = new Guid("69241672-1db4-4c7e-a65e-db0316d5a4af"),
+                            Id = new Guid("7efcc45b-43e7-44be-bfbe-157bf8b9639d"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 724",
                             DestinationName = "Fake destination name for 724",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 724",
                             OriginName = "Fake origin name for 724",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN724-724"
                         },
                         new
                         {
-                            Id = new Guid("f12b8118-4106-4058-85d6-a03b4d5592fe"),
+                            Id = new Guid("340870a5-f56d-4a6e-a7e4-b3ac15179452"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 725",
                             DestinationName = "Fake destination name for 725",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 725",
                             OriginName = "Fake origin name for 725",
                             Status = 1,
@@ -8814,59 +8818,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("df597069-14e5-49e9-9701-baa557fc865f"),
+                            Id = new Guid("17d40c6d-d04b-4a20-878d-0023f4f41ce3"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 726",
                             DestinationName = "Fake destination name for 726",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 726",
                             OriginName = "Fake origin name for 726",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN726-726"
                         },
                         new
                         {
-                            Id = new Guid("50171630-a28e-4b65-81ca-bc30d10ff401"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("6540e13a-d236-41c2-aa66-41a9e6afc18a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 727",
                             DestinationName = "Fake destination name for 727",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 727",
                             OriginName = "Fake origin name for 727",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN727-727"
                         },
                         new
                         {
-                            Id = new Guid("a5d5249e-b9df-42c2-a2d0-39155191bf03"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0c542433-7c2a-49e7-b215-6ca3779db3f3"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 728",
                             DestinationName = "Fake destination name for 728",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 728",
                             OriginName = "Fake origin name for 728",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN728-728"
                         },
                         new
                         {
-                            Id = new Guid("7bb323d7-b88a-40b9-b9e4-572896fed7b4"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("a6335166-67db-463f-8801-aca2dca783c5"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 729",
                             DestinationName = "Fake destination name for 729",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 729",
                             OriginName = "Fake origin name for 729",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN729-729"
                         },
                         new
                         {
-                            Id = new Guid("9c5d8c77-975d-4374-b11b-00116a7efb1a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("762c5120-35f6-4fdd-9660-83510cd53651"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 730",
                             DestinationName = "Fake destination name for 730",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 730",
                             OriginName = "Fake origin name for 730",
                             Status = 1,
@@ -8874,11 +8878,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5dcb00b5-2a99-4180-b929-54fb0476e945"),
+                            Id = new Guid("592c350a-c40a-4067-ac01-91d5b0414160"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 731",
                             DestinationName = "Fake destination name for 731",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 731",
                             OriginName = "Fake origin name for 731",
                             Status = 2,
@@ -8886,8 +8890,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3dd83a97-bda6-42d0-b9cc-8f6429acbf81"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5cca3e31-a444-4540-921a-06245136a846"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 732",
                             DestinationName = "Fake destination name for 732",
                             NumberOfPackeges = 3,
@@ -8898,47 +8902,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("356be5d0-78cd-4c5a-8be5-1249fc6635f6"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("9dd3d151-8065-4c01-8ad5-ade73ce97b9e"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 733",
                             DestinationName = "Fake destination name for 733",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 733",
                             OriginName = "Fake origin name for 733",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN733-733"
                         },
                         new
                         {
-                            Id = new Guid("8b646c36-c5a0-4aea-943b-5a4eddef4e4c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f77386ae-22d7-4078-9314-83b522c166ee"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 734",
                             DestinationName = "Fake destination name for 734",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 734",
                             OriginName = "Fake origin name for 734",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN734-734"
                         },
                         new
                         {
-                            Id = new Guid("0e831ae7-1e36-4a9c-9b95-00a4dc993e06"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("55205b00-63e0-4fdf-acea-f027451d873f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 735",
                             DestinationName = "Fake destination name for 735",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 735",
                             OriginName = "Fake origin name for 735",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN735-735"
                         },
                         new
                         {
-                            Id = new Guid("35375885-2264-42ef-9f3c-73b827ad3637"),
+                            Id = new Guid("03566ac3-bbbb-4549-a14f-db75ed33d612"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 736",
                             DestinationName = "Fake destination name for 736",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 736",
                             OriginName = "Fake origin name for 736",
                             Status = 1,
@@ -8946,119 +8950,119 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4adbb677-966b-4554-8a3d-55d35a3a9bee"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("d49f8a5d-e25c-4e8d-b8dd-8fec68c835cb"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 737",
                             DestinationName = "Fake destination name for 737",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 737",
                             OriginName = "Fake origin name for 737",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN737-737"
                         },
                         new
                         {
-                            Id = new Guid("388dda16-6e1b-49d1-b766-6e5eaa0b1cbc"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("69afb188-0fca-45d8-abc1-e103bf98c5e4"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 738",
                             DestinationName = "Fake destination name for 738",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 738",
                             OriginName = "Fake origin name for 738",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN738-738"
                         },
                         new
                         {
-                            Id = new Guid("b2f972fc-5f13-4a71-85fa-8725d59c2076"),
+                            Id = new Guid("a625462f-657a-443e-ac06-8f974d87ba93"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 739",
                             DestinationName = "Fake destination name for 739",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 739",
                             OriginName = "Fake origin name for 739",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN739-739"
                         },
                         new
                         {
-                            Id = new Guid("00b2f0d4-8e41-4004-b594-2050bb6dc291"),
+                            Id = new Guid("430dc819-62f4-42ce-bf59-84a1c65bbbeb"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 740",
                             DestinationName = "Fake destination name for 740",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 740",
                             OriginName = "Fake origin name for 740",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN740-740"
                         },
                         new
                         {
-                            Id = new Guid("29360b38-7d88-47b6-9cf7-441dcecffd44"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a9cc4344-2f99-48bc-a15c-6a26491fdbcb"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 741",
                             DestinationName = "Fake destination name for 741",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 741",
                             OriginName = "Fake origin name for 741",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN741-741"
                         },
                         new
                         {
-                            Id = new Guid("12b8e264-27a4-4955-8da8-5d9d81ee1d78"),
+                            Id = new Guid("bd15c4fc-c173-4241-bb85-7b66e16d010a"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 742",
                             DestinationName = "Fake destination name for 742",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 742",
                             OriginName = "Fake origin name for 742",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN742-742"
                         },
                         new
                         {
-                            Id = new Guid("0ab4d731-aa42-4c52-ade7-366f09999f21"),
+                            Id = new Guid("c2a99198-a7c0-428e-83d3-82eb548f9365"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 743",
                             DestinationName = "Fake destination name for 743",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 743",
                             OriginName = "Fake origin name for 743",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN743-743"
                         },
                         new
                         {
-                            Id = new Guid("fd13e0f1-9fff-408d-bc9e-5384dcd0f5e3"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("d28878d9-9483-4abf-80d8-300ad3b85be8"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 744",
                             DestinationName = "Fake destination name for 744",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 744",
                             OriginName = "Fake origin name for 744",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN744-744"
                         },
                         new
                         {
-                            Id = new Guid("b0642c36-5354-48d6-92d6-ed3c1fb6b3ea"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b82e706c-517c-4334-9ef4-4781458851e4"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 745",
                             DestinationName = "Fake destination name for 745",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 745",
                             OriginName = "Fake origin name for 745",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN745-745"
                         },
                         new
                         {
-                            Id = new Guid("84df5e69-51cc-4c5f-951c-c358296a10ff"),
+                            Id = new Guid("d4134650-4dfd-4332-90e5-7e90a24ffae3"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 746",
                             DestinationName = "Fake destination name for 746",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 746",
                             OriginName = "Fake origin name for 746",
                             Status = 2,
@@ -9066,59 +9070,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c4eed75f-10e1-493f-b2e7-2433a2d20200"),
+                            Id = new Guid("4adc7112-e8a8-46c9-bf28-d607078e5b67"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 747",
                             DestinationName = "Fake destination name for 747",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 747",
                             OriginName = "Fake origin name for 747",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN747-747"
                         },
                         new
                         {
-                            Id = new Guid("d8e6354c-8850-4d4a-82f1-78e8c37b6d21"),
+                            Id = new Guid("d3f52357-33f2-499c-89c0-c6cfbd1958e8"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 748",
                             DestinationName = "Fake destination name for 748",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 748",
                             OriginName = "Fake origin name for 748",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN748-748"
                         },
                         new
                         {
-                            Id = new Guid("89f6eeb1-86cf-45a4-bddd-8d4e4f4929eb"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("f81abafc-907b-47b4-b540-f1bd3591854f"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 749",
                             DestinationName = "Fake destination name for 749",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 749",
                             OriginName = "Fake origin name for 749",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN749-749"
                         },
                         new
                         {
-                            Id = new Guid("342e0f5a-c579-424e-9ffb-01c59c906d0f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("bcadcac5-77db-4440-82dd-c3543f22623f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 750",
                             DestinationName = "Fake destination name for 750",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 750",
                             OriginName = "Fake origin name for 750",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN750-750"
                         },
                         new
                         {
-                            Id = new Guid("75cda98c-40f4-46bc-8f58-8e7947d328ca"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b5df132a-518c-4889-afb5-12e854edd472"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 751",
                             DestinationName = "Fake destination name for 751",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 751",
                             OriginName = "Fake origin name for 751",
                             Status = 2,
@@ -9126,32 +9130,32 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e118fdab-5c1a-4f16-826b-f2728a0f6c78"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("04e92623-bbd9-4ea6-a42a-c2aca11cba5d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 752",
                             DestinationName = "Fake destination name for 752",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 752",
                             OriginName = "Fake origin name for 752",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN752-752"
                         },
                         new
                         {
-                            Id = new Guid("da25ab4b-2f25-43f8-9e04-4f5f3ff80403"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("5e6b87db-69c9-4e7b-94e6-b7e8db2d2849"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 753",
                             DestinationName = "Fake destination name for 753",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 753",
                             OriginName = "Fake origin name for 753",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN753-753"
                         },
                         new
                         {
-                            Id = new Guid("580194b6-b8bc-45fd-acb9-f0f0aa65b533"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ff1ba047-f225-4759-9521-323d52414bd6"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 754",
                             DestinationName = "Fake destination name for 754",
                             NumberOfPackeges = 0,
@@ -9162,11 +9166,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("586d4729-fdf4-4ce0-bcd2-e7f3d8d375d5"),
+                            Id = new Guid("5955b2ee-c44a-4730-a783-0f6c0e96e858"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 755",
                             DestinationName = "Fake destination name for 755",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 755",
                             OriginName = "Fake origin name for 755",
                             Status = 1,
@@ -9174,8 +9178,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("911c4250-8306-4745-a667-cb43470be971"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f2d0b56b-ff6e-405e-b996-6731be158ddf"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 756",
                             DestinationName = "Fake destination name for 756",
                             NumberOfPackeges = 1,
@@ -9186,11 +9190,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3c7d62e7-ad38-414a-8477-ad87460c5b7d"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("9aaf7c0d-28c2-472d-86e4-fee3d50e7549"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 757",
                             DestinationName = "Fake destination name for 757",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 757",
                             OriginName = "Fake origin name for 757",
                             Status = 1,
@@ -9198,35 +9202,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3a067793-517b-4f60-9bdd-c11a23e74ca7"),
+                            Id = new Guid("33fdecc5-d202-4cf0-87d2-4770885660af"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 758",
                             DestinationName = "Fake destination name for 758",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 758",
                             OriginName = "Fake origin name for 758",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN758-758"
                         },
                         new
                         {
-                            Id = new Guid("5e6c7220-3d40-43bf-b2ab-76c83aac755c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0bfa2abc-2600-4d69-9b63-39533b79aabe"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 759",
                             DestinationName = "Fake destination name for 759",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 759",
                             OriginName = "Fake origin name for 759",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN759-759"
                         },
                         new
                         {
-                            Id = new Guid("16adc9ec-6513-41c9-84c1-49aedcc4907a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("76522ac7-eaa1-4139-9b84-f539b8ea402b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 760",
                             DestinationName = "Fake destination name for 760",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 760",
                             OriginName = "Fake origin name for 760",
                             Status = 1,
@@ -9234,23 +9238,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("41f73309-8f57-4e79-9908-1f88cab06227"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1f8bd52b-1096-4839-b62c-afc763e2a963"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 761",
                             DestinationName = "Fake destination name for 761",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 761",
                             OriginName = "Fake origin name for 761",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN761-761"
                         },
                         new
                         {
-                            Id = new Guid("806c45e7-2c95-4fef-bc1f-fad9532b140e"),
+                            Id = new Guid("24dcd534-2695-4138-94b8-7d19863b12c4"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 762",
                             DestinationName = "Fake destination name for 762",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 762",
                             OriginName = "Fake origin name for 762",
                             Status = 0,
@@ -9258,80 +9262,80 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f14b28fe-e194-435e-97dd-c48b28ff01c8"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a398fcef-09a9-48e4-9eaf-2d7b79912d33"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 763",
                             DestinationName = "Fake destination name for 763",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 763",
                             OriginName = "Fake origin name for 763",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN763-763"
                         },
                         new
                         {
-                            Id = new Guid("68d98f59-7ecb-4838-b24e-baf67688ff99"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("5b8a5c11-ef2a-4408-b76c-66d49c486c30"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 764",
                             DestinationName = "Fake destination name for 764",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 764",
                             OriginName = "Fake origin name for 764",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN764-764"
                         },
                         new
                         {
-                            Id = new Guid("b7ef110b-8b02-4fb4-80fb-d372a6597a40"),
+                            Id = new Guid("3934e1d4-7279-4feb-a940-4470f606262f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 765",
                             DestinationName = "Fake destination name for 765",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 765",
                             OriginName = "Fake origin name for 765",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN765-765"
                         },
                         new
                         {
-                            Id = new Guid("64ae6a81-dc22-43dc-94fd-2594855b7a16"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("28db16ff-7258-4c88-96f9-ea069715069d"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 766",
                             DestinationName = "Fake destination name for 766",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 766",
                             OriginName = "Fake origin name for 766",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN766-766"
                         },
                         new
                         {
-                            Id = new Guid("3a6cb08c-bc25-467b-b113-6e2b6e43a968"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("9b5c6fa8-5356-45ef-8cc4-5f97ac3e16c9"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 767",
                             DestinationName = "Fake destination name for 767",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 767",
                             OriginName = "Fake origin name for 767",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN767-767"
                         },
                         new
                         {
-                            Id = new Guid("19de6795-b813-4f5e-be5d-a1093c475a69"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("716431d7-051e-4158-98c7-ffb5ec7b425b"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 768",
                             DestinationName = "Fake destination name for 768",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 768",
                             OriginName = "Fake origin name for 768",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN768-768"
                         },
                         new
                         {
-                            Id = new Guid("70da4f49-00c4-4030-9b12-de263c862c4a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("97b029d5-6817-4202-8536-cda2e2f205b3"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 769",
                             DestinationName = "Fake destination name for 769",
                             NumberOfPackeges = 1,
@@ -9342,31 +9346,31 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1e3a8bb4-d521-4788-8cf0-a16571116d0d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("992bab2a-5904-4aa2-b4f3-e6bf783c60ae"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 770",
                             DestinationName = "Fake destination name for 770",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 770",
                             OriginName = "Fake origin name for 770",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN770-770"
                         },
                         new
                         {
-                            Id = new Guid("e873402b-ade3-47cc-b52f-8a7b3212e9e2"),
+                            Id = new Guid("9f2d8494-68c9-41e4-a409-327cf98df9a9"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 771",
                             DestinationName = "Fake destination name for 771",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 771",
                             OriginName = "Fake origin name for 771",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN771-771"
                         },
                         new
                         {
-                            Id = new Guid("1d3534db-8d25-4f87-a923-be2be4afb38d"),
+                            Id = new Guid("d4827b9e-faf6-4376-bad5-5882f127432f"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 772",
                             DestinationName = "Fake destination name for 772",
@@ -9378,20 +9382,20 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9b97ce17-a0de-4eef-851e-14bc5fce7c9d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1a7240ee-a6f1-49bf-98aa-cfe59a3c9cdd"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 773",
                             DestinationName = "Fake destination name for 773",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 773",
                             OriginName = "Fake origin name for 773",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN773-773"
                         },
                         new
                         {
-                            Id = new Guid("e35a4dc2-6d6d-40bb-9c6c-55aacd72bc80"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("0b31eb95-f4da-4c97-8b73-cf9144982376"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 774",
                             DestinationName = "Fake destination name for 774",
                             NumberOfPackeges = 0,
@@ -9402,71 +9406,71 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c066ee0a-7380-43de-ae66-9d8c63e7a81b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("18379e3a-cf29-4350-ab95-a15b6d39dbfe"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 775",
                             DestinationName = "Fake destination name for 775",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 775",
                             OriginName = "Fake origin name for 775",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN775-775"
                         },
                         new
                         {
-                            Id = new Guid("60d9cb0b-a14e-40d3-9341-fc50b8a83221"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7269d63a-aacd-44f2-b2cb-6087b86d63ad"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 776",
                             DestinationName = "Fake destination name for 776",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 776",
                             OriginName = "Fake origin name for 776",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN776-776"
                         },
                         new
                         {
-                            Id = new Guid("5f2ce092-01bc-4efa-9e3a-c8cc4337edcc"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("f0dd28fb-1c56-4d98-888c-9d8e62a9afdb"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 777",
                             DestinationName = "Fake destination name for 777",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 777",
                             OriginName = "Fake origin name for 777",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN777-777"
                         },
                         new
                         {
-                            Id = new Guid("765cf5b8-3663-46c1-8e9c-63e86ee1fb2a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("408b0214-3043-4614-96d9-3c43a2d1fa7f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 778",
                             DestinationName = "Fake destination name for 778",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 778",
                             OriginName = "Fake origin name for 778",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN778-778"
                         },
                         new
                         {
-                            Id = new Guid("c9577663-32bb-4f10-b318-5a82e4f95e5f"),
+                            Id = new Guid("ef857c6d-1c60-429b-a732-95f9d2890066"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 779",
                             DestinationName = "Fake destination name for 779",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 779",
                             OriginName = "Fake origin name for 779",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN779-779"
                         },
                         new
                         {
-                            Id = new Guid("4160e59f-43f4-4d12-8ae5-090a960ded70"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("b58c0ec7-aa79-4909-b768-832fe9936574"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 780",
                             DestinationName = "Fake destination name for 780",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 780",
                             OriginName = "Fake origin name for 780",
                             Status = 1,
@@ -9474,95 +9478,95 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7d6d1345-813d-42d3-92de-11fd25527e99"),
+                            Id = new Guid("3c571bc5-b3a3-4479-a1e6-243ae8c39cb4"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 781",
                             DestinationName = "Fake destination name for 781",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 781",
                             OriginName = "Fake origin name for 781",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN781-781"
                         },
                         new
                         {
-                            Id = new Guid("c2426d35-82bf-4bd7-859b-a5353b3c6a06"),
+                            Id = new Guid("f093f32e-43af-43bc-8ce7-9b419352995e"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 782",
                             DestinationName = "Fake destination name for 782",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 782",
                             OriginName = "Fake origin name for 782",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN782-782"
                         },
                         new
                         {
-                            Id = new Guid("d46514e8-a266-41fd-ac03-aea581accb68"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5a8b1a54-6d3d-409e-8eb4-8edb063da37f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 783",
                             DestinationName = "Fake destination name for 783",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 783",
                             OriginName = "Fake origin name for 783",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN783-783"
                         },
                         new
                         {
-                            Id = new Guid("791658aa-321f-4a58-980d-f3fda97ab830"),
+                            Id = new Guid("efe0de53-d7f0-47d2-8628-67836a923fc9"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 784",
                             DestinationName = "Fake destination name for 784",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 784",
                             OriginName = "Fake origin name for 784",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN784-784"
                         },
                         new
                         {
-                            Id = new Guid("b5e8eb20-b924-4ccc-a179-5f1718690d8d"),
+                            Id = new Guid("fe4aa045-f93c-444c-882f-d0c79947ed47"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 785",
                             DestinationName = "Fake destination name for 785",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 785",
                             OriginName = "Fake origin name for 785",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN785-785"
                         },
                         new
                         {
-                            Id = new Guid("56d31de5-b0d8-4b4b-903f-6a15346645fd"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("cd86e4cb-9f12-441e-9b20-0a47a05480c5"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 786",
                             DestinationName = "Fake destination name for 786",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 786",
                             OriginName = "Fake origin name for 786",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN786-786"
                         },
                         new
                         {
-                            Id = new Guid("9e5d6560-35b4-4f9c-8d9f-a9420f69dc48"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ecf67e63-757e-4017-8454-c02efe4fe514"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 787",
                             DestinationName = "Fake destination name for 787",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 787",
                             OriginName = "Fake origin name for 787",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN787-787"
                         },
                         new
                         {
-                            Id = new Guid("fe0f0d9f-b8ce-4ce2-939e-11aee0ee533b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("368bc3f1-fef7-4e4b-a493-5ff10eeeaef4"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 788",
                             DestinationName = "Fake destination name for 788",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 788",
                             OriginName = "Fake origin name for 788",
                             Status = 1,
@@ -9570,32 +9574,32 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("74e96f41-7284-4aa0-9b0e-8d9438003e78"),
+                            Id = new Guid("854c69d9-ceba-4368-9d21-33dcba0abeda"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 789",
                             DestinationName = "Fake destination name for 789",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 789",
                             OriginName = "Fake origin name for 789",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN789-789"
                         },
                         new
                         {
-                            Id = new Guid("3df655ed-4d76-423c-b061-dc22c375ee5f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("3fa9fc30-2d73-4e99-ab42-054200321d8c"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 790",
                             DestinationName = "Fake destination name for 790",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 790",
                             OriginName = "Fake origin name for 790",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN790-790"
                         },
                         new
                         {
-                            Id = new Guid("149673a0-de4f-4779-a545-d1cffa4e7986"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("6b263dbc-9e9c-43a8-81b9-3b7108b9e4ed"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 791",
                             DestinationName = "Fake destination name for 791",
                             NumberOfPackeges = 0,
@@ -9606,35 +9610,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b48675f9-9a6b-4e20-8dbc-e2ba7ea9e372"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ac878436-dce4-4a30-a47f-a45dc5745295"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 792",
                             DestinationName = "Fake destination name for 792",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 792",
                             OriginName = "Fake origin name for 792",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN792-792"
                         },
                         new
                         {
-                            Id = new Guid("9f6808f6-046c-4979-a0f4-f5d49dfd50ee"),
+                            Id = new Guid("ec6a53e2-2a5b-4c50-9ce5-c275965f9efc"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 793",
                             DestinationName = "Fake destination name for 793",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 793",
                             OriginName = "Fake origin name for 793",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN793-793"
                         },
                         new
                         {
-                            Id = new Guid("e5e533ec-8486-4428-b93f-838b6f399a06"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("7c421009-3a4a-43a6-a782-0080c28eef30"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 794",
                             DestinationName = "Fake destination name for 794",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 794",
                             OriginName = "Fake origin name for 794",
                             Status = 2,
@@ -9642,95 +9646,95 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8b5bb87d-84dd-46ba-a7f6-52fc9c079b2e"),
+                            Id = new Guid("0c35875c-7c85-453b-802a-d80a2ec542b5"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 795",
                             DestinationName = "Fake destination name for 795",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 795",
                             OriginName = "Fake origin name for 795",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN795-795"
                         },
                         new
                         {
-                            Id = new Guid("abb7270f-e225-472a-81b9-a3041544375b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c3b4400f-134c-4c7b-b1c1-7acaa4216bf6"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 796",
                             DestinationName = "Fake destination name for 796",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 796",
                             OriginName = "Fake origin name for 796",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN796-796"
                         },
                         new
                         {
-                            Id = new Guid("36f54f65-7585-40ba-b75b-964df39575db"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("98601a2e-007b-43c3-936d-b2eca0f6e6b4"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 797",
                             DestinationName = "Fake destination name for 797",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 797",
                             OriginName = "Fake origin name for 797",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN797-797"
                         },
                         new
                         {
-                            Id = new Guid("70be20b5-ce20-4c8a-8e28-416bf321c931"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("f22486d7-54d4-4a03-83f9-d3003a9d5605"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 798",
                             DestinationName = "Fake destination name for 798",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 798",
                             OriginName = "Fake origin name for 798",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN798-798"
                         },
                         new
                         {
-                            Id = new Guid("5c479dde-a5e7-4e8b-90f1-4f640a9e188c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1c64e4a3-2a04-4ea1-a1ee-7aeac08dacb2"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 799",
                             DestinationName = "Fake destination name for 799",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 799",
                             OriginName = "Fake origin name for 799",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN799-799"
                         },
                         new
                         {
-                            Id = new Guid("b87a9d5f-83bc-4268-afe9-8f0a143bf1a9"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("bc0c4e5e-48d0-4658-91a0-ab3466e8467a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 800",
                             DestinationName = "Fake destination name for 800",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 800",
                             OriginName = "Fake origin name for 800",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN800-800"
                         },
                         new
                         {
-                            Id = new Guid("199ff6e5-e54b-42a4-8102-22b9dfaa37c3"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("ca5337e1-cebf-4b5d-bbb3-811152a32247"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 801",
                             DestinationName = "Fake destination name for 801",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 801",
                             OriginName = "Fake origin name for 801",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN801-801"
                         },
                         new
                         {
-                            Id = new Guid("dbf1b15b-33da-478e-adab-e6a0d2ff0597"),
+                            Id = new Guid("85e39e43-2336-4b06-9dad-dabe48884c23"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 802",
                             DestinationName = "Fake destination name for 802",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 802",
                             OriginName = "Fake origin name for 802",
                             Status = 1,
@@ -9738,11 +9742,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1f16438d-a9a6-450e-b0d8-d7725f2cc07c"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f4a6a93c-76ef-487c-a235-6123c19fe44f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 803",
                             DestinationName = "Fake destination name for 803",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 803",
                             OriginName = "Fake origin name for 803",
                             Status = 0,
@@ -9750,11 +9754,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0bd728ec-0478-4905-9732-c4cecdd1d806"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("828b5b52-131b-4fa9-801d-0d4a6df7147d"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 804",
                             DestinationName = "Fake destination name for 804",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 804",
                             OriginName = "Fake origin name for 804",
                             Status = 2,
@@ -9762,35 +9766,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bd4d8826-c592-40ad-8151-9232207f3e14"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d9ffb5ee-58aa-4113-bca3-18c7cfe1dedc"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 805",
                             DestinationName = "Fake destination name for 805",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 805",
                             OriginName = "Fake origin name for 805",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN805-805"
                         },
                         new
                         {
-                            Id = new Guid("bbc84828-c4e6-45c9-af9f-2b4277003b4b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("3a2af49f-1a22-44c1-9669-d5944b56aa93"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 806",
                             DestinationName = "Fake destination name for 806",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 806",
                             OriginName = "Fake origin name for 806",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN806-806"
                         },
                         new
                         {
-                            Id = new Guid("611b3e2c-1b81-4099-9191-c9e3b2e4608f"),
+                            Id = new Guid("453f5561-1fde-485a-ba0c-c43e8c3adbd4"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 807",
                             DestinationName = "Fake destination name for 807",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 807",
                             OriginName = "Fake origin name for 807",
                             Status = 0,
@@ -9798,11 +9802,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f4ab8cc6-afc9-491e-92dd-68dd872a7104"),
+                            Id = new Guid("cce7c17b-c8c9-4b5a-b29d-e9ebd353874e"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 808",
                             DestinationName = "Fake destination name for 808",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 808",
                             OriginName = "Fake origin name for 808",
                             Status = 1,
@@ -9810,23 +9814,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5d703862-82df-4dae-9c28-eb17520d13ea"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("382d30cf-3ca8-47ff-a063-d1759d703809"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 809",
                             DestinationName = "Fake destination name for 809",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 809",
                             OriginName = "Fake origin name for 809",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN809-809"
                         },
                         new
                         {
-                            Id = new Guid("13b7778f-ee0d-4b5c-89f4-97629dbdeeb1"),
+                            Id = new Guid("1fa85acd-fb05-4345-9c4c-a97a2bf730e9"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 810",
                             DestinationName = "Fake destination name for 810",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 810",
                             OriginName = "Fake origin name for 810",
                             Status = 2,
@@ -9834,35 +9838,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9d922c69-5d48-49ea-8e5c-0cacd4111775"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ce8b6907-3255-471d-98fc-cb6d7da16e05"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 811",
                             DestinationName = "Fake destination name for 811",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 811",
                             OriginName = "Fake origin name for 811",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN811-811"
                         },
                         new
                         {
-                            Id = new Guid("3fdf7cb7-41f7-4cd8-bc2b-1cd16edc7733"),
+                            Id = new Guid("055f1392-d19b-46f8-9297-9602ab2d9ccf"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 812",
                             DestinationName = "Fake destination name for 812",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 812",
                             OriginName = "Fake origin name for 812",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN812-812"
                         },
                         new
                         {
-                            Id = new Guid("5a702767-af20-4659-8127-ad29894e62dd"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("61886ffa-cb3e-43ba-b79a-2479127ba0d7"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 813",
                             DestinationName = "Fake destination name for 813",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 813",
                             OriginName = "Fake origin name for 813",
                             Status = 1,
@@ -9870,8 +9874,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("490f2e54-7c89-404b-8203-8931055bc53b"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5be3e4d6-3b75-4196-ba0a-cc9bed691089"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 814",
                             DestinationName = "Fake destination name for 814",
                             NumberOfPackeges = 1,
@@ -9882,11 +9886,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7f13a0b7-9299-4fc5-8b5f-4bc4e56d1977"),
+                            Id = new Guid("28844304-eedb-4068-9dd5-adf7b80327b6"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 815",
                             DestinationName = "Fake destination name for 815",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 815",
                             OriginName = "Fake origin name for 815",
                             Status = 1,
@@ -9894,23 +9898,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1f16f14c-23e9-40b3-9498-77305a2f7157"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a50a93ad-3618-4ed8-a1b3-96f2704a5fb6"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 816",
                             DestinationName = "Fake destination name for 816",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 816",
                             OriginName = "Fake origin name for 816",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN816-816"
                         },
                         new
                         {
-                            Id = new Guid("526fc415-5e1a-4f4d-993d-47e445d529fc"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("92de05ac-e51c-4524-a1c2-680871b9e72a"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 817",
                             DestinationName = "Fake destination name for 817",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 817",
                             OriginName = "Fake origin name for 817",
                             Status = 0,
@@ -9918,59 +9922,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("22193aef-819d-4fe6-b94a-e8079b9f9749"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("8f6311ab-47db-4d3d-9ed0-35c251d1b618"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 818",
                             DestinationName = "Fake destination name for 818",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 818",
                             OriginName = "Fake origin name for 818",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN818-818"
                         },
                         new
                         {
-                            Id = new Guid("3b2f6e9d-9b7b-4b2b-ae17-404a5ceccdb6"),
+                            Id = new Guid("2c9c2c86-3bdf-4a28-a5f7-b067ea09c689"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 819",
                             DestinationName = "Fake destination name for 819",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 819",
                             OriginName = "Fake origin name for 819",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN819-819"
                         },
                         new
                         {
-                            Id = new Guid("fefecdba-4662-4b60-9061-2063606db77e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b5cada5a-b2b9-4d48-9785-08ea4002c9c1"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 820",
                             DestinationName = "Fake destination name for 820",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 820",
                             OriginName = "Fake origin name for 820",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN820-820"
                         },
                         new
                         {
-                            Id = new Guid("7150f6b6-f8eb-41c8-a16a-cfe45500f6fc"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("acd4dcc5-1f2a-4116-98aa-836c2c453923"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 821",
                             DestinationName = "Fake destination name for 821",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 821",
                             OriginName = "Fake origin name for 821",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN821-821"
                         },
                         new
                         {
-                            Id = new Guid("7ccbc6f8-f9b8-4aa7-b0cf-549013feea4a"),
+                            Id = new Guid("6a85d755-e36e-468d-9b73-dd17c5943f65"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 822",
                             DestinationName = "Fake destination name for 822",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 822",
                             OriginName = "Fake origin name for 822",
                             Status = 0,
@@ -9978,23 +9982,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6c962bdf-bbc9-459b-ae66-c1cea59fb215"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("6982c173-16f8-4022-862f-8dd41191c9e9"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 823",
                             DestinationName = "Fake destination name for 823",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 823",
                             OriginName = "Fake origin name for 823",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN823-823"
                         },
                         new
                         {
-                            Id = new Guid("d3b1bf5e-6063-48c5-8c08-bf1172c845be"),
+                            Id = new Guid("116164fa-1464-4199-8cd3-965b22b75648"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 824",
                             DestinationName = "Fake destination name for 824",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 824",
                             OriginName = "Fake origin name for 824",
                             Status = 2,
@@ -10002,59 +10006,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b39ee4f7-542c-456e-be76-4cac2ec25585"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("a60370c6-2f94-4f53-825a-257f72f8fe15"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 825",
                             DestinationName = "Fake destination name for 825",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 825",
                             OriginName = "Fake origin name for 825",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN825-825"
                         },
                         new
                         {
-                            Id = new Guid("f6a68162-8fdf-4135-af39-7661fd0acf95"),
+                            Id = new Guid("52d71650-a838-400f-86f6-9ee9b8f84ebe"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 826",
                             DestinationName = "Fake destination name for 826",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 826",
                             OriginName = "Fake origin name for 826",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN826-826"
                         },
                         new
                         {
-                            Id = new Guid("883a270a-307e-4228-9267-0dd8236ae94f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("72c5538c-6692-4782-95fb-6a9a7d0590a2"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 827",
                             DestinationName = "Fake destination name for 827",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 827",
                             OriginName = "Fake origin name for 827",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN827-827"
                         },
                         new
                         {
-                            Id = new Guid("c60f2331-9d71-42b5-a27c-1795d3826478"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("ef442ab8-b63b-43dc-b050-68d2eb2204ed"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 828",
                             DestinationName = "Fake destination name for 828",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 828",
                             OriginName = "Fake origin name for 828",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN828-828"
                         },
                         new
                         {
-                            Id = new Guid("b819695b-3581-4cf5-b271-d1a91f6c09b2"),
+                            Id = new Guid("084db446-904f-4b21-b4b7-03cdd14220a0"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 829",
                             DestinationName = "Fake destination name for 829",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 829",
                             OriginName = "Fake origin name for 829",
                             Status = 2,
@@ -10062,23 +10066,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("953d28c7-397e-46c7-9196-8a759898032f"),
+                            Id = new Guid("02a03d4e-855e-44d1-8946-aaed7f15570f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 830",
                             DestinationName = "Fake destination name for 830",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 830",
                             OriginName = "Fake origin name for 830",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN830-830"
                         },
                         new
                         {
-                            Id = new Guid("d206053e-a475-4ec6-a465-f9a4db11de9c"),
+                            Id = new Guid("b5fdd899-0dd5-4761-8fb2-ebe2d5c978ec"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 831",
                             DestinationName = "Fake destination name for 831",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 831",
                             OriginName = "Fake origin name for 831",
                             Status = 2,
@@ -10086,56 +10090,56 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8932c735-ab45-461d-b117-0b04a9958bf3"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("1afd349b-3ef8-4cc7-92a3-69fd31fb3201"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 832",
                             DestinationName = "Fake destination name for 832",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 832",
                             OriginName = "Fake origin name for 832",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN832-832"
                         },
                         new
                         {
-                            Id = new Guid("8b9a7cf1-4022-4275-bb81-35950b586186"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("84c6a9ec-f210-4238-bc06-69fcc8141daa"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 833",
                             DestinationName = "Fake destination name for 833",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 833",
                             OriginName = "Fake origin name for 833",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN833-833"
                         },
                         new
                         {
-                            Id = new Guid("aff435cf-b692-469c-a35f-8394a5b2ada2"),
+                            Id = new Guid("dc6baa1f-b66b-480d-9744-063725ad80c2"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 834",
                             DestinationName = "Fake destination name for 834",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 834",
                             OriginName = "Fake origin name for 834",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN834-834"
                         },
                         new
                         {
-                            Id = new Guid("8d2af8df-8575-4a03-acab-bfec84a54e26"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("10c57dd4-2cd7-4271-bd06-6a1418a18d12"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 835",
                             DestinationName = "Fake destination name for 835",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 835",
                             OriginName = "Fake origin name for 835",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN835-835"
                         },
                         new
                         {
-                            Id = new Guid("2cdeaed0-97ba-484a-9995-a4c6fd7b4071"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1c190298-a26b-41f7-9c97-980bc9637ca2"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 836",
                             DestinationName = "Fake destination name for 836",
                             NumberOfPackeges = 4,
@@ -10146,35 +10150,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("43c1154d-3e72-4a30-afdf-5a89d0deb4f5"),
+                            Id = new Guid("3d70e5de-23a3-4d96-84fa-a478daa08a9f"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 837",
                             DestinationName = "Fake destination name for 837",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 837",
                             OriginName = "Fake origin name for 837",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN837-837"
                         },
                         new
                         {
-                            Id = new Guid("f35f0a06-d73a-4454-9154-293fca7d09ed"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("92396bf1-136c-416a-9c3e-c65514640b87"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 838",
                             DestinationName = "Fake destination name for 838",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 838",
                             OriginName = "Fake origin name for 838",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN838-838"
                         },
                         new
                         {
-                            Id = new Guid("b93300a5-8d19-4b27-b58f-39b8f5fa6805"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("2c60d63f-8c33-42ed-96ec-fa75ad73c294"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 839",
                             DestinationName = "Fake destination name for 839",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 839",
                             OriginName = "Fake origin name for 839",
                             Status = 0,
@@ -10182,11 +10186,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0401bca0-1ac7-473c-92f2-1987c5ea1464"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("06ba0c20-7ddf-4258-96c3-d654415af799"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 840",
                             DestinationName = "Fake destination name for 840",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 840",
                             OriginName = "Fake origin name for 840",
                             Status = 2,
@@ -10194,44 +10198,44 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0dd5a4f2-03be-4e29-8eb1-78ef513327af"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("5c596231-8b99-47e0-a4c7-1fc82e8ca6d7"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 841",
                             DestinationName = "Fake destination name for 841",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 841",
                             OriginName = "Fake origin name for 841",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN841-841"
                         },
                         new
                         {
-                            Id = new Guid("3ed76556-fe8a-4337-96aa-5980e29775fa"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("10ad8314-1ce4-43aa-8483-c68d361a81ab"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 842",
                             DestinationName = "Fake destination name for 842",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 842",
                             OriginName = "Fake origin name for 842",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN842-842"
                         },
                         new
                         {
-                            Id = new Guid("92cd0be9-a221-4f45-a71e-cb1e76e77125"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("cddaeab9-c051-480e-aa71-3c6106246114"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 843",
                             DestinationName = "Fake destination name for 843",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 843",
                             OriginName = "Fake origin name for 843",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN843-843"
                         },
                         new
                         {
-                            Id = new Guid("fadcf6ce-227b-400a-94bd-c2ca261ef745"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("cc96e2e8-bcc4-44a4-846d-f9610f94b28f"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 844",
                             DestinationName = "Fake destination name for 844",
                             NumberOfPackeges = 4,
@@ -10242,23 +10246,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8913775f-3d69-421c-b96a-40bc42f0092c"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("afa26828-a965-4143-8801-7a05458b59b0"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 845",
                             DestinationName = "Fake destination name for 845",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 845",
                             OriginName = "Fake origin name for 845",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN845-845"
                         },
                         new
                         {
-                            Id = new Guid("a503c6f7-c2d9-4e2d-b9d0-258f8b314595"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("916ed8fc-8071-4a64-b5a3-1ac861fa44a6"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 846",
                             DestinationName = "Fake destination name for 846",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 846",
                             OriginName = "Fake origin name for 846",
                             Status = 2,
@@ -10266,47 +10270,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f278bd9f-7abf-4538-90be-e73120c00a12"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("914be1d1-67f2-458d-b361-6769f685f7d1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 847",
                             DestinationName = "Fake destination name for 847",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 847",
                             OriginName = "Fake origin name for 847",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN847-847"
                         },
                         new
                         {
-                            Id = new Guid("7d550e62-1773-42de-a3c1-a6fc565a3e5b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("621b2e90-a22e-4a78-9b7b-b243a9a54245"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 848",
                             DestinationName = "Fake destination name for 848",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 848",
                             OriginName = "Fake origin name for 848",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN848-848"
                         },
                         new
                         {
-                            Id = new Guid("4bae79d0-062d-45b7-9638-1191cf6b2305"),
+                            Id = new Guid("87acd9f1-455f-4147-b60e-0cba83d157ce"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 849",
                             DestinationName = "Fake destination name for 849",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 849",
                             OriginName = "Fake origin name for 849",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN849-849"
                         },
                         new
                         {
-                            Id = new Guid("4fb0d116-a46a-46b1-9b16-20fa520feee1"),
+                            Id = new Guid("054296b0-f41c-4c5d-b217-8644357053fc"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 850",
                             DestinationName = "Fake destination name for 850",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 850",
                             OriginName = "Fake origin name for 850",
                             Status = 0,
@@ -10314,11 +10318,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2e52190c-f51b-4ec3-a36b-d505f9179968"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f6317b57-9c63-4c29-90c3-14c89bbe57bd"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 851",
                             DestinationName = "Fake destination name for 851",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 851",
                             OriginName = "Fake origin name for 851",
                             Status = 2,
@@ -10326,20 +10330,20 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a3b1c393-896b-4ba4-9f92-3078299accbf"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ccbc4453-a438-480d-bad0-4cda42a892a8"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 852",
                             DestinationName = "Fake destination name for 852",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 852",
                             OriginName = "Fake origin name for 852",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN852-852"
                         },
                         new
                         {
-                            Id = new Guid("8fd3c2e6-b1d1-42bd-aa09-1013e9a205f3"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("4468ea14-02e3-4613-b04f-89db6ed7853d"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 853",
                             DestinationName = "Fake destination name for 853",
                             NumberOfPackeges = 0,
@@ -10350,47 +10354,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("de040169-086a-439c-b168-0236faf8f187"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("3c64b1f8-f441-4d6b-accb-c2d72f366292"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 854",
                             DestinationName = "Fake destination name for 854",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 854",
                             OriginName = "Fake origin name for 854",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN854-854"
                         },
                         new
                         {
-                            Id = new Guid("12697167-aece-4de6-acf7-c99b861a0754"),
+                            Id = new Guid("7a7a497e-5b93-4686-86c0-9f7ac0e7e430"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 855",
                             DestinationName = "Fake destination name for 855",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 855",
                             OriginName = "Fake origin name for 855",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN855-855"
                         },
                         new
                         {
-                            Id = new Guid("12b6dbb2-a56a-46a9-807c-5b0fde9f97dd"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4da80200-84fd-4b04-8866-da658382ca28"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 856",
                             DestinationName = "Fake destination name for 856",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 856",
                             OriginName = "Fake origin name for 856",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN856-856"
                         },
                         new
                         {
-                            Id = new Guid("e04e6fb9-f37b-4b22-b7b6-5584e9726c8a"),
+                            Id = new Guid("453a61a5-f61d-4bc0-ad56-ce939cbd7636"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 857",
                             DestinationName = "Fake destination name for 857",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 857",
                             OriginName = "Fake origin name for 857",
                             Status = 2,
@@ -10398,23 +10402,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cf49304a-3bfd-42b9-8f2b-ff5cb023a769"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f3410577-5f48-491b-9824-f85a16c2ef0b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 858",
                             DestinationName = "Fake destination name for 858",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 858",
                             OriginName = "Fake origin name for 858",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN858-858"
                         },
                         new
                         {
-                            Id = new Guid("d01b5657-63e6-497a-8744-271383c8585b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("85f8db24-8af2-4e61-b393-0bdb118518d1"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 859",
                             DestinationName = "Fake destination name for 859",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 859",
                             OriginName = "Fake origin name for 859",
                             Status = 2,
@@ -10422,23 +10426,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7ad0ea26-1561-43fd-91e2-0eeb1757795f"),
+                            Id = new Guid("496198f8-8c85-4eb1-ac05-9b6cc1975254"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 860",
                             DestinationName = "Fake destination name for 860",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 860",
                             OriginName = "Fake origin name for 860",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN860-860"
                         },
                         new
                         {
-                            Id = new Guid("dc0e2d01-506e-4891-8f62-c98611905b18"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("272ee354-8189-4a6f-9f44-91ee04d86676"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 861",
                             DestinationName = "Fake destination name for 861",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 861",
                             OriginName = "Fake origin name for 861",
                             Status = 1,
@@ -10446,8 +10450,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8286498b-a2ca-4651-a264-8f8bb250079b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("0f0ebb2c-f078-46e5-a46f-473b2c86b821"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 862",
                             DestinationName = "Fake destination name for 862",
                             NumberOfPackeges = 0,
@@ -10458,11 +10462,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8fc3d88c-81fe-49e4-8a6f-5ed517a5ea7a"),
+                            Id = new Guid("083e628a-c732-4dc9-982e-f736c93cf1d2"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 863",
                             DestinationName = "Fake destination name for 863",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 863",
                             OriginName = "Fake origin name for 863",
                             Status = 1,
@@ -10470,23 +10474,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("acbcbeec-315c-480c-ad93-aadbd3fb1d5e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("3fb5b2a5-4c4b-4932-93fd-8df47427e9b1"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 864",
                             DestinationName = "Fake destination name for 864",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 864",
                             OriginName = "Fake origin name for 864",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN864-864"
                         },
                         new
                         {
-                            Id = new Guid("1fb3b75b-216c-4fc1-83e0-f1e7b7289be4"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("851c5e7d-5bc4-4305-9723-0fc1ccd9a1dd"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 865",
                             DestinationName = "Fake destination name for 865",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 865",
                             OriginName = "Fake origin name for 865",
                             Status = 0,
@@ -10494,47 +10498,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("87191b13-e9db-45cf-b143-3dd6b14bc132"),
+                            Id = new Guid("2d849977-e5ff-41b2-b404-bff08a2b09f3"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 866",
                             DestinationName = "Fake destination name for 866",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 866",
                             OriginName = "Fake origin name for 866",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN866-866"
                         },
                         new
                         {
-                            Id = new Guid("979a7db2-ad4d-4104-87bb-88fed08d8831"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("fac346c8-b331-409d-a3ef-507fae2e49f7"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 867",
                             DestinationName = "Fake destination name for 867",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 867",
                             OriginName = "Fake origin name for 867",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN867-867"
                         },
                         new
                         {
-                            Id = new Guid("a90cfed6-f4d0-4096-a8b8-99926319be91"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("e691294d-45b7-436e-9dbe-90980e71b76d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 868",
                             DestinationName = "Fake destination name for 868",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 868",
                             OriginName = "Fake origin name for 868",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN868-868"
                         },
                         new
                         {
-                            Id = new Guid("fda71814-6e79-4f28-8e51-cd4bd9a74e69"),
+                            Id = new Guid("0715cdf9-7fdc-4feb-be1e-7fdab60cfc6d"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 869",
                             DestinationName = "Fake destination name for 869",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 869",
                             OriginName = "Fake origin name for 869",
                             Status = 2,
@@ -10542,11 +10546,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("19c5cf29-109f-4541-b75e-c78af076df44"),
+                            Id = new Guid("0302ed3b-4e9b-44ab-bc9a-c657e7c6b7b3"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 870",
                             DestinationName = "Fake destination name for 870",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 870",
                             OriginName = "Fake origin name for 870",
                             Status = 1,
@@ -10554,83 +10558,83 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b52b6ba8-0ea1-4bc0-bbc0-779792080d7d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("fd75aa29-ea4f-49bf-b5c8-340b13ba1160"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 871",
                             DestinationName = "Fake destination name for 871",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 871",
                             OriginName = "Fake origin name for 871",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN871-871"
                         },
                         new
                         {
-                            Id = new Guid("7adc8c44-dd06-49c1-a0fa-e8ddc3e48d97"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("bab55504-66e0-4028-9a2e-b662d110b700"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 872",
                             DestinationName = "Fake destination name for 872",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 872",
                             OriginName = "Fake origin name for 872",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN872-872"
                         },
                         new
                         {
-                            Id = new Guid("9eca782d-e392-4dcd-8739-40f2752b2ee2"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a82290d8-0a19-4dd8-b77a-6a473dd745bc"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 873",
                             DestinationName = "Fake destination name for 873",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 873",
                             OriginName = "Fake origin name for 873",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN873-873"
                         },
                         new
                         {
-                            Id = new Guid("6ea5d312-e6e3-479d-8d3e-abc8faea3033"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("683b3d4f-382e-4bda-829c-016ebd9562cc"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 874",
                             DestinationName = "Fake destination name for 874",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 874",
                             OriginName = "Fake origin name for 874",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN874-874"
                         },
                         new
                         {
-                            Id = new Guid("ac2fd829-8eb7-473d-87e7-1a6fc061e0f1"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("6402c140-fa3c-49fd-a472-cad5037b81f4"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 875",
                             DestinationName = "Fake destination name for 875",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 875",
                             OriginName = "Fake origin name for 875",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN875-875"
                         },
                         new
                         {
-                            Id = new Guid("f3652ca1-3e45-41d4-8a5d-1a74c93607c9"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d27235d5-a8a9-4334-88e5-fedcc195b955"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 876",
                             DestinationName = "Fake destination name for 876",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 876",
                             OriginName = "Fake origin name for 876",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN876-876"
                         },
                         new
                         {
-                            Id = new Guid("dbafe7df-1ae3-44e1-899b-c98080f763b3"),
+                            Id = new Guid("ef402298-9858-46eb-b1d5-8db8fbe01041"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 877",
                             DestinationName = "Fake destination name for 877",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 877",
                             OriginName = "Fake origin name for 877",
                             Status = 2,
@@ -10638,11 +10642,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("04a874b2-6919-4305-b110-40da11a0b160"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f6e8cecf-f57d-4e78-9243-6c2d69dd5dec"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 878",
                             DestinationName = "Fake destination name for 878",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 878",
                             OriginName = "Fake origin name for 878",
                             Status = 0,
@@ -10650,35 +10654,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8e6402fe-8783-496a-b7b2-eb57dc95505d"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1950445a-5b9a-46b6-902b-ab408e739db8"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 879",
                             DestinationName = "Fake destination name for 879",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 879",
                             OriginName = "Fake origin name for 879",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN879-879"
                         },
                         new
                         {
-                            Id = new Guid("9980446f-4695-4f63-bb0b-9688909591bb"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("30e125ed-5c35-4027-81d6-df0ffd084b19"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 880",
                             DestinationName = "Fake destination name for 880",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 880",
                             OriginName = "Fake origin name for 880",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN880-880"
                         },
                         new
                         {
-                            Id = new Guid("657ffb0b-79b9-4f4f-b9a2-d11292b0f40f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b039d9ac-5c8c-4862-85ef-19852a131351"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 881",
                             DestinationName = "Fake destination name for 881",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 881",
                             OriginName = "Fake origin name for 881",
                             Status = 0,
@@ -10686,35 +10690,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("873a89fd-5bfc-4197-9f0e-6e4ff9b35b91"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("10d1929c-a6de-427a-a1c0-e67fbd9309bf"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 882",
                             DestinationName = "Fake destination name for 882",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 882",
                             OriginName = "Fake origin name for 882",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN882-882"
                         },
                         new
                         {
-                            Id = new Guid("ea960b68-8316-4c54-a020-24d2ef76288e"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("1c98706a-47b1-4ff1-bb85-ec66f03d4722"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 883",
                             DestinationName = "Fake destination name for 883",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 883",
                             OriginName = "Fake origin name for 883",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN883-883"
                         },
                         new
                         {
-                            Id = new Guid("735a74ef-f39b-4582-95a2-91ef5d3c9324"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("b15d37da-8987-429a-855e-d8ebe567fea9"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 884",
                             DestinationName = "Fake destination name for 884",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 884",
                             OriginName = "Fake origin name for 884",
                             Status = 1,
@@ -10722,83 +10726,83 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e63e12af-20a9-46b1-b040-3058a0501749"),
+                            Id = new Guid("a7d3d48d-af24-4bdd-bc41-f375507dfd91"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 885",
                             DestinationName = "Fake destination name for 885",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 885",
                             OriginName = "Fake origin name for 885",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN885-885"
                         },
                         new
                         {
-                            Id = new Guid("f345f928-216f-4366-97a0-5a81f60d9e09"),
+                            Id = new Guid("5d0a1ddb-aa7f-43dc-8b41-1d3134a74819"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 886",
                             DestinationName = "Fake destination name for 886",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 886",
                             OriginName = "Fake origin name for 886",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN886-886"
                         },
                         new
                         {
-                            Id = new Guid("571836ac-5c65-482c-8abc-62b9f698011a"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c7faa0c7-680b-48a0-97f0-bc3b846065ab"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 887",
                             DestinationName = "Fake destination name for 887",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 887",
                             OriginName = "Fake origin name for 887",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN887-887"
                         },
                         new
                         {
-                            Id = new Guid("a859341d-2457-42c2-a790-912e8afba38a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("753e910c-f76f-4a36-9ccd-f88f8269ae5b"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 888",
                             DestinationName = "Fake destination name for 888",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 888",
                             OriginName = "Fake origin name for 888",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN888-888"
                         },
                         new
                         {
-                            Id = new Guid("bc3644fd-ba72-4f19-b6d3-7844938a8671"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("32802f79-29f2-494c-911e-1b422e473e92"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 889",
                             DestinationName = "Fake destination name for 889",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 889",
                             OriginName = "Fake origin name for 889",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN889-889"
                         },
                         new
                         {
-                            Id = new Guid("0c2f80e6-dff8-48d4-86a1-c9285247a930"),
+                            Id = new Guid("bbff3ceb-aa20-4cc8-9071-393097dcc325"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 890",
                             DestinationName = "Fake destination name for 890",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 890",
                             OriginName = "Fake origin name for 890",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN890-890"
                         },
                         new
                         {
-                            Id = new Guid("e79edc7b-813b-4aa4-9a47-c137194c988e"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("1fda5a21-b99c-4e79-b000-374b0b88f424"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 891",
                             DestinationName = "Fake destination name for 891",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 891",
                             OriginName = "Fake origin name for 891",
                             Status = 2,
@@ -10806,107 +10810,107 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8f162738-6795-4058-a458-aca26ea4a999"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("cb5e02f8-1e07-4966-a320-6e33b58aed7b"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 892",
                             DestinationName = "Fake destination name for 892",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 892",
                             OriginName = "Fake origin name for 892",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN892-892"
                         },
                         new
                         {
-                            Id = new Guid("bab3b8a3-00b3-45f0-8bb3-22bab2f62044"),
+                            Id = new Guid("3e11be52-9807-4bc9-b1b4-799892931e3a"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 893",
                             DestinationName = "Fake destination name for 893",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 893",
                             OriginName = "Fake origin name for 893",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN893-893"
                         },
                         new
                         {
-                            Id = new Guid("820a7f49-f4f7-4c6c-acc6-a4fff3263a42"),
+                            Id = new Guid("4c48e39d-e1c4-431e-8bea-8014f0286595"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 894",
                             DestinationName = "Fake destination name for 894",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 894",
                             OriginName = "Fake origin name for 894",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN894-894"
                         },
                         new
                         {
-                            Id = new Guid("084229a4-394c-448f-a956-43e9cd427b54"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7364eb37-bb4f-48e7-b4ce-9a6f76617de8"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 895",
                             DestinationName = "Fake destination name for 895",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 895",
                             OriginName = "Fake origin name for 895",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN895-895"
                         },
                         new
                         {
-                            Id = new Guid("445d1967-3963-4ed9-b92c-d4b0bcd0641c"),
+                            Id = new Guid("d70deb99-7fad-4351-a8c0-023f62e2f4f4"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 896",
                             DestinationName = "Fake destination name for 896",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 896",
                             OriginName = "Fake origin name for 896",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN896-896"
                         },
                         new
                         {
-                            Id = new Guid("7f02bbf9-f9cf-41f8-8135-ba1914552c6e"),
+                            Id = new Guid("f260ad07-3e68-48ac-8349-25232ec78d1e"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 897",
                             DestinationName = "Fake destination name for 897",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 897",
                             OriginName = "Fake origin name for 897",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN897-897"
                         },
                         new
                         {
-                            Id = new Guid("12a9e3b2-3e29-4f72-82e8-5bfb2fdd9975"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("13ed2c56-0baa-4f83-8390-70d2c4ac3642"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 898",
                             DestinationName = "Fake destination name for 898",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 898",
                             OriginName = "Fake origin name for 898",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN898-898"
                         },
                         new
                         {
-                            Id = new Guid("c3134a5a-eea2-4216-970b-84fbc2067970"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b36f96ee-dde1-4fea-97a3-dd6c9685e5db"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 899",
                             DestinationName = "Fake destination name for 899",
                             NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 899",
                             OriginName = "Fake origin name for 899",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN899-899"
                         },
                         new
                         {
-                            Id = new Guid("39e6f3f2-7e48-4de1-b95d-f462ffad0382"),
+                            Id = new Guid("38d13cdf-bd17-4cdd-a435-98bd265ccf14"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 900",
                             DestinationName = "Fake destination name for 900",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 900",
                             OriginName = "Fake origin name for 900",
                             Status = 0,
@@ -10914,35 +10918,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("001a6660-b149-4406-9c10-898d95e3fe86"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("f089845a-58a8-49aa-b439-2aecc07e1b9e"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 901",
                             DestinationName = "Fake destination name for 901",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 901",
                             OriginName = "Fake origin name for 901",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN901-901"
                         },
                         new
                         {
-                            Id = new Guid("24d29eeb-8105-4d88-93e8-e17e00d36b0e"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b04549f1-e8af-46b6-ab77-0930b1dcd3de"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 902",
                             DestinationName = "Fake destination name for 902",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 902",
                             OriginName = "Fake origin name for 902",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN902-902"
                         },
                         new
                         {
-                            Id = new Guid("d68650c9-baa9-48a9-8350-d89f8411b009"),
+                            Id = new Guid("53b642ed-d901-4447-bbfd-03bd14c096ae"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 903",
                             DestinationName = "Fake destination name for 903",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 903",
                             OriginName = "Fake origin name for 903",
                             Status = 1,
@@ -10950,47 +10954,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("46bd693a-6240-4404-bdf7-0b5d8c5a6d70"),
+                            Id = new Guid("2a0ab25c-0b7e-45af-bdd7-a37988b74e84"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 904",
                             DestinationName = "Fake destination name for 904",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 904",
                             OriginName = "Fake origin name for 904",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN904-904"
                         },
                         new
                         {
-                            Id = new Guid("791e0ffd-269f-42fc-80a5-52c7eef7cf09"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("ef57901b-41a3-4e00-b971-9c6c227ac69c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 905",
                             DestinationName = "Fake destination name for 905",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 905",
                             OriginName = "Fake origin name for 905",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN905-905"
                         },
                         new
                         {
-                            Id = new Guid("59ee7507-b80e-40b4-84fa-6486dea0d9a8"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("7ca56fa0-5500-4dc4-b406-117b74842433"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 906",
                             DestinationName = "Fake destination name for 906",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 906",
                             OriginName = "Fake origin name for 906",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN906-906"
                         },
                         new
                         {
-                            Id = new Guid("a2d7e740-8037-45ad-b11a-ac3925242e4a"),
+                            Id = new Guid("b6bee4e1-b0d8-4400-8a32-453b0e388324"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 907",
                             DestinationName = "Fake destination name for 907",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 907",
                             OriginName = "Fake origin name for 907",
                             Status = 1,
@@ -10998,35 +11002,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e193438f-0262-4f7f-af20-9d933884b0c0"),
+                            Id = new Guid("8e939fce-9faf-4993-8499-cbc38f4f48a5"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 908",
                             DestinationName = "Fake destination name for 908",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 908",
                             OriginName = "Fake origin name for 908",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN908-908"
                         },
                         new
                         {
-                            Id = new Guid("22d69223-a6d8-4c3d-a29b-c1c64b915c60"),
+                            Id = new Guid("10d7bef3-8f4f-4397-babd-49693e745ebf"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 909",
                             DestinationName = "Fake destination name for 909",
                             NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 909",
                             OriginName = "Fake origin name for 909",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN909-909"
                         },
                         new
                         {
-                            Id = new Guid("3b234916-4e2c-481c-8d95-480ce7b1f92e"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("9f8e502e-a36a-40dc-a6d6-3a3ecfc38a57"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 910",
                             DestinationName = "Fake destination name for 910",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 910",
                             OriginName = "Fake origin name for 910",
                             Status = 0,
@@ -11034,11 +11038,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("996b91d9-648e-4e47-a4b8-6168c4bf44c6"),
+                            Id = new Guid("f9c99d8e-845b-401c-9bbb-c5010bc0b4b1"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 911",
                             DestinationName = "Fake destination name for 911",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 911",
                             OriginName = "Fake origin name for 911",
                             Status = 0,
@@ -11046,23 +11050,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2584a256-58b8-4251-a07e-d347e268b01d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("e693f84c-1063-455d-a01a-dbea1cdd2f71"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 912",
                             DestinationName = "Fake destination name for 912",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 912",
                             OriginName = "Fake origin name for 912",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN912-912"
                         },
                         new
                         {
-                            Id = new Guid("4db679db-eef3-4ee1-9906-7960bde06370"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2043e2f9-79d1-4e0f-9c0f-8b8aacc50101"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 913",
                             DestinationName = "Fake destination name for 913",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 913",
                             OriginName = "Fake origin name for 913",
                             Status = 1,
@@ -11070,23 +11074,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("324c738f-2b56-46fc-ae88-ead10f205bb3"),
+                            Id = new Guid("5d26979b-2aee-4535-88c0-b393520c2395"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 914",
                             DestinationName = "Fake destination name for 914",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 914",
                             OriginName = "Fake origin name for 914",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN914-914"
                         },
                         new
                         {
-                            Id = new Guid("0fd225af-30b7-41d6-b852-4c9d24e6e394"),
+                            Id = new Guid("35e9dcbb-a651-4f3f-b12a-8ff0e08a524b"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 915",
                             DestinationName = "Fake destination name for 915",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 915",
                             OriginName = "Fake origin name for 915",
                             Status = 0,
@@ -11094,11 +11098,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ebf3107d-bf51-49a0-9e26-c6faa535ea7c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("296fed64-11c7-4c6d-bfc9-2ce22479bbef"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 916",
                             DestinationName = "Fake destination name for 916",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 916",
                             OriginName = "Fake origin name for 916",
                             Status = 2,
@@ -11106,35 +11110,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8b227606-8c66-4434-9117-0b0e2a1512fa"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("30df03f0-9241-41a6-b35c-2a597494af12"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 917",
                             DestinationName = "Fake destination name for 917",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 917",
                             OriginName = "Fake origin name for 917",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN917-917"
                         },
                         new
                         {
-                            Id = new Guid("1a0e87b9-5109-43cc-9b9e-4c7d3d266a69"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4f416310-ca41-42b4-921f-fd040b6bca07"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 918",
                             DestinationName = "Fake destination name for 918",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 918",
                             OriginName = "Fake origin name for 918",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN918-918"
                         },
                         new
                         {
-                            Id = new Guid("14bf129f-cf45-4837-805c-c6bb3f8ee973"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("14d3fecc-d7b3-4b19-9392-1a840cb5f66c"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 919",
                             DestinationName = "Fake destination name for 919",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 919",
                             OriginName = "Fake origin name for 919",
                             Status = 1,
@@ -11142,23 +11146,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2239fdbb-3d04-4b01-8441-e61dbc0e7d9e"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("42c1f10e-6688-435c-b3d6-081604b02b95"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 920",
                             DestinationName = "Fake destination name for 920",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 920",
                             OriginName = "Fake origin name for 920",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN920-920"
                         },
                         new
                         {
-                            Id = new Guid("83551536-a857-4dae-82dc-df513ab4dc1c"),
+                            Id = new Guid("3fcdf410-a9db-4045-9c2e-9f69226bcde7"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 921",
                             DestinationName = "Fake destination name for 921",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 921",
                             OriginName = "Fake origin name for 921",
                             Status = 1,
@@ -11166,20 +11170,20 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8c0a35d6-aa3e-4218-9c5a-a3f02ce01718"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ac13e422-1cf4-4a63-b9f5-7e13a2328f91"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 922",
                             DestinationName = "Fake destination name for 922",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 922",
                             OriginName = "Fake origin name for 922",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN922-922"
                         },
                         new
                         {
-                            Id = new Guid("76d8283f-c94c-4621-b318-3070ea676b9c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("9f3369cf-771f-4ea9-b7a2-740eb9e12d1f"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 923",
                             DestinationName = "Fake destination name for 923",
                             NumberOfPackeges = 4,
@@ -11190,11 +11194,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8cc539e8-def2-49f9-b1d8-aeceb9077ec8"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c03db9aa-4185-439d-ba5b-65fbb64cbd40"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 924",
                             DestinationName = "Fake destination name for 924",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 924",
                             OriginName = "Fake origin name for 924",
                             Status = 0,
@@ -11202,23 +11206,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a032472b-b8ab-44af-b92b-8cc2f54e3740"),
+                            Id = new Guid("ff1d141f-34fa-4254-ab3e-50e6b59871db"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 925",
                             DestinationName = "Fake destination name for 925",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 925",
                             OriginName = "Fake origin name for 925",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN925-925"
                         },
                         new
                         {
-                            Id = new Guid("2880bb7d-b7d3-4158-bfcd-d479e4a0fae9"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f2eab776-6550-4af7-ba8b-507ea6dd1d31"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 926",
                             DestinationName = "Fake destination name for 926",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 926",
                             OriginName = "Fake origin name for 926",
                             Status = 2,
@@ -11226,47 +11230,47 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a4940bc0-4ce5-4a79-a236-ce72db71bb70"),
+                            Id = new Guid("a328d31d-7d23-4fb0-9857-c7dfaab5f19d"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 927",
                             DestinationName = "Fake destination name for 927",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 927",
                             OriginName = "Fake origin name for 927",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN927-927"
                         },
                         new
                         {
-                            Id = new Guid("bfea255e-b241-4fd0-8592-f3fb592678fa"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("4cb5ed53-4dd1-4089-bb48-7b6a2384a0a1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 928",
                             DestinationName = "Fake destination name for 928",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 928",
                             OriginName = "Fake origin name for 928",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN928-928"
                         },
                         new
                         {
-                            Id = new Guid("a94bfb50-5a4f-4873-ab25-b0fed6c36630"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8b116b28-bcb5-44ad-bb68-b2a2362d1a79"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 929",
                             DestinationName = "Fake destination name for 929",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 929",
                             OriginName = "Fake origin name for 929",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN929-929"
                         },
                         new
                         {
-                            Id = new Guid("d8132530-f8da-416d-ad31-9b66dc0b9132"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("2ccca1e7-6609-4458-b906-51aba2851e2d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 930",
                             DestinationName = "Fake destination name for 930",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 930",
                             OriginName = "Fake origin name for 930",
                             Status = 0,
@@ -11274,11 +11278,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("abaf2cd8-e845-40c5-8014-955531e5d0a0"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("b7b5ed86-5128-49fe-bac4-c3a4d1509b96"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 931",
                             DestinationName = "Fake destination name for 931",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 931",
                             OriginName = "Fake origin name for 931",
                             Status = 1,
@@ -11286,23 +11290,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0d0de430-195d-4919-987a-9dfcb9343d48"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("104b0be7-3d8c-4335-af33-2d12c95bbe99"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 932",
                             DestinationName = "Fake destination name for 932",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 932",
                             OriginName = "Fake origin name for 932",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN932-932"
                         },
                         new
                         {
-                            Id = new Guid("5129faee-a117-4e64-8556-1dc639695ca2"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("eda16709-79f5-47ae-b3b3-24437a5b0a2d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 933",
                             DestinationName = "Fake destination name for 933",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 933",
                             OriginName = "Fake origin name for 933",
                             Status = 2,
@@ -11310,35 +11314,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("87a9dac6-a0a7-4901-beed-ce9926aaed44"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("4ebe4249-0bbc-4100-910b-f83386514b14"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 934",
                             DestinationName = "Fake destination name for 934",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 934",
                             OriginName = "Fake origin name for 934",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN934-934"
                         },
                         new
                         {
-                            Id = new Guid("a4a9bd97-bf72-4c16-8314-3fe7e587c591"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0e4af82d-8810-435e-88b5-74d7008e27dd"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 935",
                             DestinationName = "Fake destination name for 935",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 935",
                             OriginName = "Fake origin name for 935",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN935-935"
                         },
                         new
                         {
-                            Id = new Guid("ee957b01-ca6c-46a0-bdc7-c4f9e8b51a39"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("3d200062-675b-44b1-a96f-0f26d4392c65"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 936",
                             DestinationName = "Fake destination name for 936",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 936",
                             OriginName = "Fake origin name for 936",
                             Status = 1,
@@ -11346,23 +11350,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("53ea703e-853a-401d-b5f8-91e322c8bae2"),
+                            Id = new Guid("c83ecafd-dc59-473b-874c-e03fd7c91026"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 937",
                             DestinationName = "Fake destination name for 937",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 937",
                             OriginName = "Fake origin name for 937",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN937-937"
                         },
                         new
                         {
-                            Id = new Guid("1fe313ee-902b-4c92-9f2e-a1bbc7e46c0d"),
+                            Id = new Guid("7737057a-c375-4af8-b5f6-7eb7f6bdf45e"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 938",
                             DestinationName = "Fake destination name for 938",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 938",
                             OriginName = "Fake origin name for 938",
                             Status = 1,
@@ -11370,44 +11374,44 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("03706329-f3dc-43a1-8b53-e352d8edf5d9"),
+                            Id = new Guid("0949cda7-a66f-4991-8bd2-e06b225a91b4"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 939",
                             DestinationName = "Fake destination name for 939",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 939",
                             OriginName = "Fake origin name for 939",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN939-939"
                         },
                         new
                         {
-                            Id = new Guid("fbc2613d-e0fc-4c27-8fd0-d8c8ac808332"),
+                            Id = new Guid("184205d8-f601-4a5b-8689-44187be967a1"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 940",
                             DestinationName = "Fake destination name for 940",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 940",
                             OriginName = "Fake origin name for 940",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN940-940"
                         },
                         new
                         {
-                            Id = new Guid("fbe51a05-3266-4c87-b31f-ca44e8185465"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("d110e735-14d5-4710-a197-3ca601535f13"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 941",
                             DestinationName = "Fake destination name for 941",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 941",
                             OriginName = "Fake origin name for 941",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN941-941"
                         },
                         new
                         {
-                            Id = new Guid("35f816b7-2dd0-48c5-af89-a57b99f3907c"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("7a3547c0-e1ab-4746-94c2-c90bb14e623a"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 942",
                             DestinationName = "Fake destination name for 942",
                             NumberOfPackeges = 1,
@@ -11418,35 +11422,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6bb94b4c-eb13-49f0-ac1d-578ef7481e77"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("62cfcca7-db66-4552-8208-8196ae8ebc02"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 943",
                             DestinationName = "Fake destination name for 943",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 943",
                             OriginName = "Fake origin name for 943",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN943-943"
                         },
                         new
                         {
-                            Id = new Guid("7090f419-e187-4de8-a34a-df5a3b8c0b30"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("4fa3e178-84c0-4bce-ba75-bdc32c341022"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 944",
                             DestinationName = "Fake destination name for 944",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 944",
                             OriginName = "Fake origin name for 944",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN944-944"
                         },
                         new
                         {
-                            Id = new Guid("5a80cbde-b14f-4f72-a3dd-50c4fff6e978"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("d1d5400e-ee04-469c-a070-8534373ccf87"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 945",
                             DestinationName = "Fake destination name for 945",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 945",
                             OriginName = "Fake origin name for 945",
                             Status = 0,
@@ -11454,35 +11458,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("05e7f7d9-4202-4b5d-a2d3-132f090d5c96"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("5dd9bcc1-85f3-411c-8beb-d36b95bee2c1"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 946",
                             DestinationName = "Fake destination name for 946",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 946",
                             OriginName = "Fake origin name for 946",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN946-946"
                         },
                         new
                         {
-                            Id = new Guid("a227327c-98eb-4c5e-90b0-5953c75b1f66"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("a44fbba6-8403-4952-b8a5-050b9907608c"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 947",
                             DestinationName = "Fake destination name for 947",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 947",
                             OriginName = "Fake origin name for 947",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN947-947"
                         },
                         new
                         {
-                            Id = new Guid("90a891cb-e1e3-4c98-a1bd-6b110cc1bbdd"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("569ef8b0-87ac-4ca6-a947-978a1aa0ec97"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 948",
                             DestinationName = "Fake destination name for 948",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 948",
                             OriginName = "Fake origin name for 948",
                             Status = 0,
@@ -11490,119 +11494,119 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("16d1474f-e2d7-495a-a8ee-0656469a5eac"),
+                            Id = new Guid("5fb3d1a7-49fc-4219-b466-98ed302f050f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 949",
                             DestinationName = "Fake destination name for 949",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 949",
                             OriginName = "Fake origin name for 949",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN949-949"
                         },
                         new
                         {
-                            Id = new Guid("ef08e837-a9a3-486e-9a14-4bf58534d729"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("228daa01-e79f-49e6-8b0c-6905dd223f92"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 950",
                             DestinationName = "Fake destination name for 950",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 950",
                             OriginName = "Fake origin name for 950",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN950-950"
                         },
                         new
                         {
-                            Id = new Guid("2f36fea6-f6b6-4b96-9e5f-3e979a4a657f"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("67a31095-c0f9-405e-808d-8ce343282220"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 951",
                             DestinationName = "Fake destination name for 951",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 951",
                             OriginName = "Fake origin name for 951",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN951-951"
                         },
                         new
                         {
-                            Id = new Guid("c5bfab79-19ee-464e-83ab-639c023d3854"),
+                            Id = new Guid("5facc405-d341-40af-a93f-2bd4b78dc404"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 952",
                             DestinationName = "Fake destination name for 952",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 952",
                             OriginName = "Fake origin name for 952",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN952-952"
                         },
                         new
                         {
-                            Id = new Guid("0aae45c0-e81b-4c9d-a75f-3d4a4e9f9ddb"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("e3427b0d-de00-44ce-84bd-bb6884545e84"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 953",
                             DestinationName = "Fake destination name for 953",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 953",
                             OriginName = "Fake origin name for 953",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN953-953"
                         },
                         new
                         {
-                            Id = new Guid("809e6548-97ce-4a33-b7f8-baf0fe0fd25a"),
+                            Id = new Guid("8ec3a702-f776-444a-a6c3-2f629852b5f6"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 954",
                             DestinationName = "Fake destination name for 954",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 954",
                             OriginName = "Fake origin name for 954",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN954-954"
                         },
                         new
                         {
-                            Id = new Guid("852a9c0b-9677-4667-8b76-97a848acdd27"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("98bf4861-07fb-414b-8b59-3204e2337564"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 955",
                             DestinationName = "Fake destination name for 955",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 955",
                             OriginName = "Fake origin name for 955",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN955-955"
                         },
                         new
                         {
-                            Id = new Guid("f274a2bd-5011-4c3a-ba9b-27701bf1814d"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("cee85613-89aa-4f8a-9a90-63004bd23650"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 956",
                             DestinationName = "Fake destination name for 956",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 956",
                             OriginName = "Fake origin name for 956",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN956-956"
                         },
                         new
                         {
-                            Id = new Guid("7019b799-f723-4c4e-88d1-c3ca9bc999e7"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("67cc2f32-f8f5-4bf8-a903-d912a06cd582"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 957",
                             DestinationName = "Fake destination name for 957",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 957",
                             OriginName = "Fake origin name for 957",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN957-957"
                         },
                         new
                         {
-                            Id = new Guid("024c4311-78b6-4f87-a2a8-c40cddd0cc89"),
+                            Id = new Guid("ef6d0595-a0ea-4702-ab0f-9b6184913b0b"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 958",
                             DestinationName = "Fake destination name for 958",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 958",
                             OriginName = "Fake origin name for 958",
                             Status = 2,
@@ -11610,35 +11614,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b960835b-63a5-4e81-8ae2-ef1a1e3f67f5"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("3e1ca081-5703-4e09-a186-8ecdde4ddec1"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 959",
                             DestinationName = "Fake destination name for 959",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 959",
                             OriginName = "Fake origin name for 959",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN959-959"
                         },
                         new
                         {
-                            Id = new Guid("50870c4f-579d-4b1d-a944-50e56649dc79"),
+                            Id = new Guid("2c2379cf-02d0-40a3-a15f-668d554b65c0"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 960",
                             DestinationName = "Fake destination name for 960",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 960",
                             OriginName = "Fake origin name for 960",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN960-960"
                         },
                         new
                         {
-                            Id = new Guid("b5195cde-578b-466c-8538-241dec692b72"),
+                            Id = new Guid("704f279a-9b11-4582-aecc-b244e266bd25"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 961",
                             DestinationName = "Fake destination name for 961",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 961",
                             OriginName = "Fake origin name for 961",
                             Status = 2,
@@ -11646,11 +11650,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c064ff38-e7c0-4a18-8394-60f2c34ae8e1"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("0361bba7-c278-47c5-b12e-a89b562a5cfe"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 962",
                             DestinationName = "Fake destination name for 962",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 962",
                             OriginName = "Fake origin name for 962",
                             Status = 1,
@@ -11658,35 +11662,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d24e4ae2-b88d-4f65-b799-140c6a31120f"),
+                            Id = new Guid("b7ea65de-c91a-4802-8f72-2066732c620e"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 963",
                             DestinationName = "Fake destination name for 963",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 963",
                             OriginName = "Fake origin name for 963",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN963-963"
                         },
                         new
                         {
-                            Id = new Guid("f5d448be-f0a3-45ac-bd22-a2032e6d9c5f"),
+                            Id = new Guid("1a01501f-2cd0-48d6-af78-51d2adbfb170"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 964",
                             DestinationName = "Fake destination name for 964",
                             NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 964",
                             OriginName = "Fake origin name for 964",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN964-964"
                         },
                         new
                         {
-                            Id = new Guid("04939399-5135-4835-b36c-7f43980c12eb"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f3a243a2-2a5c-4f17-9538-a7616eefa6eb"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 965",
                             DestinationName = "Fake destination name for 965",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 965",
                             OriginName = "Fake origin name for 965",
                             Status = 2,
@@ -11694,23 +11698,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("343bde28-8d1b-47f9-a589-66b6e8e921b5"),
+                            Id = new Guid("35af1e74-49e9-450c-82b7-ff63d1b82377"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 966",
                             DestinationName = "Fake destination name for 966",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 966",
                             OriginName = "Fake origin name for 966",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN966-966"
                         },
                         new
                         {
-                            Id = new Guid("e6b4bbc1-1763-4de4-8d7b-8666691dac28"),
+                            Id = new Guid("befd5ab7-974e-4e45-92c8-dd36269c185f"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 967",
                             DestinationName = "Fake destination name for 967",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 967",
                             OriginName = "Fake origin name for 967",
                             Status = 0,
@@ -11718,107 +11722,107 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c24902f4-ada6-4f21-91b1-e024348e44f3"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("55af6397-2166-483c-89e3-40e2a35b09c9"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 968",
                             DestinationName = "Fake destination name for 968",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 968",
                             OriginName = "Fake origin name for 968",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN968-968"
                         },
                         new
                         {
-                            Id = new Guid("41e233b4-bd35-4239-b226-202b93b2cbbf"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("e3751895-12d1-43f4-979f-28fd7d0c0718"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 969",
                             DestinationName = "Fake destination name for 969",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 969",
                             OriginName = "Fake origin name for 969",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN969-969"
                         },
                         new
                         {
-                            Id = new Guid("87911a10-da17-4164-91ba-8465c96091b1"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("eed27a7a-ae43-45b9-8fc1-431e516e1aed"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 970",
                             DestinationName = "Fake destination name for 970",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 970",
                             OriginName = "Fake origin name for 970",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN970-970"
                         },
                         new
                         {
-                            Id = new Guid("f0bf2bd8-8d3b-419b-bbb1-c7ed9b0536dd"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("c9939109-f918-435a-bc76-0b985b00c1e1"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 971",
                             DestinationName = "Fake destination name for 971",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 971",
                             OriginName = "Fake origin name for 971",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN971-971"
                         },
                         new
                         {
-                            Id = new Guid("b43fb152-7b36-4da6-8751-403543a87f51"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("f066c91b-e592-4411-8a2a-a52eb080b87c"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 972",
                             DestinationName = "Fake destination name for 972",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 972",
                             OriginName = "Fake origin name for 972",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN972-972"
                         },
                         new
                         {
-                            Id = new Guid("e61791ae-f1e5-4ca3-b6dc-1555ee571c44"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("87db78dd-58e1-4fe6-867a-0a1e0cc51676"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 973",
                             DestinationName = "Fake destination name for 973",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 973",
                             OriginName = "Fake origin name for 973",
-                            Status = 1,
+                            Status = 0,
                             TrackingNumber = "FTN973-973"
                         },
                         new
                         {
-                            Id = new Guid("cec5fd6a-9a4d-4bd8-9f32-bd17a87d469b"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("a0485597-6d70-4593-82fd-b2866895d1f6"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 974",
                             DestinationName = "Fake destination name for 974",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 974",
                             OriginName = "Fake origin name for 974",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN974-974"
                         },
                         new
                         {
-                            Id = new Guid("70f6365b-6bcf-497d-86d7-bc6b9448344f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("7e222edc-b269-4717-a4e3-dce62146b569"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 975",
                             DestinationName = "Fake destination name for 975",
                             NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 975",
                             OriginName = "Fake origin name for 975",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN975-975"
                         },
                         new
                         {
-                            Id = new Guid("2e3724d7-2ed1-4b90-9893-34dd5ea3dc1c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("e7c15573-d3c4-4ea0-9998-e8be55546314"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 976",
                             DestinationName = "Fake destination name for 976",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 976",
                             OriginName = "Fake origin name for 976",
                             Status = 1,
@@ -11826,35 +11830,35 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("01955323-d98f-45f3-aa63-fbe104e66d5a"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("80f13ec7-4355-4685-ad86-a1947977e669"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 977",
                             DestinationName = "Fake destination name for 977",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 977",
                             OriginName = "Fake origin name for 977",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN977-977"
                         },
                         new
                         {
-                            Id = new Guid("ccbe7652-c108-4f24-a015-3d204400feab"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("92ebd212-d22e-4bda-ad9e-ff9e471bcf20"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 978",
                             DestinationName = "Fake destination name for 978",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 978",
                             OriginName = "Fake origin name for 978",
-                            Status = 2,
+                            Status = 0,
                             TrackingNumber = "FTN978-978"
                         },
                         new
                         {
-                            Id = new Guid("2db9eb97-54a5-4421-b87d-62fcce209cf4"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("616f1a20-f589-4636-b8a8-d00d1292517f"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 979",
                             DestinationName = "Fake destination name for 979",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 979",
                             OriginName = "Fake origin name for 979",
                             Status = 1,
@@ -11862,20 +11866,20 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2c3ecfa3-3f20-43fd-8a40-8b521d7376a6"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("ef67fddb-75a4-4da9-ae4a-c29429f84a93"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 980",
                             DestinationName = "Fake destination name for 980",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 980",
                             OriginName = "Fake origin name for 980",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN980-980"
                         },
                         new
                         {
-                            Id = new Guid("0e60faff-26e0-450c-a6f1-6f3bd9fb5c5e"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("99bc1351-d885-4090-9cad-a1b1b87d9d77"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 981",
                             DestinationName = "Fake destination name for 981",
                             NumberOfPackeges = 0,
@@ -11886,11 +11890,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("137174d1-96f6-42f7-84a3-6d4a55781483"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("5d317b6b-bba0-45e4-93e3-7b6c7955fdbc"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 982",
                             DestinationName = "Fake destination name for 982",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 982",
                             OriginName = "Fake origin name for 982",
                             Status = 2,
@@ -11898,8 +11902,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("36a3d3c3-66ef-48c3-b650-e43169586911"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("ce79341f-b68e-4ba2-b8e9-0263d3474e8c"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 983",
                             DestinationName = "Fake destination name for 983",
                             NumberOfPackeges = 0,
@@ -11910,11 +11914,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6f726f0c-a56e-4de3-991f-8eb02c44f72a"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("6558162f-4f54-425d-945e-46445f1135bc"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 984",
                             DestinationName = "Fake destination name for 984",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 984",
                             OriginName = "Fake origin name for 984",
                             Status = 1,
@@ -11922,44 +11926,44 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("acde6274-2940-41ae-b9c9-0f5d45708173"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("201b375c-13c7-4b85-bdee-f65506787800"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 985",
                             DestinationName = "Fake destination name for 985",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 985",
                             OriginName = "Fake origin name for 985",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN985-985"
                         },
                         new
                         {
-                            Id = new Guid("4c04d9c6-0091-47c2-b882-b78afcf14705"),
+                            Id = new Guid("e519f3b9-d3d5-42f6-a433-4d47ef5b8984"),
                             DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 986",
                             DestinationName = "Fake destination name for 986",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 986",
                             OriginName = "Fake origin name for 986",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN986-986"
                         },
                         new
                         {
-                            Id = new Guid("611ddec1-2ee8-4075-a57c-808c80b6d266"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("2ec52bb6-d399-49d3-84ce-34a938d8c6a1"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 987",
                             DestinationName = "Fake destination name for 987",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 0,
                             OriginAddress = "Fake origin address for 987",
                             OriginName = "Fake origin name for 987",
-                            Status = 0,
+                            Status = 2,
                             TrackingNumber = "FTN987-987"
                         },
                         new
                         {
-                            Id = new Guid("375d8153-4ad5-4bc5-a399-0f75d42d0899"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("518dbfb4-337d-4694-a9df-c6a7e99ca3c5"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 988",
                             DestinationName = "Fake destination name for 988",
                             NumberOfPackeges = 3,
@@ -11970,11 +11974,11 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ca5bd6e7-940b-4a00-a4c4-3e93c249764c"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("329da8f3-b065-4c6d-b00c-0c1fb6a1959c"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 989",
                             DestinationName = "Fake destination name for 989",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 989",
                             OriginName = "Fake origin name for 989",
                             Status = 2,
@@ -11982,59 +11986,59 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("308dacc6-3a83-496a-838f-39aea1adb702"),
+                            Id = new Guid("28764eff-3019-4e05-b9bd-fb5c52fa8e01"),
                             DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 990",
                             DestinationName = "Fake destination name for 990",
-                            NumberOfPackeges = 1,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 990",
                             OriginName = "Fake origin name for 990",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN990-990"
                         },
                         new
                         {
-                            Id = new Guid("5f6e4eed-517e-4459-934c-b5a0d10a8eab"),
-                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
+                            Id = new Guid("83c879c1-609a-47b3-84d2-ca59d823ca22"),
+                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 991",
                             DestinationName = "Fake destination name for 991",
-                            NumberOfPackeges = 3,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 991",
                             OriginName = "Fake origin name for 991",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN991-991"
                         },
                         new
                         {
-                            Id = new Guid("7cf581cb-ee1c-449d-9e2f-8d8467a7c563"),
-                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
+                            Id = new Guid("d99caa67-6cbb-476c-bc08-91dd6e43c375"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 992",
                             DestinationName = "Fake destination name for 992",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 992",
                             OriginName = "Fake origin name for 992",
-                            Status = 2,
+                            Status = 1,
                             TrackingNumber = "FTN992-992"
                         },
                         new
                         {
-                            Id = new Guid("46e072fa-17ea-4260-8dc3-aac1d64d201f"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f3bfde9e-f2ca-448f-bb35-03512b011f1e"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 993",
                             DestinationName = "Fake destination name for 993",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 993",
                             OriginName = "Fake origin name for 993",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN993-993"
                         },
                         new
                         {
-                            Id = new Guid("db26596b-b46f-4be8-82f4-2b6c988a7b72"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("09a2a24a-c189-4734-9429-7083c37a3f57"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 994",
                             DestinationName = "Fake destination name for 994",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 994",
                             OriginName = "Fake origin name for 994",
                             Status = 0,
@@ -12042,23 +12046,23 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("233c6e6a-29ab-4954-af35-b8aa9c48ef86"),
+                            Id = new Guid("b97d48d0-fba4-4550-8988-04df7b49ef16"),
                             DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
                             DestinationAddress = "Fake destination address for 995",
                             DestinationName = "Fake destination name for 995",
-                            NumberOfPackeges = 0,
+                            NumberOfPackeges = 4,
                             OriginAddress = "Fake origin address for 995",
                             OriginName = "Fake origin name for 995",
-                            Status = 1,
+                            Status = 2,
                             TrackingNumber = "FTN995-995"
                         },
                         new
                         {
-                            Id = new Guid("a1d50d59-8f61-4d30-b9ed-c910f831fe53"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("f39df8fa-2e24-4957-b456-26013d023d89"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 996",
                             DestinationName = "Fake destination name for 996",
-                            NumberOfPackeges = 4,
+                            NumberOfPackeges = 2,
                             OriginAddress = "Fake origin address for 996",
                             OriginName = "Fake origin name for 996",
                             Status = 0,
@@ -12066,8 +12070,8 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f3825471-edc5-47c8-a8b8-f99842e202b2"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("6c7d732a-911f-4aab-b412-2001ccee0a19"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 997",
                             DestinationName = "Fake destination name for 997",
                             NumberOfPackeges = 4,
@@ -12078,26 +12082,26 @@ namespace Datex.DeliveryConformation.Db.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fdf7e1bc-da93-4d5e-b46a-6214da6866f2"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("cf32f387-899b-43ee-b16a-c33d45d60504"),
+                            DeliveryTruckId = new Guid("daf6f1fe-7f99-4567-bb22-ca36f44c79e8"),
                             DestinationAddress = "Fake destination address for 998",
                             DestinationName = "Fake destination name for 998",
-                            NumberOfPackeges = 2,
+                            NumberOfPackeges = 3,
                             OriginAddress = "Fake origin address for 998",
                             OriginName = "Fake origin name for 998",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN998-998"
                         },
                         new
                         {
-                            Id = new Guid("3273d6b9-295f-4786-8f3c-32660d72046b"),
-                            DeliveryTruckId = new Guid("b11ceabb-7b65-4216-832d-a1c3309a6aa5"),
+                            Id = new Guid("8f65c057-afa6-479f-bc1d-181de9c4b79d"),
+                            DeliveryTruckId = new Guid("f9c3a27d-c25a-4fe3-80bb-ea562ffa7bc7"),
                             DestinationAddress = "Fake destination address for 999",
                             DestinationName = "Fake destination name for 999",
                             NumberOfPackeges = 1,
                             OriginAddress = "Fake origin address for 999",
                             OriginName = "Fake origin name for 999",
-                            Status = 0,
+                            Status = 1,
                             TrackingNumber = "FTN999-999"
                         });
                 });

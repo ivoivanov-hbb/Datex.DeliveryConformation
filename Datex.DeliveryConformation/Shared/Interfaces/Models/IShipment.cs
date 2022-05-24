@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace Datex.DeliveryConformation.Shared.Interfaces.Models
 {
-    public interface IShipment
+    public interface IShipment : IBasicShipment
     {
-        Guid Id { get; }
         string? OriginName { get; }
         string? OriginAddress { get; }
-        string? DestinationName { get; }
-        string? DestinationAddress { get; }
-        int NumberOfPackeges { get; }
         string? TrackingNumber { get; }
         ShipmentStatuses Status { get; set; }
         bool? WasCustomerAtHome { get; set; }

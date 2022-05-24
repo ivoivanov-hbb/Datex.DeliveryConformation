@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datex.DeliveryConformation.Shared.Interfaces.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
