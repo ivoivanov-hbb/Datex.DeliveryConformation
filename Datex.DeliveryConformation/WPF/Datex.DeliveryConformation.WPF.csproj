@@ -8,12 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Datex.DeliveryConformation.Shared.csproj" />
+    <PackageReference Include="Nextcorp.DelegateCommand" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+    <ProjectReference Include="..\Shared\Datex.DeliveryConformation.Shared.csproj" />
   </ItemGroup>
 
 </Project>

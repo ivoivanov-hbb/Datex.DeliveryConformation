@@ -33,7 +33,8 @@ namespace Datex.DeliveryConformation.Server.Controllers
             // If more complex logic is to be included and more models are created, a Mapper can be implemented.
             List<IBasicShipment> result = await context.Shipments
                 .Where(s => s.DeliveryTruckId.Equals(deliveryTruckId) 
-                            && shipmentStatus.HasValue ? s.Status == shipmentStatus : true)
+                            && (shipmentStatus.HasValue ? s.Status == shipmentStatus : true))
+                .OrderBy(s => s.OriginName)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .Select(s => new BasicShipment() { Id = s.Id, DestinationAddress = s.DestinationAddress, DestinationName = s.DestinationName, NumberOfPackeges = s.NumberOfPackeges })
@@ -43,10 +44,12 @@ namespace Datex.DeliveryConformation.Server.Controllers
         }
 
         [HttpGet("count")]
-        public async Task<ActionResult<int>> GetCount(ShipmentStatuses? shipmentStatus)
+        public async Task<ActionResult<int>> GetCount(Guid deliveryTruckId, ShipmentStatuses? shipmentStatus)
         {
             int result = await context.Shipments
-                .Where(s => shipmentStatus.HasValue ? s.Status == shipmentStatus : true).CountAsync();
+                .Where(s => s.DeliveryTruckId.Equals(deliveryTruckId)
+                            && (shipmentStatus.HasValue ? s.Status == shipmentStatus : true))
+                .CountAsync();
 
             return Ok(result);
         }
@@ -60,7 +63,7 @@ namespace Datex.DeliveryConformation.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Update(IShipment shipment)
+        public async Task<ActionResult> Update(Shipment shipment)
         {
             if(!ShipmentValidator.IsShipmentValid(shipment))
             {

@@ -16,5 +16,6 @@ namespace Datex.DeliveryConformation.Shared.Interfaces.Models
         bool? WasCustomerAtHome { get; set; }
         bool? WasPackageDamaged { get; set; }
         string? Notes { get; set; }
+        Guid DeliveryTruckId { get; }
     }
 }

@@ -22,7 +22,7 @@ namespace Datex.DeliveryConformation.Db.Configurations
                     Id = Guid.NewGuid(),
                     DestinationAddress = $"Fake destination address for {i}",
                     DestinationName = $"Fake destination name for {i}",
-                    NumberOfPackeges = random.Next(5),
+                    NumberOfPackeges = random.Next(5) + 1,
                     OriginAddress = $"Fake origin address for {i}",
                     OriginName = $"Fake origin name for {i}",
                     Status = (Shared.Enums.ShipmentStatuses)random.Next(3),

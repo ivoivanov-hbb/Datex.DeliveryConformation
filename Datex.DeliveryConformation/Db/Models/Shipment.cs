@@ -29,6 +29,6 @@ namespace Datex.DeliveryConformation.Db.Models
 
         public Guid DeliveryTruckId { get; set; }
         [JsonIgnore]
-        public DeliveryTruck DeliveryTruck { get; set; }
+        public DeliveryTruck? DeliveryTruck { get; set; }
     }
 }

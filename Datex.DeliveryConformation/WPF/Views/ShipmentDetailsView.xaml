@@ -1,0 +1,169 @@
+﻿<UserControl x:Class="Datex.DeliveryConformation.WPF.Views.ShipmentDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Datex.DeliveryConformation.WPF.Views"
+             xmlns:converters="clr-namespace:Datex.DeliveryConformation.WPF.Helpers.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Visibility="Collapsed"
+             DataContextChanged="UserControl_DataContextChanged"
+             Background="White">
+    <UserControl.Resources>
+        <Style x:Key="DataTextBlockStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <converters:NullableBoolToBoolConverter x:Key="NullableBoolToBoolConverter"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid
+        Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Column="0" Grid.Row="0"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Sender Name: "/>
+        <TextBlock
+            Grid.Column="1" Grid.Row="0"
+            Style="{StaticResource DataTextBlockStyle}"
+            Text="{Binding Path=SenderName}"/>
+        <TextBlock
+            Grid.Column="0" Grid.Row="1"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Sender Address: "/>
+        <TextBlock
+            Grid.Column="1" Grid.Row="1"
+            Style="{StaticResource DataTextBlockStyle}"
+            Text="{Binding Path=SenderAddress}"/>
+        <TextBlock
+            Grid.Column="0" Grid.Row="2"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Receiver Name: "/>
+        <TextBlock
+            Grid.Column="1" Grid.Row="2"
+            Style="{StaticResource DataTextBlockStyle}"
+            Text="{Binding Path=ReceiverName}"/>
+        <TextBlock
+            Grid.Column="0" Grid.Row="3"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Receiver Address: "/>
+        <TextBlock
+            Grid.Column="1" Grid.Row="3"
+            Style="{StaticResource DataTextBlockStyle}"
+            Text="{Binding Path=ReceiverAddress}"/>
+        <TextBlock
+            Grid.Column="0" Grid.Row="4"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Number of packages: "/>
+        <TextBlock
+            Grid.Column="1" Grid.Row="4"
+            Style="{StaticResource DataTextBlockStyle}"
+            Text="{Binding Path=NumberOfPackages}"/>
+        <TextBlock
+            Grid.Column="0" Grid.Row="5"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Tracking Number: "/>
+        <TextBlock
+            Grid.Column="1" Grid.Row="5"
+            Style="{StaticResource DataTextBlockStyle}"
+            Text="{Binding Path=TrackingNumber}"/>
+        <TextBlock
+            Grid.Column="0" Grid.Row="6"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Status: "/>
+        <TextBlock
+            Grid.Column="1" Grid.Row="6"
+            Style="{StaticResource DataTextBlockStyle}"
+            Text="{Binding Path=Status}"/>
+        <TextBlock
+            Grid.Column="0" Grid.Row="7"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Customer Was At Home: "/>
+        <Grid
+            Grid.Column="1" Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ToggleButton 
+                Grid.Column="0" 
+                Content="Yes" 
+                IsChecked="{Binding Path=WasCustomerAtHome, Converter={StaticResource NullableBoolToBoolConverter}, ConverterParameter=true}"/>
+            <ToggleButton 
+                Grid.Column="1" 
+                Content="No" 
+                IsChecked="{Binding Path=WasCustomerAtHome, Converter={StaticResource NullableBoolToBoolConverter}, ConverterParameter=false}"/>
+        </Grid>
+        <TextBlock
+            Grid.Column="0" Grid.Row="8"
+            VerticalAlignment="Center" HorizontalAlignment="Right"
+            Text="Package Was Damaged: "/>
+        <Grid
+            Grid.Column="1" Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ToggleButton 
+                Grid.Column="0" 
+                Content="Yes" 
+                IsChecked="{Binding Path=WasPackageDamaged, Converter={StaticResource NullableBoolToBoolConverter}, ConverterParameter=true}"/>
+            <ToggleButton 
+                Grid.Column="1" 
+                Content="No" 
+                IsChecked="{Binding Path=WasPackageDamaged, Converter={StaticResource NullableBoolToBoolConverter}, ConverterParameter=false}"/>
+        </Grid>
+        <TextBlock
+            Grid.Column="0" Grid.Row="9"
+            VerticalAlignment="Center"
+            Text="Notes: "/>
+        <TextBox
+            Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="10"
+            Text="{Binding Path=Notes}"/>
+        <StackPanel
+            Grid.Column="2" Grid.Row="11"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            <Button
+                Content="Deliver"
+                MinWidth="60" MinHeight="20"
+                Command="{Binding Path=DeliverCommand}"
+                Visibility="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Button
+                Content="Hold"
+                MinWidth="60" MinHeight="20"
+                Command="{Binding Path=HoldCommand}"
+                Visibility="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Button
+                Content="Undo"
+                MinWidth="60" MinHeight="20"
+                Command="{Binding Path=UndoCommand}"
+                Visibility="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Button
+                Content="Cancel"
+                MinWidth="60" MinHeight="20"
+                IsCancel="True"
+                Command="{Binding Path=CancelCommand}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
